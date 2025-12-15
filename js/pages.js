@@ -1,12 +1,17 @@
 const pages = {
   "/": `
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Contabilidade Estratégica para seu Negócio</h1>
+        <p class="section-subtitle">
+          Mais de 10 anos oferecendo soluções contábeis completas para empresas de todos os portes. 
+          Atendimento personalizado, processos ágeis e assessoria estratégica para o crescimento sustentável do seu negócio.
+        </p>
+        <a href="https://wa.me/5511995172741" class="cta-button">Fale Conosco Agora</a> <!-- Ajuste o href para o link desejado, ex: WhatsApp ou formulário -->
+      </div>
+    </section>
     <section class="home">
-      <h1>Contabilidade Estratégica para seu Negócio</h1>
-      <p class="section-subtitle">
-        Mais de 10 anos oferecendo soluções contábeis completas para empresas de todos os portes. 
-        Atendimento personalizado, processos ágeis e assessoria estratégica para o crescimento sustentável do seu negócio.
-      </p>
-
       <h2>Transição de CLT para Pessoa Jurídica</h2>
       <p>
         Planeje sua mudança profissional com segurança. Oferecemos consultoria completa para profissionais 
@@ -20,7 +25,11 @@ const pages = {
         <li>Suporte completo na abertura e regularização do CNPJ</li>
         <li>Assessoria contínua para gestão financeira e fiscal</li>
       </ul>
-
+      <p>
+        Com uma equipe especializada e comprometida com o sucesso dos 
+        nossos clientes, garantimos uma transição suave e eficiente, evitando riscos como a pejotização irregular e maximizando os benefícios da autonomia como PJ, 
+        sempre priorizando a legalidade e a personalização de cada caso.
+      </p>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-number">1</div>
@@ -85,11 +94,13 @@ const pages = {
           <li>Consultoria para crescimento e formalização</li>
         </ul>
       </div>
-
-      <div class="cta-box">
-        <h3>Solicite uma Proposta</h3>
-        <p>Entre em contato para receber um orçamento personalizado e descobrir como podemos otimizar a gestão fiscal do seu negócio</p>
+      
+      <div class="cta-box-contact">
+        <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer">        <h3>Solicite uma Proposta</h3>
+          <p>Entre em contato para receber um orçamento personalizado e descobrir como podemos otimizar a gestão fiscal do seu negócio</p>
+        </a>
       </div>
+      
     </section>
   `,
 
@@ -228,19 +239,21 @@ const pages = {
           <li><strong>Orientação estratégica:</strong> Consultoria para crescimento sustentável</li>
         </ul>
       </div>
-
-      <div class="cta-box">
-        <h3>Planejamento Profissional</h3>
-        <p>Entre em contato para agendar uma consultoria e descobrir o momento ideal para expandir seu negócio com segurança jurídica e fiscal</p>
+    
+      <div class="cta-box-contact">
+        <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer">          <h3>Planejamento Profissional</h3>
+          <p>Entre em contato para agendar uma consultoria e descobrir o momento ideal para expandir seu negócio com segurança jurídica e fiscal</p>
+        </a>
       </div>
-    </section>
+  </section>
+
   `,
 
    "/Impostos": `
     <section class="impostos">
       <h1>Quanto Vou Pagar de Imposto?</h1>
       <p class="section-subtitle">
-        Entenda como funciona a tributação no Simples Nacional e descubra quanto sua empresa pagará de acordo com seu faturamento e atividade
+        Entenda como funciona a tributação no Simples Nacional e descubra quanto sua empresa pagará de acordo com seu faturamento e atividade.  
       </p>
 
       <p>
@@ -474,16 +487,17 @@ const pages = {
         pode-se utilizar a tabela do Anexo III em vez do Anexo V, resultando em menor tributação.
       </div>
 
-      <div class="cta-box">
-        <h3>Dúvidas sobre o Enquadramento?</h3>
-        <p>
-          Nossa equipe de especialistas está pronta para analisar seu negócio e identificar o anexo correto, 
-          garantindo que você pague apenas o necessário. Entre em contato para uma consultoria personalizada.
-        </p>
+      <div class="cta-box-contact">
+        <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer"> 
+          <h3>Dúvidas sobre o Enquadramento?</h3>
+          <p>
+            Nossa equipe de especialistas está pronta para analisar seu negócio e identificar o anexo correto, 
+            garantindo que você pague apenas o necessário. Entre em contato para uma consultoria personalizada.
+          </p>  
+        </a>
       </div>
     </section>
   `,
-
 
   "/contato": `
   <section class="contato">
