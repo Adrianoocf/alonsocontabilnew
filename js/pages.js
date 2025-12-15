@@ -486,31 +486,47 @@ const pages = {
 
 
   "/contato": `
-    <section class="contato">
-      <h1>Entre em Contato</h1>
-      <p class="section-subtitle">
-        Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
-      </p>
+  <section class="contato">
+    <h1>Entre em Contato</h1>
+    <p class="section-subtitle">
+      Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
+    </p>
 
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-icon">✉</div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">atendimento@alonsocontabil.com.br</div>
-        </div>
+    <div class="contact-grid">
+      
+      <!-- Email -->
+      <a 
+        href="mailto:atendimento@alonsocontabil.com.br" 
+        class="contact-card"
+      >
+        <div class="contact-icon">✉</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value">atendimento@alonsocontabil.com.br</div>
+      </a>
+      
+      <!-- WhatsApp -->
+      <a 
+        href="https://wa.me/5511995172741"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-card"
+      >
+        <div class="contact-icon">☎</div>
+        <div class="contact-label">WhatsApp</div>
+        <div class="contact-value">(11) 99517-2741</div>
+      </a>
 
-        <div class="contact-card">
-          <div class="contact-icon">☎</div>
-          <div class="contact-label">WhatsApp</div>
-          <div class="contact-value">(11) 99517-2741</div>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-icon">⏰</div>
-          <div class="contact-label">Horário</div>
-          <div class="contact-value">Segunda a Sexta<br>9h às 18h</div>
+      <!-- Horário -->
+      <div class="contact-card">
+        <div class="contact-icon">⏰</div>
+        <div class="contact-label">Horário</div>
+        <div class="contact-value">
+          Segunda a Sexta<br>9h às 18h
         </div>
       </div>
-    </section>
-  `
+
+    </div>
+  </section>
+`
+
 };
