@@ -1,31 +1,37 @@
 const pages = {
   "/": `
     <section class="hero-section">
-      <div class="hero-overlay"></div>
+      <div class="hero-image"></div>
+
       <div class="hero-content">
         <h1>Contabilidade Estratégica para seu Negócio</h1>
+
         <p class="section-subtitle">
-          Mais de 10 anos oferecendo soluções contábeis completas para empresas de todos os portes. 
+          Mais de 10 anos oferecendo soluções contábeis completas para empresas de todos os portes.
           Atendimento personalizado, processos ágeis e assessoria estratégica para o crescimento sustentável do seu negócio.
         </p>
-        <a href="https://wa.me/5511995172741" class="cta-button">Fale Conosco Agora</a> <!-- Ajuste o href para o link desejado, ex: WhatsApp ou formulário -->
+
+        <a href="https://wa.me/5511995172741" class="cta-button">
+          Fale Conosco Agora
+        </a>
       </div>
     </section>
+
     <section class="home">
-      <h2>Transição de CLT para Pessoa Jurídica</h2>
-      <p>
+      <h2 class="home-texto">Transição de CLT para Pessoa Jurídica</h2>
+      <p class="home-texto">
         Planeje sua mudança profissional com segurança. Oferecemos consultoria completa para profissionais 
         que desejam migrar do regime CLT para PJ, garantindo conformidade fiscal e otimização tributária.
       </p>
       
-      <ul>
+      <ul class="home-texto">
         <li>Análise personalizada do melhor tipo societário para seu perfil</li>
         <li>Planejamento tributário para redução legal de impostos</li>
         <li>Orientação sobre pró-labore, INSS e benefícios fiscais</li>
         <li>Suporte completo na abertura e regularização do CNPJ</li>
         <li>Assessoria contínua para gestão financeira e fiscal</li>
       </ul>
-      <p>
+      <p class="home-texto">
         Com uma equipe especializada e comprometida com o sucesso dos 
         nossos clientes, garantimos uma transição suave e eficiente, evitando riscos como a pejotização irregular e maximizando os benefícios da autonomia como PJ, 
         sempre priorizando a legalidade e a personalização de cada caso.
@@ -67,34 +73,36 @@ const pages = {
         Soluções completas em contabilidade, consultoria fiscal e planejamento tributário para empresas e profissionais autônomos
       </p>
 
-      <div class="service-card">
-        <h3>Serviços Empresariais</h3>
-        <span class="service-badge">MEI • ME • EPP</span>
-        <ul>
-          <li>Abertura, alteração e encerramento de empresas</li>
-          <li>Escrituração contábil e fiscal completa</li>
-          <li>Apuração de impostos e obrigações acessórias</li>
-          <li>Folha de pagamento e departamento pessoal</li>
-          <li>Gestão trabalhista e encargos sociais</li>
-          <li>Planejamento tributário e elisão fiscal</li>
-          <li>Consultoria para redução legal de impostos</li>
-        </ul>
-      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Serviços Empresariais</h3>
+          <span class="service-badge">MEI • ME • EPP</span>
+          <ul>
+            <li>Abertura, alteração e encerramento de empresas</li>
+            <li>Escrituração contábil e fiscal completa</li>
+            <li>Apuração de impostos e obrigações acessórias</li>
+            <li>Folha de pagamento e departamento pessoal</li>
+            <li>Gestão trabalhista e encargos sociais</li>
+            <li>Planejamento tributário e elisão fiscal</li>
+            <li>Consultoria para redução legal de impostos</li>
+          </ul>
+        </div>
 
-      <div class="service-card">
-        <h3>Serviços para Profissionais Autônomos</h3>
-        <span class="service-badge">PJ • Prestadores de Serviço • Ex-CLT</span>
-        <ul>
-          <li>Abertura de CNPJ com orientação personalizada</li>
-          <li>Enquadramento no regime tributário mais vantajoso</li>
-          <li>Emissão de notas fiscais e gestão de impostos</li>
-          <li>Assessoria para pró-labore e contribuição ao INSS</li>
-          <li>Planejamento tributário personalizado</li>
-          <li>Suporte contínuo para questões fiscais e contábeis</li>
-          <li>Consultoria para crescimento e formalização</li>
-        </ul>
+        <div class="service-card">
+          <h3>Serviços para Profissionais Autônomos</h3>
+          <span class="service-badge">PJ • Prestadores de Serviço • Ex-CLT</span>
+          <ul>
+            <li>Abertura de CNPJ com orientação personalizada</li>
+            <li>Enquadramento no regime tributário mais vantajoso</li>
+            <li>Emissão de notas fiscais e gestão de impostos</li>
+            <li>Assessoria para pró-labore e contribuição ao INSS</li>
+            <li>Planejamento tributário personalizado</li>
+            <li>Suporte contínuo para questões fiscais e contábeis</li>
+            <li>Consultoria para crescimento e formalização</li>
+          </ul>
+        </div>
       </div>
-      
+        
       <div class="cta-box-contact">
         <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer">        <h3>Solicite uma Proposta</h3>
           <p>Entre em contato para receber um orçamento personalizado e descobrir como podemos otimizar a gestão fiscal do seu negócio</p>
@@ -511,7 +519,8 @@ const pages = {
       <!-- Email -->
       <a 
         href="mailto:atendimento@alonsocontabil.com.br" 
-        class="contact-card"
+        class="contact-card" 
+        rel="noopener noreferrer"
       >
         <div class="contact-icon">✉</div>
         <div class="contact-label">Email</div>
@@ -530,15 +539,23 @@ const pages = {
         <div class="contact-value">(11) 99517-2741</div>
       </a>
 
-      <!-- Horário -->
-      <div class="contact-card">
-        <div class="contact-icon">⏰</div>
-        <div class="contact-label">Horário</div>
-        <div class="contact-value">
-          Segunda a Sexta<br>9h às 18h
+      <!-- Insta -->
+      <a 
+        href="https://www.instagram.com/alonsocontabil" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-card"
+      >
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
         </div>
-      </div>
-
+        <div class="contact-label">Insta</div>
+        <div class="contact-value">
+          @alonsocontabil
+        </div>
+      </a>
     </div>
   </section>
 `

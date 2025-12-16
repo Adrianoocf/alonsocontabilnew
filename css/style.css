@@ -1,4 +1,6 @@
-/* Reset e Configurações Globais */
+/* ============================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ============================================ */
 * {
   margin: 0;
   padding: 0;
@@ -25,13 +27,15 @@
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: var(--text-body);
+  background: var(--bg-white);
   color: var(--text-dark);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Header */
+/* ============================================
+   HEADER E NAVEGAÇÃO
+   ============================================ */
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   border-bottom: 0px solid var(--border);
@@ -39,33 +43,6 @@ header {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
-}
-
-.cta-button {
-  display: inline-block;
-  background-color: #007bff; /* Cor azul, ajuste para a identidade da sua marca */
-  color: white;
-  padding: 12px 15px;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.cta-button:hover {
-  background-color: #175da9;
-  transform: translateY(-1px);
-}
-
-.hero-image {
-    max-width: 100%; /* Garante que não ultrapasse a largura do container */
-    height: auto; /* Mantém a proporção da imagem */
-    margin: 10px 0 30px; /* Adiciona espaçamento vertical */
-    border-radius: 8px; /* Opcional: para bordas arredondadas */
-    opacity: 50% var(--bg-white);
-    /* Outras propriedades de estilo que desejar */
 }
 
 .navbar {
@@ -113,21 +90,25 @@ header {
   background: var(--bg-light);
 }
 
-/* Main Content */
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
 main {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem 1.2rem;
+  padding: 1rem 0.5rem;
   min-height: calc(100vh - 80px);
 }
 
-/* Seções */
+/* ============================================
+   SEÇÕES GERAIS
+   ============================================ */
 section {
   background: var(--bg-white);
-  padding: 3rem;
+  padding: 1.5rem;
   border-radius: 8px;
-  border: 1px solid var(--border);
-  margin-bottom: 2rem;
+  /*border: 1px solid var(--border);*/
+  margin-bottom: 1.5rem;
 }
 
 section h1 {
@@ -150,7 +131,7 @@ section h2 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   letter-spacing: -0.01em;
 }
 
@@ -178,7 +159,7 @@ section ul li {
   color: var(--text-medium);
   margin-bottom: 0.825rem;
   line-height: 1.6;
-  padding-left: 4px;
+  padding-left: 6px;
 }
 
 section ul li strong {
@@ -186,16 +167,85 @@ section ul li strong {
   font-weight: 600;
 }
 
-/* Home Banner */
-.home img {
+/* ============================================
+   HERO SECTION – IMAGEM À ESQUERDA
+============================================ */
+
+.hero-section {
+  display: flex;
+  min-height: 420px;
   width: 100%;
-  max-height: 380px;
-  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 2.5rem;
+  overflow: hidden;
+  margin-bottom: 0.2rem; 
 }
 
-/* Cards Grid */
+/* IMAGEM */
+.hero-image {
+  flex: 1;
+  background-image: url('/img/img4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+/* EFEITO OVERLAY (igual da 2ª imagem) */
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.0) 0%,
+    rgba(255,255,255,0.4) 70%,
+    rgba(255,255,255,0.95) 100%
+  );
+}
+
+/* CONTEÚDO */
+.hero-content {
+  flex: 1;
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg-white);
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content .section-subtitle {
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+/* BOTÃO */
+.cta-button {
+  align-self: flex-start;
+  background: #0d6efd;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+/* ============================================
+   HOME - BENEFITS GRID
+   ============================================ */
+
+.home-texto{
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -245,12 +295,23 @@ section ul li strong {
   margin: 0;
 }
 
-/* Service Cards */
+/* ============================================
+   SERVIÇOS - SERVICE CARDS
+   ============================================ */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1.5rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+}
+
 .service-card {
   background: var(--bg-white);
   padding: 2rem;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--text-body);
   margin-bottom: 1.5rem;
   transition: all 0.3s;
 }
@@ -267,13 +328,13 @@ section ul li strong {
 .service-badge {
   display: inline-block;
   padding: 0.375rem 1.875rem;
-  background: var(--bg-light);
+  background: var(--border);
   color: var(--primary);
   border-radius: 4px;
   font-size: 0.813rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--text-body);
 }
 
 .service-card ul {
@@ -284,7 +345,6 @@ section ul li strong {
 
 .service-card ul li {
   padding: 0.35rem 0;
-  padding-left: 1.1rem;
   position: relative;
   border-bottom: 1px solid var(--bg-light);
   margin: 4px;
@@ -294,29 +354,20 @@ section ul li strong {
   border-bottom: none;
 }
 
-.service-card ul li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 1.125rem;
-  width: 5px;
-  height: 5px;
-  background: var(--primary);
-  border-radius: 50%;
-}
-
-/* Info Cards Grid */
+/* ============================================
+   DIFERENÇAS - INFO CARDS GRID
+   ============================================ */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 1.5rem;
   margin: 2rem auto;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 .info-card {
   background: var(--bg-light);
-  padding: 2rem;
+  padding: 3rem 3rem 2rem 3rem;
   border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s;
@@ -325,6 +376,7 @@ section ul li strong {
 .info-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  border-color: var(--accent);
 }
 
 .info-label {
@@ -358,12 +410,14 @@ section ul li strong {
   margin-bottom: 6px;
 }
 
-/* Detail Section */
+/* ============================================
+   DIFERENÇAS E EVOLUÇÃO - DETAIL SECTION
+   ============================================ */
 .detail-section {
   background: var(--bg-white);
   padding: 0.8rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--text-body);
   margin: 1.5rem 0;
 }
 
@@ -399,73 +453,11 @@ section ul li strong {
   font-weight: 600;
 }
 
-/* CTA Box */
-.cta-box {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  color: var(--bg-white);
-  padding: 2.5rem;
-  border-radius: 8px;
-  text-align: center;
-  margin: 2.5rem 0;
-  box-shadow: var(--shadow-md);
-}
-
-.cta-box h3 {
-  color: var(--bg-white);
-  margin: 0 0 0.75rem 0;
-  font-size: 1.375rem;
-}
-
-.cta-box p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.063rem;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/*
-  background-color: #007bff; 
-  background-color: #175da9;
-*/
-
-.cta-box-contact {
-  background-color: var(--secondary);
-  color: var(--bg-white);
-  padding: 2.5rem;
-  border-radius: 8px;
-  text-align: center;
-  margin: 2.5rem 0;
-  box-shadow: var(--shadow-md);
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-  
-.cta-box-contact h3 {
-  color: var(--bg-white);
-  margin: 0 0 0.75rem 0;
-  font-size: 1.375rem;
-}
-
-.cta-box-contact p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.063rem;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.cta-box-contact:hover {
-  background-color: #175da9;
-  transform: translateY(-1px);
-  text-decoration: none;
-}
-
-.cta-box-contact a{
-  text-decoration: none;
-}
-
-/* Tax Tables */
+/* ============================================
+   IMPOSTOS - TABELAS DE TAXAS
+   ============================================ */
 .tax-table {
   background: var(--bg-white);
-  /*border: 1px solid var(--text-body);*/
   border-radius: 8px;
   overflow: hidden;
   margin: 1.5rem 0;
@@ -473,7 +465,7 @@ section ul li strong {
 
 .tax-row {
   display: grid;
-  grid-template-columns: 2fr 1fr 1.2fr;  /* 3 colunas: Faturamento | Alíquota | Deduzir */
+  grid-template-columns: 2fr 1fr 1.2fr;
   gap: 1rem;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--text-body);
@@ -489,13 +481,15 @@ section ul li strong {
 
 .info-box {
   background: var(--bg-light);
-  border-left: 4px solid var(--accent);  /* Barra azul na lateral */
+  border-left: 4px solid var(--accent);
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
   border-radius: 4px;
 }
 
-/* Contact Section */
+/* ============================================
+   CONTATO - CONTACT SECTION
+   ============================================ */
 .contato {
   text-align: center;
   padding: 1rem;
@@ -557,7 +551,87 @@ section ul li strong {
   font-weight: 600;
 }
 
-/* WhatsApp Button */
+/* ============================================
+   CTA BOXES E BUTTONS
+   ============================================ */
+.cta-button {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.cta-button:hover {
+  background-color: #175da9;
+  transform: translateY(-1px);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+  color: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2.5rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.cta-box h3 {
+  color: var(--bg-white);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.375rem;
+}
+
+.cta-box p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.063rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cta-box-contact {
+  background-color: var(--secondary);
+  color: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 2.5rem 0;
+  transition: all 0.3s ;
+  box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.3);;
+}
+  
+.cta-box-contact h3 {
+  color: var(--bg-white);
+  margin: 0 0 0.75rem 0;
+  font-size: 1.375rem;
+}
+
+.cta-box-contact p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.063rem;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cta-box-contact:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0px 3px 9px 0 rgba(0, 0, 0, 0.3);;
+}
+
+.cta-box-contact a{
+  text-decoration: none;
+}
+
+/* ============================================
+   WHATSAPP BUTTON FIXO
+   ============================================ */
 .whatsapp-btn {
   position: fixed;
   bottom: 2rem;
@@ -582,7 +656,9 @@ section ul li strong {
   object-fit: contain;
 }
 
-/* Responsive - Tablet */
+/* ============================================
+   RESPONSIVE - TABLET (max-width: 992px)
+   ============================================ */
 @media (max-width: 992px) {
   section {
     padding: 2.5rem;
@@ -601,7 +677,9 @@ section ul li strong {
   }
 }
 
-/* Responsive - Mobile */
+/* ============================================
+   RESPONSIVE - MOBILE (max-width: 768px)
+   ============================================ */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
@@ -681,11 +759,40 @@ section ul li strong {
     font-size: 14px;
   }
 
+  .hero-section {
+    flex-direction: column;
+    min-height: auto;
+    margin-top: -20px;
+  }
+
+  /* ESCONDE A IMAGEM NO MOBILE */
+  .hero-image {
+    display: none;
+  }
+
+  /* CONTEÚDO OCUPA TUDO */
+  .hero-content {
+    width: 100%;
+    padding: 2rem 2rem;
+    align-items: flex-start;
+    text-align: left;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-content .section-subtitle {
+    font-size: 1rem;
+  }
+
   .tax-row {
-    grid-template-columns: 1fr;  /* 1 coluna no mobile */
+    grid-template-columns: 1fr;
   }
   
-  /* Adiciona labels antes de cada valor */
   .tax-row div:first-child::before {
     content: 'Faturamento: ';
   }
@@ -728,7 +835,6 @@ section ul li strong {
     padding: 2rem 1.5rem;
   }
 
-  /* Tax Tables Mobile */
   .tax-table {
     border: none;
     background: transparent;
@@ -742,7 +848,7 @@ section ul li strong {
     grid-template-columns: 1fr;
     gap: 0;
     padding: 0;
-    border: 1px solid var(--border);
+    border: 1px solid var(--text-body);
     border-radius: 8px;
     margin-bottom: 1rem;
     background: var(--bg-white);
@@ -811,7 +917,9 @@ section ul li strong {
   }
 }
 
-/* Mobile Small */
+/* ============================================
+   RESPONSIVE - MOBILE SMALL (max-width: 480px)
+   ============================================ */
 @media (max-width: 480px) {
   main {
     padding: 1.5rem 1rem;
@@ -840,7 +948,4 @@ section ul li strong {
     color: var(--primary);
     font-weight: 600;
   }
-
-  
-
 }
