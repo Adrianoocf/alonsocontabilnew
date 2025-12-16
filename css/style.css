@@ -827,7 +827,8 @@ section ul li strong {
 
   .benefits-grid,
   .info-grid,
-  .contact-grid {
+  .contact-grid,
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
