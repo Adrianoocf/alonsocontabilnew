@@ -8,6 +8,12 @@ function render() {
   const app = document.getElementById("app");
 
   app.innerHTML = pages[path] || pages["/"];
+
+   // 👇 Força ir para o topo da página
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
 
 window.addEventListener("hashchange", render);

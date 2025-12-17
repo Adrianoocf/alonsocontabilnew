@@ -2,113 +2,160 @@ const pages = {
   "/": `
     <section class="hero-section">
       <div class="hero-image"></div>
-
       <div class="hero-content">
-        <h1>Contabilidade Estratégica para seu Negócio</h1>
-
+        <h1>
+          Contabilidade para MEI e PJ em São Paulo
+        </h1>
+        <h2>Menos Burocracia. Mais Lucro</h2>
         <p class="section-subtitle">
-          Mais de 10 anos oferecendo soluções contábeis completas para empresas de todos os portes.
-          Atendimento personalizado, processos ágeis e assessoria estratégica para o crescimento sustentável do seu negócio.
+          Especialistas em MEI, PMEs e Profissionais PJ.<br>
+          Abrimos ou migramos sua empresa com segurança jurídica,
+          atendimento ágil e foco real na redução legal de impostos.
         </p>
-
         <a href="https://wa.me/5511995172741" class="cta-button">
-          Fale Conosco Agora
+          Quero Falar com um Especialista Agora
         </a>
       </div>
     </section>
-
     <section class="home">
-      <h2 class="home-texto">Transição de CLT para Pessoa Jurídica</h2>
       <p class="home-texto">
-        Planeje sua mudança profissional com segurança. Oferecemos consultoria completa para profissionais 
-        que desejam migrar do regime CLT para PJ, garantindo conformidade fiscal e otimização tributária.
+        A Alonso Contábil é um escritório de contabilidade em São Paulo
+        especializado em MEIs, pequenas e médias empresas e profissionais PJ
+        que precisam de segurança fiscal e economia tributária.
       </p>
-      
-      <ul class="home-texto lista-check">
-        <li>Análise personalizada do melhor tipo societário para seu perfil</li>
-        <li>Planejamento tributário para redução legal de impostos</li>
-        <li>Orientação sobre pró-labore, INSS e benefícios fiscais</li>
-        <li>Suporte completo na abertura e regularização do CNPJ</li>
-        <li>Assessoria contínua para gestão financeira e fiscal</li>
-      </ul>
+
       <p class="home-texto">
-        Com uma equipe especializada e comprometida com o sucesso dos 
-        nossos clientes, garantimos uma transição suave e eficiente, evitando riscos como a pejotização irregular e maximizando os benefícios da autonomia como PJ, 
-        sempre priorizando a legalidade e a personalização de cada caso.
+        Cuidamos de toda a burocracia contábil, fiscal e tributária para que
+        você possa focar no que realmente importa: vender mais e crescer
+        com tranquilidade.
+      </p>
+      <h2 class="home-texto p--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
+      <p class="home-texto">
+        Atuamos de forma consultiva, analisando cada detalhe do seu negócio
+        para evitar impostos desnecessários, riscos fiscais e decisões
+        equivocadas que custam caro no longo prazo.
       </p>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-number">1</div>
-          <div class="benefit-title">Atendimento Ágil</div>
-          <p class="benefit-text">Respostas rápidas e suporte dedicado quando você mais precisa</p>
+          <div class="benefit-title">Foco no Lucro</div>
+          <p class="benefit-text">
+            Analisamos seu enquadramento tributário para evitar pagamentos
+            indevidos e garantir que você pague apenas o necessário,
+            sempre dentro da lei.
+          </p>
         </div>
         <div class="benefit-card">
           <div class="benefit-number">2</div>
-          <div class="benefit-title">Transparência</div>
-          <p class="benefit-text">Comunicação clara e orientações objetivas em todas as etapas</p>
+          <div class="benefit-title">Atendimento Ágil</div>
+          <p class="benefit-text">
+            Suporte rápido e direto via WhatsApp e e-mail,
+            sem burocracia e sem espera desnecessária.
+          </p>
         </div>
         <div class="benefit-card">
           <div class="benefit-number">3</div>
-          <div class="benefit-title">Soluções Personalizadas</div>
-          <p class="benefit-text">Estratégias sob medida para as necessidades do seu negócio</p>
-        </div>
-        <div class="benefit-card">
-          <div class="benefit-number">4</div>
-          <div class="benefit-title">Conformidade</div>
-          <p class="benefit-text">Garantia de regularidade fiscal e tributária</p>
+          <div class="benefit-title">Tecnologia e Transparência</div>
+          <p class="benefit-text">
+            Acesso simples a documentos, relatórios e à saúde financeira
+            da sua empresa, tudo de forma clara e organizada.
+          </p>
         </div>
       </div>
-
+      <h2 class="home-texto">
+        Transição de CLT para Pessoa Jurídica em São Paulo
+      </h2>
+      <p class="home-texto">
+        Planeje sua transição de CLT para PJ com segurança jurídica
+        e economia de impostos. Nossa consultoria especializada
+        atende profissionais em São Paulo e região,
+        garantindo conformidade fiscal e planejamento tributário eficiente.
+      </p>
+      <p class="home-texto">
+        Uma migração mal planejada pode gerar problemas com a Receita Federal,
+        INSS e até caracterizar pejotização irregular.
+        Por isso, cada transição deve ser analisada de forma individual.
+      </p>
       <div class="cta-box">
-        <h3>Parceria Estratégica</h3>
-        <p>Mais do que serviços contábeis, oferecemos consultoria estratégica para o crescimento sustentável do seu negócio</p>
-      </div>
+      <h3>Pronto para Pagar Menos Impostos com Segurança?</h3>
+      <p>
+        Fale com um contador em São Paulo especializado em MEI e PJ
+        e receba um diagnóstico gratuito sobre impostos,
+        enquadramento e riscos fiscais do seu negócio.
+      </p>
+      <a 
+        href="https://wa.me/5511995172741"
+        target="_blank" 
+        rel="noopener noreferrer"
+        class="cta-button cta-button--spaced">
+        Quero Meu Diagnóstico Gratuito
+      </a>
+    </div>
     </section>
+
     `,
 
     "/servicos": `
       <section class="servicos">
-        <h1>Serviços Especializados</h1>
+        <h1>Serviços Especializados em Contabilidade para MEI, PJ e Autônomos</h1>
         <p class="section-subtitle">
-          Soluções completas em contabilidade, consultoria fiscal e planejamento tributário para empresas e profissionais autônomos
+          Soluções completas em contabilidade, consultoria fiscal e planejamento tributário 
+          do início ao crescimento do seu negócio em São Paulo e região.      
         </p>
-
-        <div class="service-grid">
+       <div class="service-grid">
           <div class="service-card">
             <h3>Serviços Empresariais</h3>
+            <p>
+              Tudo que sua empresa precisa para operar 
+              com segurança e pagar menos impostos, dentro da lei.
+           </p>
             <span class="service-badge">MEI • ME • EPP</span>
-            <ul>
-              <li>Abertura, alteração e encerramento de empresas</li>
-              <li>Escrituração contábil e fiscal completa</li>
-              <li>Apuração de impostos e obrigações acessórias</li>
-              <li>Folha de pagamento e departamento pessoal</li>
-              <li>Gestão trabalhista e encargos sociais</li>
+            <ul class="lista-check">
               <li>Planejamento tributário e elisão fiscal</li>
               <li>Consultoria para redução legal de impostos</li>
+              <li>Apuração de impostos e obrigações acessórias</li>
+              <li>Escrituração contábil e fiscal completa</li>
+              <li>Gestão trabalhista e encargos sociais</li>
+              <li>Folha de pagamento e departamento pessoal</li>
+              <li>Abertura, alteração e encerramento de empresas</li>
             </ul>
-          </div>
+          </div>  
 
           <div class="service-card">
             <h3>Serviços para Profissionais Autônomos</h3>
+            <p>
+              Perfeito para profissionais que querem formalizar,
+              pagar menos impostos e evitar problemas fiscais no futuro.
+            </p>
             <span class="service-badge">PJ • Prestadores de Serviço • Ex-CLT</span>
-            <ul>
-              <li>Abertura de CNPJ com orientação personalizada</li>
+            <ul class="lista-check">
               <li>Enquadramento no regime tributário mais vantajoso</li>
+              <li>Planejamento tributário personalizado</li>
+              <li>Abertura de CNPJ com orientação personalizada</li>
               <li>Emissão de notas fiscais e gestão de impostos</li>
               <li>Assessoria para pró-labore e contribuição ao INSS</li>
-              <li>Planejamento tributário personalizado</li>
               <li>Suporte contínuo para questões fiscais e contábeis</li>
               <li>Consultoria para crescimento e formalização</li>
             </ul>
           </div>
         </div>
           
-        <div class="cta-box-contact">
-          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer">        <h3>Solicite uma Proposta</h3>
-            <p>Entre em contato para receber um orçamento personalizado e descobrir como podemos otimizar a gestão fiscal do seu negócio</p>
+        <div class="cta-box">
+          <h3>Solicite uma Proposta</h3>
+          <p>Entre em contato para receber um
+           orçamento personalizado e descobrir 
+           como podemos otimizar a gestão fiscal 
+           do seu negócio
+          </p>
+          <a 
+            href="https://wa.me/5511995172741"
+            target="_blank" 
+            rel="noopener noreferrer"        
+            class="cta-button cta-button cta-button--spaced">
+              Fale Conosco Agora
           </a>
         </div>
-        
+
       </section>
     `,
 
@@ -116,9 +163,10 @@ const pages = {
       <section class="Diferencas">
         <h1>Entenda os Regimes Empresariais</h1>
         <p class="section-subtitle">
-          Conheça as características e diferenças entre MEI, ME e o regime Simples Nacional para escolher a melhor opção para seu negócio
+          As informações abaixo são gerais.
+          Cada negócio possui particularidades que podem alterar
+          completamente o enquadramento e o valor dos impostos.
         </p>
-
         <div class="info-grid">
           <div class="info-card">
             <span class="info-label">MEI</span>
@@ -196,6 +244,13 @@ const pages = {
         <div class="cta-box">
           <h3>Consultoria Especializada</h3>
           <p>A legislação tributária está em constante atualização. Conte com nossa equipe para garantir a conformidade e otimização fiscal do seu negócio</p>
+          <a 
+            href="https://wa.me/5511995172741"
+            target="_blank" 
+            rel="noopener noreferrer"        
+            class="cta-button cta-button cta-button--spaced">
+              Fale com um Especialista
+          </a>
         </div>
       </section>
     `,
@@ -248,9 +303,15 @@ const pages = {
           </ul>
         </div>
       
-        <div class="cta-box-contact">
-          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer">          <h3>Planejamento Profissional</h3>
-            <p>Entre em contato para agendar uma consultoria e descobrir o momento ideal para expandir seu negócio com segurança jurídica e fiscal</p>
+        <div class="cta-box">
+          <h3>Planejamento Profissional</h3>
+          <p>Entre em contato para agendar uma consultoria e descobrir o momento ideal para expandir seu negócio com segurança jurídica e fiscal</p>
+          <a 
+            href="https://wa.me/5511995172741"
+            target="_blank" 
+            rel="noopener noreferrer"        
+            class="cta-button cta-button cta-button--spaced">
+              Fale com um Especialista
           </a>
         </div>
     </section>
@@ -495,13 +556,18 @@ const pages = {
           pode-se utilizar a tabela do Anexo III em vez do Anexo V, resultando em menor tributação.
         </div>
 
-        <div class="cta-box-contact">
-          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer"> 
-            <h3>Dúvidas sobre o Enquadramento?</h3>
-            <p>
-              Nossa equipe de especialistas está pronta para analisar seu negócio e identificar o anexo correto, 
-              garantindo que você pague apenas o necessário. Entre em contato para uma consultoria personalizada.
-            </p>  
+        <div class="cta-box">
+          <h3>Dúvidas sobre o Enquadramento?</h3>
+          <p>
+            Nossa equipe de especialistas está pronta para analisar seu negócio e identificar o anexo correto, 
+            garantindo que você pague apenas o necessário. Entre em contato para uma consultoria personalizada.
+          </p>  
+          <a 
+            href="https://wa.me/5511995172741"
+            target="_blank" 
+            rel="noopener noreferrer"        
+            class="cta-button cta-button cta-button--spaced">
+              Fale com um Especialista
           </a>
         </div>
       </section>

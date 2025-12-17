@@ -91,6 +91,114 @@ header {
 }
 
 /* ============================================
+       FOOTER STYLES
+    ============================================ */
+footer {
+  background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--bg-white);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--bg-white);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.938rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.938rem;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--bg-white);
+  transform: translateX(3px);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.938rem;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: var(--bg-white);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
    MAIN CONTENT
    ============================================ */
 main {
@@ -107,7 +215,6 @@ section {
   background: var(--bg-white);
   padding: 1.5rem;
   border-radius: 8px;
-  /*border: 1px solid var(--border);*/
   margin-bottom: 1.5rem;
 }
 
@@ -150,6 +257,10 @@ section p {
   line-height: 1.7;
 }
 
+.p--spaced {
+  margin-top: 2rem;
+}
+
 section ul {
   margin: 1.7rem 0;
   padding-left: 1.5rem;
@@ -165,38 +276,6 @@ section ul li {
 section ul li strong {
   color: var(--text-dark);
   font-weight: 600;
-}
-
-ul.lista-check {
-  margin: 1.7rem 0 2rem 1.2rem;
-  padding-left: 0;
-  list-style: none;
-}
-
-ul.lista-check li {
-  color: var(--text-medium);
-  margin-bottom: 0.825rem;
-  line-height: 1.6;
-  padding-left: 1.8rem;
-  position: relative;
-}
-
-ul.lista-check li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--bg-white);
-  font-weight: bold;
-  font-size: 0.6rem;
-  width: 1.0rem;
-  height: 1.0rem;
-  background-color: rgba(59, 130, 246, 0.5);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  margin-top: 0.37rem;
 }
 
 /* ============================================
@@ -238,17 +317,26 @@ ul.lista-check li::before {
 /* CONTEÚDO */
 .hero-content {
   flex: 1;
-  padding: 4rem 3.5rem;
+  padding: 3rem 3.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background: var(--bg-white);
   z-index: 1;
+  max-width: 550px;
 }
 
 .hero-content h1 {
-  font-size: 2.2rem;
-  margin-bottom: 1rem;
+  font-size: 2.4rem; /* antes 2.2rem */
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.hero-content h2 {
+  font-size: 1.5rem; /* antes 2.2rem */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
 .hero-content .section-subtitle {
@@ -342,12 +430,12 @@ ul.lista-check li::before {
 .service-badge {
   display: inline-block;
   padding: 0.575rem 1.875rem;
-  background: var(--accent);
-  color: var(--bg-white);
-  border-radius: 4px;
+  background: var(--bg-light);
+  color: var(--primary);
   font-size: 0.813rem;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  margin: 0.7rem 0 1.3rem 0;
   border: 1px solid var(--text-body);
 }
 
@@ -368,6 +456,30 @@ ul.lista-check li::before {
   border-bottom: none;
 }
 
+ul.lista-check {
+  list-style: none;
+  padding-left: 1.4rem;
+}
+
+ul.lista-check li {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+/* CHECK */
+ul.lista-check li::after {
+  content: "";
+  position: absolute;
+  left: -1.15rem;
+  top: 0.65em;
+  width: 0.35rem;
+  height: 0.18rem;
+  border-left: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary-dark);
+  transform: rotate(-45deg);
+  margin-top: 5px;
+}
+
 /* ============================================
    DIFERENÇAS - INFO CARDS GRID
    ============================================ */
@@ -380,7 +492,7 @@ ul.lista-check li::before {
 }
 
 .info-card {
-  background: var(--bg-light);
+  background: var(--bg-white);
   padding: 3rem 3rem 2rem 3rem;
   border-radius: 8px;
   border: 1px solid var(--border);
@@ -389,8 +501,9 @@ ul.lista-check li::before {
 
 .info-label {
   display: inline-block;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent) 100%);
-  color: var(--bg-white);
+  background-color:var(--bg-light) ;
+  border: 1px solid var(--border);
+  color: var(--primary);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   font-size: 0.875rem;
@@ -482,9 +595,10 @@ ul.lista-check li::before {
 }
 
 .tax-header {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent) 100%);
-  color: var(--bg-white);
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-light) 100%);
+  color: var(--primary-dark);
   font-weight: 600;
+  border-color: var(--border);
 }
 
 .info-box {
@@ -562,13 +676,14 @@ ul.lista-check li::before {
 /* ============================================
    CTA BOXES E BUTTONS
    ============================================ */
+
 .cta-button {
   display: inline-block;
-  background-color: #007bff;
-  width: 200px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  max-width: 350px;
   color: white;
-  padding: 12px 15px;
-  font-size: 1rem;
+  padding: 12px 19px;
+  font-size: 0.91rem;
   font-weight: bold;
   border-radius: 10px;
   text-decoration: none;
@@ -577,67 +692,36 @@ ul.lista-check li::before {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+/* Modificador apenas para margin-top */
+.cta-button--spaced {
+  margin-top: 3rem;
+}
+
 .cta-button:hover {
-  background-color: #175da9;
   transform: translateY(-1px);
 }
 
 .cta-box {
-  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
-  color: var(--bg-white);
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-light) 100%);
+  color: var(--primary);
   padding: 2.5rem;
   border-radius: 8px;
+  border: 1px solid var(--border);
   text-align: center;
   margin: 2.5rem 0;
-  box-shadow: var(--shadow-md);
 }
 
 .cta-box h3 {
-  color: var(--bg-white);
+  color: var(--text-dark);
   margin: 0 0 0.75rem 0;
   font-size: 1.375rem;
 }
 
 .cta-box p {
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--primary);
   font-size: 1.063rem;
   margin: 0;
   line-height: 1.6;
-}
-
-.cta-box-contact {
-  background-color: #007bff;
-  color: var(--bg-white);
-  padding: 2.5rem;
-  border-radius: 8px;
-  text-align: center;
-  margin: 2.5rem 0;
-  transition: all 0.3s ;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-    
-.cta-box-contact h3 {
-  color: var(--bg-white);
-  margin: 0 0 0.75rem 0;
-  font-size: 1.375rem;
-}
-
-.cta-box-contact p {
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.063rem;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.cta-box-contact:hover {
-  transform: translateY(-1px);
-  text-decoration: none;
-  background-color: #175da9;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-
-.cta-box-contact a{
-  text-decoration: none;
 }
 
 /* ============================================
@@ -685,6 +769,15 @@ ul.lista-check li::before {
 
   .nav-links a {
     font-size: 14px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
   }
 }
 
@@ -768,6 +861,23 @@ ul.lista-check li::before {
     padding: 0.75rem 1.5rem;
     border-radius: 0;
     font-size: 14px;
+  }
+
+  .footer-content {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-about {
+    grid-column: 1;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
   }
 
   .hero-section {
