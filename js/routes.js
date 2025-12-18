@@ -1,70 +1,79 @@
+// 1. Função de Navegação
 function route(event) {
   event.preventDefault();
-  window.location.hash = event.target.getAttribute("href");
+  const href = event.currentTarget.getAttribute("href");
+  window.location.hash = href;
 }
 
+// 2. Função para fechar o menu mobile
+function closeMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  if (navLinks && navLinks.classList.contains('active')) {
+    navLinks.classList.remove('active');
+  }
+  if (menuToggle && menuToggle.classList.contains('active')) {
+    menuToggle.classList.remove('active');
+  }
+}
+
+// 3. Função para inicializar o FAQ (garante que o clique funcione)
+function initFAQ() {
+  const questions = document.querySelectorAll('.faq-question');
+  questions.forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      
+      // Fecha outros itens
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) item.classList.remove('active');
+      });
+
+      faqItem.classList.toggle('active');
+    });
+  });
+}
+
+// 4. Função Principal de Renderização
 function render() {
   const path = window.location.hash.replace("#", "") || "/";
   const app = document.getElementById("app");
 
-  app.innerHTML = pages[path] || pages["/"];
+  if (app) {
+    app.innerHTML = pages[path] || pages["/"];
+  }
 
-   // 👇 Força ir para o topo da página
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
+  // --- Ações após renderizar ---
+  closeMenu(); // 👈 Fecha o menu sempre que mudar de rota
+  initFAQ();   // 👈 Reativa os cliques do FAQ na nova página
+  
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-window.addEventListener("hashchange", render);
-window.addEventListener("load", render);
-
-// Adicione este código no final do seu arquivo routes.js ou crie um novo arquivo menu.js
-
-// Criar botão toggle para mobile
+// 5. Inicialização do Menu (Hamburger)
 document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
-  const navLinks = document.querySelector('.nav-links');
-  
-  // Criar botão hamburger se não existir
+  if (!navbar) return;
+
+  // Cria o botão hamburger se não existir
   if (!document.querySelector('.menu-toggle')) {
     const menuToggle = document.createElement('button');
     menuToggle.className = 'menu-toggle';
     menuToggle.innerHTML = '<span></span><span></span><span></span>';
-    menuToggle.setAttribute('aria-label', 'Menu');
     
-    // Inserir botão após a logo
     const logo = navbar.querySelector('a');
     logo.insertAdjacentElement('afterend', menuToggle);
     
-    // Toggle do menu
-    menuToggle.addEventListener('click', function() {
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const navLinks = document.querySelector('.nav-links');
       navLinks.classList.toggle('active');
       this.classList.toggle('active');
     });
   }
-  
-  // Fechar menu ao clicar em um link
-  const links = navLinks.querySelectorAll('a');
-  links.forEach(link => {
-    link.addEventListener('click', function() {
-      navLinks.classList.remove('active');
-      const toggle = document.querySelector('.menu-toggle');
-      if (toggle) {
-        toggle.classList.remove('active');
-      }
-    });
-  });
-  
-  // Fechar menu ao clicar fora
-  document.addEventListener('click', function(event) {
-    const isClickInsideNav = navbar.contains(event.target);
-    if (!isClickInsideNav && navLinks.classList.contains('active')) {
-      navLinks.classList.remove('active');
-      const toggle = document.querySelector('.menu-toggle');
-      if (toggle) {
-        toggle.classList.remove('active');
-      }
-    }
-  });
 });
+
+// Eventos de mudança de rota
+window.addEventListener("hashchange", render);
+window.addEventListener("load", render);

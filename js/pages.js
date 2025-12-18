@@ -6,11 +6,9 @@ const pages = {
         <h1>
           Contabilidade para MEI e PJ em São Paulo
         </h1>
-        <h2>Menos Burocracia. Mais Lucro</h2>
         <p class="section-subtitle">
-          Especialistas em MEI, PMEs e Profissionais PJ.<br>
-          Abrimos ou migramos sua empresa com segurança jurídica,
-          atendimento ágil e foco real na redução legal de impostos.
+          Especialistas em transformar sua contabilidade em uma
+          ferramenta de lucro. Atendimento humanizado em São Paulo.
         </p>
         <a href="https://wa.me/5511995172741" class="cta-button">
           Quero Falar com um Especialista Agora
@@ -91,486 +89,330 @@ const pages = {
         Quero Meu Diagnóstico Gratuito
       </a>
     </div>
+    <section class="faq-section">
+      <h2 style="text-align:center; color:#002D5B; margin-bottom:30px;">Dúvidas Frequentes</h2>
+      <div class="faq-container" style="max-width:900px; margin: 0 auto;">
+        <div class="faq-item">
+          <button class="faq-question">Como funciona a migração de MEI para ME? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>A migração ocorre quando seu faturamento ultrapassa R$ 81 mil/ano ou quando você precisa contratar mais de um funcionário. Nós cuidamos de todo o processo na Junta Comercial e Receita Federal para que a transição seja rápida e segura.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">O que é o Fator R e como ele reduz meu imposto? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>O Fator R permite que profissionais de TI, Saúde e Engenharia paguem 6% de imposto em vez de 15,5% no Simples Nacional. Nós fazemos o cálculo mensal da sua folha para garantir que você pague sempre o mínimo legal.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Quanto tempo demora para abrir meu CNPJ? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>Em São Paulo, conseguimos abrir seu CNPJ de prestação de serviços em uma média de 2 a 5 dias úteis, dependendo da viabilidade da prefeitura.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Vou ter um contador exclusivo para me atender? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>Sim! Aqui você não é apenas um número. Nosso atendimento é humanizado e você terá contato direto com nossos especialistas via WhatsApp para tirar dúvidas em tempo real.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Como funciona a troca de contador? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>É muito simples. Você só precisa nos informar quem é seu contador atual e nós cuidamos de toda a migração dos documentos. Você não precisa se envolver em conversas desconfortáveis.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Minha empresa está inativa ou com dívidas, vocês resolvem? <span class="icon">+</span></button>
+          <div class="faq-answer">
+            <p>Sim. Fazemos um diagnóstico completo da situação fiscal da sua empresa, regularizamos pendências e propomos parcelamentos de débitos para que você volte a operar com tranquilidade.</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     `,
 
     "/servicos": `
       <section class="servicos">
-        <h1>Serviços Especializados em Contabilidade para MEI, PJ e Autônomos</h1>
+        <h1>Soluções Contábeis Inteligentes para o seu Negócio</h1>
         <p class="section-subtitle">
-          Soluções completas em contabilidade, consultoria fiscal e planejamento tributário 
-          do início ao crescimento do seu negócio em São Paulo e região.      
+          Tecnologia digital com consultoria estratégica para quem busca segurança, agilidade e redução legal de impostos em São Paulo.
         </p>
-       <div class="service-grid">
+
+        <div class="service-grid">
           <div class="service-card">
-            <h3>Serviços Empresariais</h3>
-            <p>
-              Tudo que sua empresa precisa para operar 
-              com segurança e pagar menos impostos, dentro da lei.
-           </p>
-            <span class="service-badge">MEI • ME • EPP</span>
+            <h3>Plano Digital PJ</h3>
+            <p>A solução ágil para profissionais de TI, Saúde, Engenharia e freelancers que buscam economia.</p>
+            <span class="service-badge">PJ • MEI • Autônomos</span>
             <ul class="lista-check">
-              <li>Planejamento tributário e elisão fiscal</li>
-              <li>Consultoria para redução legal de impostos</li>
-              <li>Apuração de impostos e obrigações acessórias</li>
-              <li>Escrituração contábil e fiscal completa</li>
-              <li>Gestão trabalhista e encargos sociais</li>
-              <li>Folha de pagamento e departamento pessoal</li>
-              <li>Abertura, alteração e encerramento de empresas</li>
+              <li><strong>Redução pelo Fator R:</strong> Pague 6% em vez de 15,5% no Simples.</li>
+              <li>Abertura de CNPJ rápida e digital.</li>
+              <li>Emissão de Notas Fiscais e Guias simplificadas.</li>
+              <li>Gestão de Pró-labore e contribuição ao INSS.</li>
+              <li>Atendimento ágil via WhatsApp.</li>
             </ul>
-          </div>  
+            <a href="https://wa.me/5511995172741" class="btn-card">Saiba Mais</a>
+          </div>
+
+          <div class="service-card featured">
+            <h3>Plano Business ME</h3>
+            <p>Gestão completa para micro e pequenas empresas que precisam de suporte contínuo e folha de pagamento.</p>
+            <span class="service-badge">ME • EPP • Simples Nacional</span>
+            <ul class="lista-check">
+              <li>Gestão de Folha de Pagamento e encargos sociais.</li>
+              <li>Planejamento Tributário Anual (Simples vs Presumido).</li>
+              <li>Escrituração Fiscal e Contábil Digital.</li>
+              <li>Suporte consultivo para decisões de crescimento.</li>
+              <li>Monitoramento de regularidade fiscal e CNDs.</li>
+            </ul>
+            <a href="https://wa.me/5511995172741" class="btn-card">Saiba Mais</a>
+          </div>
 
           <div class="service-card">
-            <h3>Serviços para Profissionais Autônomos</h3>
-            <p>
-              Perfeito para profissionais que querem formalizar,
-              pagar menos impostos e evitar problemas fiscais no futuro.
-            </p>
-            <span class="service-badge">PJ • Prestadores de Serviço • Ex-CLT</span>
+            <h3>Plano Consultivo LTDA</h3>
+            <p>Estratégia avançada para empresas estruturadas que buscam blindagem e máxima eficiência fiscal.</p>
+            <span class="service-badge">LTDA • Lucro Presumido • Gestão</span>
             <ul class="lista-check">
-              <li>Enquadramento no regime tributário mais vantajoso</li>
-              <li>Planejamento tributário personalizado</li>
-              <li>Abertura de CNPJ com orientação personalizada</li>
-              <li>Emissão de notas fiscais e gestão de impostos</li>
-              <li>Assessoria para pró-labore e contribuição ao INSS</li>
-              <li>Suporte contínuo para questões fiscais e contábeis</li>
-              <li>Consultoria para crescimento e formalização</li>
+              <li><strong>Blindagem Patrimonial:</strong> Proteção dos bens dos sócios.</li>
+              <li><strong>Lucro Presumido:</strong> Estratégias para faturamentos altos.</li>
+              <li>Distribuição de Lucros isenta de impostos.</li>
+              <li>Estruturação de Contrato Social Inteligente.</li>
+              <li>Consultoria direta com contador sênior.</li>
             </ul>
+            <a href="https://wa.me/5511995172741" class="btn-card">Falar com Especialista</a>
           </div>
         </div>
-          
+
         <div class="cta-box">
-          <h3>Solicite uma Proposta</h3>
-          <p>Entre em contato para receber um
-           orçamento personalizado e descobrir 
-           como podemos otimizar a gestão fiscal 
-           do seu negócio
-          </p>
-          <a 
-            href="https://wa.me/5511995172741"
-            target="_blank" 
-            rel="noopener noreferrer"        
-            class="cta-button cta-button cta-button--spaced">
-              Fale Conosco Agora
+          <h3>Pronto para pagar menos impostos com segurança?</h3>
+          <p>Receba um diagnóstico tributário gratuito da sua empresa e descubra se você está no regime mais vantajoso.</p>
+          <a href="https://wa.me/5511995172741" 
+            target="_blank" rel="noopener noreferrer" 
+            class="cta-button cta-button--spaced">
+            Solicitar Diagnóstico Gratuito
           </a>
         </div>
-
       </section>
     `,
 
     "/Diferencas": `
       <section class="Diferencas">
-        <h1>Entenda os Regimes Empresariais</h1>
+        <h1>Qual a melhor armadura jurídica para o seu negócio?</h1>
         <p class="section-subtitle">
-          As informações abaixo são gerais.
-          Cada negócio possui particularidades que podem alterar
-          completamente o enquadramento e o valor dos impostos.
+          O enquadramento correto é a base da sua segurança. Escolha o modelo que protege seu patrimônio e otimiza seus impostos.
         </p>
+
         <div class="info-grid">
           <div class="info-card">
             <span class="info-label">MEI</span>
-            <h3>Microempreendedor Individual</h3>
-            <ul>
-              <li>Faturamento limitado a R$ 81 mil/ano</li>
-              <li>Pessoa física registrada como empresa</li>
-              <li>Regime tributário simplificado</li>
-              <li>Não permite sociedade</li>
-              <li>Limite de 1 funcionário contratado</li>
-              <li>Impostos fixos mensais reduzidos</li>
+            <h3>Início Rápido</h3>
+            <p>Ideal para profissionais autônomos que estão começando e faturam até R$ 81 mil/ano.</p>
+            <ul class="lista-check">
+              <li>Registro simplificado de empresa.</li>
+              <li>Imposto mensal fixo e reduzido.</li>
+              <li>Cobertura previdenciária básica.</li>
+              <li class="atencao">Responsabilidade ilimitada (bens pessoais em risco).</li>
+              <li class="atencao">Limite rigoroso de faturamento e funcionários.</li>
             </ul>
           </div>
 
-          <div class="info-card">
-            <span class="info-label">ME</span>
-            <h3>Microempresa</h3>
-            <ul>
-              <li>Faturamento até R$ 360 mil/ano</li>
-              <li>Permite sociedade entre pessoas</li>
-              <li>Contratação ilimitada de funcionários</li>
-              <li>Maior flexibilidade operacional</li>
-              <li>Obrigações fiscais mais complexas</li>
-              <li>Requer serviços de contabilidade</li>
+          <div class="info-card featured-card">
+            <span class="info-label">LTDA / SLU</span>
+            <h3>Proteção e Estratégia</h3>
+            <p>O modelo ideal para PJs de alto ticket e empresas que buscam <strong>blindagem patrimonial</strong>.</p>
+            <ul class="lista-check">
+              <li><strong>Separação de bens:</strong> Seus bens pessoais protegidos.</li>
+              <li><strong>SLU:</strong> Tenha uma LTDA sem precisar de sócios.</li>
+              <li><strong>Escalabilidade:</strong> Sem limites de faturamento do MEI.</li>
+              <li>Maior facilidade para empréstimos e licitações.</li>
+              <li>Permite o enquadramento no Lucro Presumido.</li>
             </ul>
           </div>
         </div>
 
-        <h2>Regime Simples Nacional</h2>
-        <p>
-          Sistema tributário unificado que consolida oito impostos federais, estaduais e municipais em uma única guia de pagamento, 
-          criado especificamente para simplificar a vida de micro e pequenas empresas brasileiras.
-        </p>
+        <div class="strategy-content">
+          <h2>Regime Simples Nacional</h2>
+          <p>
+            Criado para simplificar, o Simples unifica 8 impostos em uma única guia. Mas atenção: nossa consultoria monitora mensalmente se ele ainda é o mais vantajoso para você.
+          </p>
 
-        <h3>Critérios de Elegibilidade</h3>
-        <div class="detail-section">
-          <ul>
-            <li><strong>Natureza jurídica:</strong> Microempresa (ME) ou Empresa de Pequeno Porte (EPP)</li>
-            <li><strong>Faturamento ME:</strong> Receita bruta anual de até R$ 360 mil</li>
-            <li><strong>Faturamento EPP:</strong> Receita bruta anual entre R$ 360 mil e R$ 4,8 milhões</li>
-            <li><strong>Atividades permitidas:</strong> Deve constar nos anexos da Lei Complementar 123/2006</li>
-            <li><strong>Regularidade fiscal:</strong> Empresa sem débitos com União, Estados e Municípios</li>
-            <li><strong>Participação societária:</strong> Soma dos faturamentos deve respeitar os limites do regime</li>
-          </ul>
-        </div>
+          <div class="flex-detail">
+            <div class="detail-box">
+              <h3>Vantagens Reais</h3>
+              <ul class="lista-check">
+                <li><strong>Economia Legal:</strong> Aplicamos o Fator R para reduzir impostos.</li>
+                <li><strong>Credibilidade:</strong> Empresas estruturadas fecham melhores contratos.</li>
+                <li><strong>Distribuição de Lucros:</strong> Ganho isento de IR.</li>
+              </ul>
+            </div>
 
-        <h3>Principais Obrigações</h3>
-        <div class="detail-section">
-          <ul>
-            <li><strong>DAS:</strong> Pagamento mensal através do Documento de Arrecadação do Simples Nacional</li>
-            <li><strong>Tributação variável:</strong> Alíquotas conforme anexo e faixa de faturamento</li>
-            <li><strong>DEFIS:</strong> Declaração anual obrigatória de informações socioeconômicas e fiscais</li>
-            <li><strong>Escrituração:</strong> Controle rigoroso de receitas, despesas e movimentações</li>
-            <li><strong>Gestão de limites:</strong> Acompanhamento mensal para não ultrapassar teto de faturamento</li>
-          </ul>
-        </div>
-
-        <h3>Processo de Adesão</h3>
-        <p>
-          A opção pelo Simples Nacional não ocorre automaticamente. O processo exige solicitação formal através do 
-          portal da Receita Federal, geralmente realizada em janeiro ou no momento da abertura da empresa.
-        </p>
-
-        <h3>Importância da Conformidade Fiscal</h3>
-        <div class="detail-section">
-          <ul>
-            <li><strong>Regularidade legal:</strong> Previne autuações fiscais e penalidades</li>
-            <li><strong>Credibilidade comercial:</strong> Fortalece relações com fornecedores e clientes</li>
-            <li><strong>Acesso a crédito:</strong> Facilita aprovação em linhas de financiamento</li>
-            <li><strong>Participação em licitações:</strong> Habilita empresa para contratos públicos</li>
-            <li><strong>Crescimento sustentável:</strong> Base sólida para expansão dos negócios</li>
-          </ul>
+            <div class="detail-box">
+              <h3>Nossa Entrega</h3>
+              <ul class="lista-check">
+                <li><strong>Planejamento:</strong> Estudo tributário estratégico.</li>
+                <li><strong>Gestão Digital:</strong> Documentos e CNDs sempre à mão.</li>
+                <li><strong>Conformidade:</strong> Monitoramento total contra multas.</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
         <div class="cta-box">
-          <h3>Consultoria Especializada</h3>
-          <p>A legislação tributária está em constante atualização. Conte com nossa equipe para garantir a conformidade e otimização fiscal do seu negócio</p>
-          <a 
-            href="https://wa.me/5511995172741"
-            target="_blank" 
-            rel="noopener noreferrer"        
-            class="cta-button cta-button cta-button--spaced">
-              Fale com um Especialista
+          <h3>Precisa de uma análise personalizada?</h3>
+          <p>A legislação muda rápido. Fale com nosso time para garantir sua economia hoje.</p>
+          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
+            Falar com um Especialista Agora
           </a>
         </div>
       </section>
     `,
 
     "/Evolucao": `
-      <section class="Evolucao">
-        <h1>Crescimento Empresarial</h1>
-        <p class="section-subtitle">
-          Planeje a evolução do seu negócio com segurança. Orientamos a transição do MEI para regimes mais amplos, 
-          garantindo conformidade e aproveitamento de novas oportunidades
-        </p>
+    <section class="Evolucao">
+     <h1>Do MEI ao Próximo Nível</h1>
+      <p class="section-subtitle">
+        O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
+      </p>
+      <div class="container-small">
+        <div class="evolution-grid">
+          <div class="detail-section">
+            <div class="badge-icon">⚠️</div>
+            <h3>Sinais de que o MEI ficou pequeno</h3>
+            <ul class="lista-check">
+              <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
+              <li>Necessidade de contratar mais de um colaborador.</li>
+              <li>Desejo de atrair sócios ou investidores.</li>
+              <li>Sua atividade não é mais permitida na lista do MEI.</li>
+              <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
+            </ul>
+          </div>
 
-        <h2>Quando Considerar a Migração</h2>
-        <div class="detail-section">
-          <h3>Indicadores para Mudança de Regime</h3>
-          <ul>
-            <li>Faturamento anual ultrapassando ou próximo de R$ 81 mil</li>
-            <li>Necessidade de inclusão de sócios na empresa</li>
-            <li>Expansão para atividades não permitidas no MEI</li>
-            <li>Aumento no volume de emissão de notas fiscais</li>
-            <li>Demanda por contratação de múltiplos funcionários</li>
-            <li>Crescimento da estrutura operacional</li>
-            <li>Oportunidades de novos contratos empresariais</li>
-          </ul>
+          <div class="detail-section featured-evolution">
+            <div class="badge-icon">🚀</div>
+            <h3>O que você ganha ao evoluir</h3>
+            <ul class="lista-check">
+              <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
+              <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
+              <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
+              <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
+            </ul>
+          </div>
         </div>
 
-        <h2>Vantagens da Evolução</h2>
-        <div class="detail-section">
-          <h3>Benefícios Estratégicos</h3>
-          <ul>
-            <li><strong>Crescimento estruturado:</strong> Possibilidade de expandir operações com planejamento</li>
-            <li><strong>Maior credibilidade:</strong> Fortalecimento da imagem perante mercado e fornecedores</li>
-            <li><strong>Acesso a crédito:</strong> Linhas de financiamento empresarial mais robustas</li>
-            <li><strong>Flexibilidade operacional:</strong> Liberdade para contratar e formar sociedades</li>
-            <li><strong>Continuidade legal:</strong> Manutenção das atividades sem riscos fiscais</li>
-            <li><strong>Competitividade:</strong> Participação em licitações e grandes contratos</li>
-          </ul>
+        <div class="strategy-content">
+          <h2>Transição Sem Burocracia</h2>
+          <p>Nossa assessoria cuida de todo o processo técnico enquanto você foca na operação.</p>
+          
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-number">01</div>
+              <h4 class="benefit-title">Diagnóstico Fiscal</h4>
+              <p class="benefit-text">Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-number">02</div>
+              <h4 class="benefit-title">Migração Técnica</h4>
+              <p class="benefit-text">Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.</p>
+            </div>
+
+            <div class="benefit-card">
+              <div class="benefit-number">03</div>
+              <h4 class="benefit-title">Gestão Mensal</h4>
+              <p class="benefit-text">Suporte completo com folha de pagamento e monitoramento de impostos.</p>
+            </div>
+          </div>
         </div>
 
-        <h2>Nossa Assessoria na Transição</h2>
-        <div class="detail-section">
-          <h3>Serviços de Consultoria</h3>
-          <ul>
-            <li><strong>Diagnóstico completo:</strong> Análise detalhada da situação atual e projeções</li>
-            <li><strong>Planejamento temporal:</strong> Definição do melhor momento para a migração</li>
-            <li><strong>Enquadramento adequado:</strong> Escolha do regime tributário mais vantajoso</li>
-            <li><strong>Regularização documental:</strong> Preparação de toda documentação necessária</li>
-            <li><strong>Suporte fiscal:</strong> Acompanhamento nas obrigações tributárias e contábeis</li>
-            <li><strong>Orientação estratégica:</strong> Consultoria para crescimento sustentável</li>
-          </ul>
-        </div>
-      
         <div class="cta-box">
-          <h3>Planejamento Profissional</h3>
-          <p>Entre em contato para agendar uma consultoria e descobrir o momento ideal para expandir seu negócio com segurança jurídica e fiscal</p>
-          <a 
-            href="https://wa.me/5511995172741"
-            target="_blank" 
-            rel="noopener noreferrer"        
-            class="cta-button cta-button cta-button--spaced">
-              Fale com um Especialista
+          <h3>Não espere ser desenquadrado de ofício pela Receita.</h3>
+          <p>Migrar de forma planejada evita multas retroativas que podem quebrar o seu caixa. Vamos conversar sobre o seu momento atual?</p>
+          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
+            Agendar Consultoria de Migração
           </a>
         </div>
+      </div>
     </section>
 
     `,
 
     "/Impostos": `
-      <section class="impostos">
-        <h1>Quanto Vou Pagar de Imposto?</h1>
+    <section class="impostos">
+        <h1>Inteligência Fiscal</h1>
         <p class="section-subtitle">
-          Entenda como funciona a tributação no Simples Nacional e descubra quanto sua empresa pagará de acordo com seu faturamento e atividade.  
+          Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.
         </p>
 
-        <p>
-          No Simples Nacional, o valor do imposto depende de dois fatores principais: o faturamento anual acumulado 
-          e a atividade exercida pela empresa. As atividades são classificadas em anexos da Lei Complementar nº 123/2006, 
-          cada um com tabelas de alíquotas progressivas.
-        </p>
+        <div class="container-small"> 
 
-        <div class="cta-box" style="margin: 2rem 0;">
-          <h3>Sistema Progressivo</h3>
-          <p>Quanto maior o faturamento da empresa, maior será a alíquota aplicada, mas sempre dentro de um regime tributário simplificado e unificado</p>
+          <div class="tax-grid">
+            <div class="tax-card">
+              <div class="card-header">
+                <span class="label-status">Sem Planejamento</span>
+                <h3>Anexo V</h3>
+              </div>
+              <div class="card-body">
+                <p>Alíquota padrão para serviços intelectuais (TI, Médicos, Engenheiros).</p>
+                <div class="simple-table">
+                  <div class="t-row t-header">
+                    <span>Faturamento</span>
+                    <span>Imposto</span>
+                  </div>
+                  <div class="t-row">
+                    <span>Até R$ 15 mil/mês</span>
+                    <span class="value-red">15,5%</span>
+                  </div>
+                  <div class="t-row">
+                    <span>Até R$ 30 mil/mês</span>
+                    <span class="value-red">18,0%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tax-card featured">
+              <div class="card-header">
+                <span class="label-status success">Estratégia Fator R</span>
+                <h3>Anexo III</h3>
+              </div>
+              <div class="card-body">
+                <p>Redução aplicada por nossa consultoria através da gestão de folha e pró-labore.</p>
+                <div class="simple-table">
+                  <div class="t-row t-header">
+                    <span>Faturamento</span>
+                    <span>Imposto</span>
+                  </div>
+                  <div class="t-row">
+                    <span>Até R$ 15 mil/mês</span>
+                    <span class="value-green">6,0%</span>
+                  </div>
+                  <div class="t-row">
+                    <span>Até R$ 30 mil/mês</span>
+                    <span class="value-green">11,2%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer-info">
+                Economia real de até 60%
+              </div>
+            </div>
+          </div>
+          <p style="text-align:center; padding:20px;">
+            Para um faturamento de R$ 15 mil/mês,
+            você deixa de pagar R$ 1.425 extras todo mês. 
+            São mais de R$ 17 mil de economia por ano
+          </p>
         </div>
-
-        <h2>Anexo I - Comércio</h2>
-        <p>Aplicável a empresas que atuam no setor de comércio de mercadorias.</p>
         
-        <div class="tax-table">
-          <div class="tax-row tax-header">
-            <div>Receita Bruta em 12 Meses</div>
-            <div>Alíquota</div>
-            <div>Valor a Deduzir</div>
-          </div>
-          <div class="tax-row">
-            <div>Até R$ 180.000,00</div>
-            <div>4,00%</div>
-            <div>—</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 180.000,01 a R$ 360.000,00</div>
-            <div>7,30%</div>
-            <div>R$ 5.940,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 360.000,01 a R$ 720.000,00</div>
-            <div>9,50%</div>
-            <div>R$ 13.860,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 720.000,01 a R$ 1.800.000,00</div>
-            <div>10,70%</div>
-            <div>R$ 22.500,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 1.800.000,01 a R$ 3.600.000,00</div>
-            <div>14,30%</div>
-            <div>R$ 87.300,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 3.600.000,01 a R$ 4.800.000,00</div>
-            <div>19,00%</div>
-            <div>R$ 378.000,00</div>
-          </div>
-        </div>
-
-        <h2>Anexo II - Indústria</h2>
-        <p>Destinado a empresas do setor industrial e de fabricação.</p>
-        
-        <div class="tax-table">
-          <div class="tax-row tax-header">
-            <div>Receita Bruta em 12 Meses</div>
-            <div>Alíquota</div>
-            <div>Valor a Deduzir</div>
-          </div>
-          <div class="tax-row">
-            <div>Até R$ 180.000,00</div>
-            <div>4,50%</div>
-            <div>—</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 180.000,01 a R$ 360.000,00</div>
-            <div>7,80%</div>
-            <div>R$ 5.940,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 360.000,01 a R$ 720.000,00</div>
-            <div>10,00%</div>
-            <div>R$ 13.860,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 720.000,01 a R$ 1.800.000,00</div>
-            <div>11,20%</div>
-            <div>R$ 22.500,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 1.800.000,01 a R$ 3.600.000,00</div>
-            <div>14,70%</div>
-            <div>R$ 85.500,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 3.600.000,01 a R$ 4.800.000,00</div>
-            <div>30,00%</div>
-            <div>R$ 720.000,00</div>
-          </div>
-        </div>
-
-        <h2>Anexo III - Prestação de Serviços</h2>
-        <p>
-          Empresas de prestação de serviços que não se enquadram nos Anexos IV ou V. Incluem instalação, 
-          manutenção, reparos, agências de viagens, escritórios de contabilidade, escolas de idiomas, entre outras.
-        </p>
-        
-        <div class="tax-table">
-          <div class="tax-row tax-header">
-            <div>Receita Bruta em 12 Meses</div>
-            <div>Alíquota</div>
-            <div>Valor a Deduzir</div>
-          </div>
-          <div class="tax-row">
-            <div>Até R$ 180.000,00</div>
-            <div>6,00%</div>
-            <div>—</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 180.000,01 a R$ 360.000,00</div>
-            <div>11,20%</div>
-            <div>R$ 9.360,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 360.000,01 a R$ 720.000,00</div>
-            <div>13,50%</div>
-            <div>R$ 17.640,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 720.000,01 a R$ 1.800.000,00</div>
-            <div>16,00%</div>
-            <div>R$ 35.640,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 1.800.000,01 a R$ 3.600.000,00</div>
-            <div>21,00%</div>
-            <div>R$ 125.640,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 3.600.000,01 a R$ 4.800.000,00</div>
-            <div>33,00%</div>
-            <div>R$ 648.000,00</div>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <strong>Observação:</strong> Esses percentuais já incluem ICMS ou ISS, conforme aplicável à atividade.
-        </div>
-
-        <h2>Anexo IV - Serviços Específicos</h2>
-        <p>Serviços advocatícios, construção civil, obras de engenharia, vigilância e limpeza.</p>
-        
-        <div class="tax-table">
-          <div class="tax-row tax-header">
-            <div>Receita Bruta em 12 Meses</div>
-            <div>Alíquota</div>
-            <div>Valor a Deduzir</div>
-          </div>
-          <div class="tax-row">
-            <div>Até R$ 180.000,00</div>
-            <div>4,50%</div>
-            <div>—</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 180.000,01 a R$ 360.000,00</div>
-            <div>9,00%</div>
-            <div>R$ 8.100,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 360.000,01 a R$ 720.000,00</div>
-            <div>10,20%</div>
-            <div>R$ 12.420,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 720.000,01 a R$ 1.800.000,00</div>
-            <div>14,00%</div>
-            <div>R$ 39.780,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 1.800.000,01 a R$ 3.600.000,00</div>
-            <div>22,00%</div>
-            <div>R$ 183.780,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 3.600.000,01 a R$ 4.800.000,00</div>
-            <div>33,00%</div>
-            <div>R$ 828.000,00</div>
-          </div>
-        </div>
-
-        <h2>Anexo V - Serviços de Saúde e Bem-Estar</h2>
-        <p>
-          Serviços de saúde, bem-estar e outros serviços específicos. As alíquotas variam conforme a relação 
-          entre folha de salários e receita bruta.
-        </p>
-        
-        <div class="tax-table">
-          <div class="tax-row tax-header">
-            <div>Receita Bruta em 12 Meses</div>
-            <div>Alíquota</div>
-            <div>Valor a Deduzir</div>
-          </div>
-          <div class="tax-row">
-            <div>Até R$ 180.000,00</div>
-            <div>15,50%</div>
-            <div>—</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 180.000,01 a R$ 360.000,00</div>
-            <div>18,00%</div>
-            <div>R$ 4.500,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 360.000,01 a R$ 720.000,00</div>
-            <div>19,50%</div>
-            <div>R$ 9.900,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 720.000,01 a R$ 1.800.000,00</div>
-            <div>20,50%</div>
-            <div>R$ 17.100,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 1.800.000,01 a R$ 3.600.000,00</div>
-            <div>23,00%</div>
-            <div>R$ 62.100,00</div>
-          </div>
-          <div class="tax-row">
-            <div>R$ 3.600.000,01 a R$ 4.800.000,00</div>
-            <div>30,50%</div>
-            <div>R$ 540.000,00</div>
-          </div>
-        </div>
-
-        <div class="info-box">
-          <strong>Regra especial:</strong> Para empresas em que a folha de salários represente 28,5% ou mais da receita bruta, 
-          pode-se utilizar a tabela do Anexo III em vez do Anexo V, resultando em menor tributação.
-        </div>
-
         <div class="cta-box">
-          <h3>Dúvidas sobre o Enquadramento?</h3>
-          <p>
-            Nossa equipe de especialistas está pronta para analisar seu negócio e identificar o anexo correto, 
-            garantindo que você pague apenas o necessário. Entre em contato para uma consultoria personalizada.
-          </p>  
-          <a 
-            href="https://wa.me/5511995172741"
-            target="_blank" 
-            rel="noopener noreferrer"        
-            class="cta-button cta-button cta-button--spaced">
-              Fale com um Especialista
-          </a>
+          <h3>Sua atividade não é serviço?</h3>
+          <p>Atendemos Comércio e Indústria com foco em lucro real e presumido.</p>
+          <a href="https://wa.me/5511995172741" class="cta-button cta-button--spaced">Solicitar Estudo Gratuito</a>
         </div>
-      </section>
+      </div>
+    </section>   
+
     `,
 
     "/contato": `
@@ -581,7 +423,6 @@ const pages = {
       </p>
 
       <div class="contact-grid">
-        
         <!-- Email -->
         <a 
           href="mailto:atendimento@alonsocontabil.com.br" 
