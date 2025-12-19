@@ -257,7 +257,11 @@ section p {
 }
 
 .p--spaced {
-  margin-top: 2rem;
+  margin: 2rem 0;
+}
+
+.h2--spaced {
+  margin: 70px 0 30px 0;
 }
 
 section ul {
@@ -347,17 +351,16 @@ section ul li strong {
    HOME - BENEFITS GRID
    ============================================ */
 
-.home-texto{
+.spaced-texto{
   margin-left: 1.2rem;
   margin-right: 1.2rem;
 }
-
 
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin: 2rem 0;
+  margin: 4rem 0;
 }
 
 .benefit-card {
@@ -411,18 +414,18 @@ section ul li strong {
 .faq-section h2 {
     font-family: 'Montserrat', sans-serif; /* Ou a fonte principal que você usa */
     color: #002D5B; /* O mesmo azul marinho da sua logo/menu */
-    font-size: 2.2rem;
-    font-weight: 800; /* Deixa o título robusto como os outros da página */
+    font-size: 1.5rem;
+    font-weight: 600; /* Deixa o título robusto como os outros da página */
     text-align: center;
     margin-bottom: 50px;
-    letter-spacing: -1px; /* Melhora a leitura em títulos grandes */
+    letter-spacing: -0.6px; /* Melhora a leitura em títulos grandes */
 }
 
 /* Ajuste das Perguntas para maior legibilidade */
 .faq-question {
     color: #002D5B; /* Cor da pergunta igual ao título */
-    font-size: 1.2rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: 600;
     padding: 25px 15px;
     border: none;
     background: transparent;
@@ -471,13 +474,13 @@ section ul li strong {
   grid-template-columns: repeat(3, 1fr); 
   gap: 1.5rem;
   margin: 2rem auto;
-  max-width: 1200px;
+  max-width: 1250px;
   padding: 0 1rem;
 }
 
 .service-card {
   background: #ffffff;
-  padding: 2.5rem 1.5rem;
+  padding: 1.8rem 1.5rem;
   border-radius: 12px; /* Cantos mais arredondados estilo startup */
   border: 1px solid #e0e0e0;
   display: flex;
@@ -583,35 +586,6 @@ ul.lista-check li.atencao::before {
   margin: 4rem 0;
 }
 
-.detail-section {
-  background: var(--bg-white);
-  padding: 2.5rem 3rem 2rem 3rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  transition: all 0.3s;
-}
-
-.flex-detail {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
-  text-align: left;
-}
-
-.detail-box {
-  background: var(--bg-light);
-  padding: 2rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-
-.detail-box h3 {
-  margin-top: 0 !important;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
 /* ============================================
    DIFERENÇAS - INFO CARDS GRID
    ============================================ */
@@ -620,12 +594,12 @@ ul.lista-check li.atencao::before {
   grid-template-columns: repeat(2,1fr);
   gap: 1.5rem;
   margin: 2rem auto;
-  max-width: 1400px;
+  max-width: 1250px;
 }
 
 .info-card {
   background: var(--bg-white);
-  padding: 3rem 3rem 2rem 3rem;
+  padding: 2.5rem;
   border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s;
@@ -648,11 +622,11 @@ ul.lista-check li.atencao::before {
   background-color:var(--bg-light) ;
   border: 1px solid var(--border);
   color: var(--primary);
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 4rem;
   border-radius: 6px;
   font-size: 0.875rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   letter-spacing: 0.5px;
 }
 
@@ -675,12 +649,6 @@ ul.lista-check li.atencao::before {
   margin-bottom: 6px;
 }
 
-/* Ajuste específico para a seção de detalhes (Vantagens e Entrega) */
-.detail-box ul.lista-check {
-  padding-left: 1.2rem;
-  margin-top: 0.5rem;
-}
-
 /* ÍCONES (IDÊNTICO AOS SERVIÇOS) */
 ul.lista-check li::before {
   content: "✓";
@@ -696,6 +664,34 @@ ul.lista-check li.atencao::before {
   left: -1.2rem;
 }
 
+/* Ajuste específico para a seção de detalhes (Vantagens e Entrega) */
+.detail-box ul.lista-check {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.flex-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 1250px;
+  gap: 2rem;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+.detail-box {
+  background: var(--bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.detail-box h3 {
+  margin-top: 0 !important;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
 /* ============================================
    EVOLUCAO 
    ============================================ */
@@ -706,13 +702,21 @@ ul.lista-check li.atencao::before {
   margin: 3rem 0;
 }
 
+.detail-section {
+  background: var(--bg-white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+
 .featured-evolution {
   border: 2px solid var(--primary) !important;
   background: #f8fafc;
 }
 
 .badge-icon {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
@@ -766,7 +770,7 @@ ul.lista-check li.atencao::before {
 
 /* Container para não espalhar demais na tela */
 .container-small {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding: 0 1rem;
 }
@@ -1262,7 +1266,6 @@ ul.lista-check li.atencao::before {
     font-size: 1.063rem;
   }
 
-  .benefits-grid,
   .info-grid,
   .evolution-grid,
   .contact-grid,

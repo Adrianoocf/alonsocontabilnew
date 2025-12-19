@@ -16,19 +16,18 @@ const pages = {
       </div>
     </section>
     <section class="home">
-      <p class="home-texto">
+      <p class="spaced-texto">
         A Alonso Contábil é um escritório de contabilidade em São Paulo
         especializado em MEIs, pequenas e médias empresas e profissionais PJ
         que precisam de segurança fiscal e economia tributária.
       </p>
-
-      <p class="home-texto">
+      <p class="spaced-texto">  
         Cuidamos de toda a burocracia contábil, fiscal e tributária para que
         você possa focar no que realmente importa: vender mais e crescer
         com tranquilidade.
       </p>
-      <h2 class="home-texto p--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
-      <p class="home-texto">
+      <h2 class="spaced-texto h2--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
+      <p class="spaced-texto">
         Atuamos de forma consultiva, analisando cada detalhe do seu negócio
         para evitar impostos desnecessários, riscos fiscais e decisões
         equivocadas que custam caro no longo prazo.
@@ -60,85 +59,88 @@ const pages = {
           </p>
         </div>
       </div>
-      <h2 class="home-texto">
+      <h2 class="spaced-texto h2--spaced">
         Transição de CLT para Pessoa Jurídica em São Paulo
       </h2>
-      <p class="home-texto">
+      <p class="spaced-texto">
         Planeje sua transição de CLT para PJ com segurança jurídica
         e economia de impostos. Nossa consultoria especializada
         atende profissionais em São Paulo e região,
         garantindo conformidade fiscal e planejamento tributário eficiente.
       </p>
-      <p class="home-texto">
+      <p class="spaced-texto">
         Uma migração mal planejada pode gerar problemas com a Receita Federal,
         INSS e até caracterizar pejotização irregular.
         Por isso, cada transição deve ser analisada de forma individual.
       </p>
-      <div class="cta-box">
-      <h3>Pronto para Pagar Menos Impostos com Segurança?</h3>
-      <p>
-        Fale com um contador em São Paulo especializado em MEI e PJ
-        e receba um diagnóstico gratuito sobre impostos,
-        enquadramento e riscos fiscais do seu negócio.
-      </p>
-      <a 
-        href="https://wa.me/5511995172741"
-        target="_blank" 
-        rel="noopener noreferrer"
-        class="cta-button cta-button--spaced">
-        Quero Meu Diagnóstico Gratuito
-      </a>
-    </div>
-    <section class="faq-section">
-      <h2 style="text-align:center; color:#002D5B; margin-bottom:30px;">Dúvidas Frequentes</h2>
-      <div class="faq-container" style="max-width:900px; margin: 0 auto;">
-        <div class="faq-item">
-          <button class="faq-question">Como funciona a migração de MEI para ME? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>A migração ocorre quando seu faturamento ultrapassa R$ 81 mil/ano ou quando você precisa contratar mais de um funcionário. Nós cuidamos de todo o processo na Junta Comercial e Receita Federal para que a transição seja rápida e segura.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">O que é o Fator R e como ele reduz meu imposto? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>O Fator R permite que profissionais de TI, Saúde e Engenharia paguem 6% de imposto em vez de 15,5% no Simples Nacional. Nós fazemos o cálculo mensal da sua folha para garantir que você pague sempre o mínimo legal.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Quanto tempo demora para abrir meu CNPJ? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>Em São Paulo, conseguimos abrir seu CNPJ de prestação de serviços em uma média de 2 a 5 dias úteis, dependendo da viabilidade da prefeitura.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Vou ter um contador exclusivo para me atender? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>Sim! Aqui você não é apenas um número. Nosso atendimento é humanizado e você terá contato direto com nossos especialistas via WhatsApp para tirar dúvidas em tempo real.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Como funciona a troca de contador? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>É muito simples. Você só precisa nos informar quem é seu contador atual e nós cuidamos de toda a migração dos documentos. Você não precisa se envolver em conversas desconfortáveis.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question">Minha empresa está inativa ou com dívidas, vocês resolvem? <span class="icon">+</span></button>
-          <div class="faq-answer">
-            <p>Sim. Fazemos um diagnóstico completo da situação fiscal da sua empresa, regularizamos pendências e propomos parcelamentos de débitos para que você volte a operar com tranquilidade.</p>
-          </div>
-        </div>
+      <div class="cta-box" style="margin:80px 0">
+        <h3>Pronto para Pagar Menos Impostos com Segurança?</h3>
+        <p>
+          Fale com um contador em São Paulo especializado em MEI e PJ
+          e receba um diagnóstico gratuito sobre impostos,
+          enquadramento e riscos fiscais do seu negócio.
+        </p>
+        <a 
+          href="https://wa.me/5511995172741"
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="cta-button cta-button--spaced">
+          Quero Meu Diagnóstico Gratuito
+        </a>
       </div>
+      <section class="faq-section">
+        <h2 style="text-align:center; color:#002D5B; margin-bottom:30px;">Dúvidas Frequentes</h2>
+        <div class="faq-container" style="max-width:900px; margin: 0 auto;">
+          <div class="faq-item">
+            <button class="faq-question">Como funciona a migração de MEI para ME? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>A migração ocorre quando seu faturamento ultrapassa R$ 81 mil/ano ou quando você precisa contratar mais de um funcionário. Nós cuidamos de todo o processo na Junta Comercial e Receita Federal para que a transição seja rápida e segura.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">O que é o Fator R e como ele reduz meu imposto? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>O Fator R permite que profissionais de TI, Saúde e Engenharia paguem 6% de imposto em vez de 15,5% no Simples Nacional. Nós fazemos o cálculo mensal da sua folha para garantir que você pague sempre o mínimo legal.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Quanto tempo demora para abrir meu CNPJ? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Em São Paulo, conseguimos abrir seu CNPJ de prestação de serviços em uma média de 2 a 5 dias úteis, dependendo da viabilidade da prefeitura.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Vou ter um contador exclusivo para me atender? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Sim! Aqui você não é apenas um número. Nosso atendimento é humanizado e você terá contato direto com nossos especialistas via WhatsApp para tirar dúvidas em tempo real.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Como funciona a troca de contador? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>É muito simples. Você só precisa nos informar quem é seu contador atual e nós cuidamos de toda a migração dos documentos. Você não precisa se envolver em conversas desconfortáveis.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Minha empresa está inativa ou com dívidas, vocês resolvem? <span class="icon">+</span></button>
+            <div class="faq-answer">
+              <p>Sim. Fazemos um diagnóstico completo da situação fiscal da sua empresa, regularizamos pendências e propomos parcelamentos de débitos para que você volte a operar com tranquilidade.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </section>
 
     `,
 
     "/servicos": `
       <section class="servicos">
-        <h1>Soluções Contábeis Inteligentes para o seu Negócio</h1>
-        <p class="section-subtitle">
+        <h1 class="spaced-texto">Soluções Contábeis Inteligentes para o seu Negócio</h1>
+        <p class="spaced-texto section-subtitle">
           Tecnologia digital com consultoria estratégica para quem busca segurança, agilidade e redução legal de impostos em São Paulo.
         </p>
+
+        <div class="container-small">
 
         <div class="service-grid">
           <div class="service-card">
@@ -184,6 +186,8 @@ const pages = {
           </div>
         </div>
 
+        </div>
+
         <div class="cta-box">
           <h3>Pronto para pagar menos impostos com segurança?</h3>
           <p>Receba um diagnóstico tributário gratuito da sua empresa e descubra se você está no regime mais vantajoso.</p>
@@ -198,10 +202,12 @@ const pages = {
 
     "/Diferencas": `
       <section class="Diferencas">
-        <h1>Qual a melhor armadura jurídica para o seu negócio?</h1>
-        <p class="section-subtitle">
+        <h1 class="spaced-texto">Qual a melhor armadura jurídica para o seu negócio?</h1>
+        <p class="spaced-texto section-subtitle">
           O enquadramento correto é a base da sua segurança. Escolha o modelo que protege seu patrimônio e otimiza seus impostos.
         </p>
+
+        <div class="container-small">
 
         <div class="info-grid">
           <div class="info-card">
@@ -231,9 +237,11 @@ const pages = {
           </div>
         </div>
 
+        </div>
+
         <div class="strategy-content">
-          <h2>Regime Simples Nacional</h2>
-          <p>
+          <h2 class="spaced-texto">Regime Simples Nacional</h2>
+          <p class="spaced-texto">
             Criado para simplificar, o Simples unifica 8 impostos em uma única guia. Mas atenção: nossa consultoria monitora mensalmente se ele ainda é o mais vantajoso para você.
           </p>
 
@@ -270,8 +278,8 @@ const pages = {
 
     "/Evolucao": `
     <section class="Evolucao">
-     <h1>Do MEI ao Próximo Nível</h1>
-      <p class="section-subtitle">
+     <h1 class="spaced-texto">Do MEI ao Próximo Nível</h1>
+      <p class="spaced-texto section-subtitle">
         O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
       </p>
       <div class="container-small">
@@ -299,29 +307,31 @@ const pages = {
             </ul>
           </div>
         </div>
+      </div>
 
-        <div class="strategy-content">
-          <h2>Transição Sem Burocracia</h2>
-          <p>Nossa assessoria cuida de todo o processo técnico enquanto você foca na operação.</p>
-          
-          <div class="benefits-grid">
-            <div class="benefit-card">
-              <div class="benefit-number">01</div>
-              <h4 class="benefit-title">Diagnóstico Fiscal</h4>
-              <p class="benefit-text">Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.</p>
-            </div>
+      <div class="strategy-content">
+        <h2 class="spaced-texto">Transição Sem Burocracia</h2>
+        <p class="spaced-texto">Nossa assessoria cuida de todo 
+          o processo técnico enquanto você foca na operação.
+        </p>
+        
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-number">01</div>
+            <h4 class="benefit-title">Diagnóstico Fiscal</h4>
+            <p class="benefit-text">Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.</p>
+          </div>
 
-            <div class="benefit-card">
-              <div class="benefit-number">02</div>
-              <h4 class="benefit-title">Migração Técnica</h4>
-              <p class="benefit-text">Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.</p>
-            </div>
+          <div class="benefit-card">
+            <div class="benefit-number">02</div>
+            <h4 class="benefit-title">Migração Técnica</h4>
+            <p class="benefit-text">Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.</p>
+          </div>
 
-            <div class="benefit-card">
-              <div class="benefit-number">03</div>
-              <h4 class="benefit-title">Gestão Mensal</h4>
-              <p class="benefit-text">Suporte completo com folha de pagamento e monitoramento de impostos.</p>
-            </div>
+          <div class="benefit-card">
+            <div class="benefit-number">03</div>
+            <h4 class="benefit-title">Gestão Mensal</h4>
+            <p class="benefit-text">Suporte completo com folha de pagamento e monitoramento de impostos.</p>
           </div>
         </div>
 
@@ -339,8 +349,8 @@ const pages = {
 
     "/Impostos": `
     <section class="impostos">
-        <h1>Inteligência Fiscal</h1>
-        <p class="section-subtitle">
+        <h1 class="spaced-texto">Inteligência Fiscal</h1>
+        <p class="spaced-texto" section-subtitle">
           Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.
         </p>
 
@@ -401,7 +411,7 @@ const pages = {
           <p style="text-align:center; padding:20px;">
             Para um faturamento de R$ 15 mil/mês,
             você deixa de pagar R$ 1.425 extras todo mês. 
-            São mais de R$ 17 mil de economia por ano
+            São mais de R$ 17 mil de economia por ano.
           </p>
         </div>
         
