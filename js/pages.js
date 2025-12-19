@@ -15,19 +15,19 @@ const pages = {
         </a>
       </div>
     </section>
-    <section class="home">
-      <p class="spaced-texto">
+    <section class="home container-small">
+      <p class="spaced-text spaced-text-first">
         A Alonso Contábil é um escritório de contabilidade em São Paulo
         especializado em MEIs, pequenas e médias empresas e profissionais PJ
         que precisam de segurança fiscal e economia tributária.
       </p>
-      <p class="spaced-texto">  
+      <p class="spaced-text">  
         Cuidamos de toda a burocracia contábil, fiscal e tributária para que
         você possa focar no que realmente importa: vender mais e crescer
         com tranquilidade.
       </p>
-      <h2 class="spaced-texto h2--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
-      <p class="spaced-texto">
+      <h2 class="spaced-text h2--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
+      <p class="spaced-text">
         Atuamos de forma consultiva, analisando cada detalhe do seu negócio
         para evitar impostos desnecessários, riscos fiscais e decisões
         equivocadas que custam caro no longo prazo.
@@ -59,16 +59,16 @@ const pages = {
           </p>
         </div>
       </div>
-      <h2 class="spaced-texto h2--spaced">
+      <h2 class="spaced-text h2--spaced">
         Transição de CLT para Pessoa Jurídica em São Paulo
       </h2>
-      <p class="spaced-texto">
+      <p class="spaced-text">
         Planeje sua transição de CLT para PJ com segurança jurídica
         e economia de impostos. Nossa consultoria especializada
         atende profissionais em São Paulo e região,
         garantindo conformidade fiscal e planejamento tributário eficiente.
       </p>
-      <p class="spaced-texto">
+      <p class="spaced-text">
         Uma migração mal planejada pode gerar problemas com a Receita Federal,
         INSS e até caracterizar pejotização irregular.
         Por isso, cada transição deve ser analisada de forma individual.
@@ -134,13 +134,11 @@ const pages = {
     `,
 
     "/servicos": `
-      <section class="servicos">
-        <h1 class="spaced-texto">Soluções Contábeis Inteligentes para o seu Negócio</h1>
-        <p class="spaced-texto section-subtitle">
+      <section class="servicos container-small">
+        <h1 class="spaced-text spaced-text-first">Soluções Contábeis Inteligentes para o seu Negócio</h1>
+        <p class="spaced-text section-subtitle">
           Tecnologia digital com consultoria estratégica para quem busca segurança, agilidade e redução legal de impostos em São Paulo.
         </p>
-
-        <div class="container-small">
 
         <div class="service-grid">
           <div class="service-card">
@@ -185,9 +183,6 @@ const pages = {
             <a href="https://wa.me/5511995172741" class="btn-card">Falar com Especialista</a>
           </div>
         </div>
-
-        </div>
-
         <div class="cta-box">
           <h3>Pronto para pagar menos impostos com segurança?</h3>
           <p>Receba um diagnóstico tributário gratuito da sua empresa e descubra se você está no regime mais vantajoso.</p>
@@ -201,13 +196,11 @@ const pages = {
     `,
 
     "/Diferencas": `
-      <section class="Diferencas">
-        <h1 class="spaced-texto">Qual a melhor armadura jurídica para o seu negócio?</h1>
-        <p class="spaced-texto section-subtitle">
+      <section class="Diferencas container-small">
+        <h1 class="spaced-text spaced-text-first">Qual a melhor armadura jurídica para o seu negócio?</h1>
+        <p class="spaced-text section-subtitle">
           O enquadramento correto é a base da sua segurança. Escolha o modelo que protege seu patrimônio e otimiza seus impostos.
         </p>
-
-        <div class="container-small">
 
         <div class="info-grid">
           <div class="info-card">
@@ -236,12 +229,10 @@ const pages = {
             </ul>
           </div>
         </div>
-
-        </div>
-
+       
         <div class="strategy-content">
-          <h2 class="spaced-texto">Regime Simples Nacional</h2>
-          <p class="spaced-texto">
+          <h2 class="spaced-text">Regime Simples Nacional</h2>
+          <p class="spaced-text">
             Criado para simplificar, o Simples unifica 8 impostos em uma única guia. Mas atenção: nossa consultoria monitora mensalmente se ele ainda é o mais vantajoso para você.
           </p>
 
@@ -277,41 +268,40 @@ const pages = {
     `,
 
     "/Evolucao": `
-    <section class="Evolucao">
-     <h1 class="spaced-texto">Do MEI ao Próximo Nível</h1>
-      <p class="spaced-texto section-subtitle">
+    <section class="Evolucao container-small">
+      <h1 class="spaced-text spaced-text-first">Do MEI ao Próximo Nível</h1>
+      <p class="spaced-text section-subtitle">
         O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
       </p>
-      <div class="container-small">
-        <div class="evolution-grid">
-          <div class="detail-section">
-            <div class="badge-icon">⚠️</div>
-            <h3>Sinais de que o MEI ficou pequeno</h3>
-            <ul class="lista-check">
-              <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
-              <li>Necessidade de contratar mais de um colaborador.</li>
-              <li>Desejo de atrair sócios ou investidores.</li>
-              <li>Sua atividade não é mais permitida na lista do MEI.</li>
-              <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
-            </ul>
-          </div>
+      
+      <div class="evolution-grid">
+        <div class="detail-section">
+          <div class="badge-icon">⚠️</div>
+          <h3>Sinais de que o MEI ficou pequeno</h3>
+          <ul class="lista-check">
+            <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
+            <li>Necessidade de contratar mais de um colaborador.</li>
+            <li>Desejo de atrair sócios ou investidores.</li>
+            <li>Sua atividade não é mais permitida na lista do MEI.</li>
+            <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
+          </ul>
+        </div>
 
-          <div class="detail-section featured-evolution">
-            <div class="badge-icon">🚀</div>
-            <h3>O que você ganha ao evoluir</h3>
-            <ul class="lista-check">
-              <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
-              <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
-              <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
-              <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
-            </ul>
-          </div>
+        <div class="detail-section featured-evolution">
+          <div class="badge-icon">🚀</div>
+          <h3>O que você ganha ao evoluir</h3>
+          <ul class="lista-check">
+            <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
+            <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
+            <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
+            <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
+          </ul>
         </div>
       </div>
-
+      
       <div class="strategy-content">
-        <h2 class="spaced-texto">Transição Sem Burocracia</h2>
-        <p class="spaced-texto">Nossa assessoria cuida de todo 
+        <h2 class="spaced-text">Transição Sem Burocracia</h2>
+        <p class="spaced-text">Nossa assessoria cuida de todo 
           o processo técnico enquanto você foca na operação.
         </p>
         
@@ -348,72 +338,70 @@ const pages = {
     `,
 
     "/Impostos": `
-    <section class="impostos">
-        <h1 class="spaced-texto">Inteligência Fiscal</h1>
-        <p class="spaced-texto" section-subtitle">
+    <section class="impostos container-small">
+        <h1 class="spaced-text spaced-text-first">Inteligência Fiscal</h1>
+        <p class="spaced-text" section-subtitle">
           Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.
         </p>
 
-        <div class="container-small"> 
-
-          <div class="tax-grid">
-            <div class="tax-card">
-              <div class="card-header">
-                <span class="label-status">Sem Planejamento</span>
-                <h3>Anexo V</h3>
-              </div>
-              <div class="card-body">
-                <p>Alíquota padrão para serviços intelectuais (TI, Médicos, Engenheiros).</p>
-                <div class="simple-table">
-                  <div class="t-row t-header">
-                    <span>Faturamento</span>
-                    <span>Imposto</span>
-                  </div>
-                  <div class="t-row">
-                    <span>Até R$ 15 mil/mês</span>
-                    <span class="value-red">15,5%</span>
-                  </div>
-                  <div class="t-row">
-                    <span>Até R$ 30 mil/mês</span>
-                    <span class="value-red">18,0%</span>
-                  </div>
-                </div>
-              </div>
+        <div class="tax-grid">
+          <div class="tax-card">
+            <div class="card-header">
+              <span class="label-status">Sem Planejamento</span>
+              <h3>Anexo V</h3>
             </div>
-
-            <div class="tax-card featured">
-              <div class="card-header">
-                <span class="label-status success">Estratégia Fator R</span>
-                <h3>Anexo III</h3>
-              </div>
-              <div class="card-body">
-                <p>Redução aplicada por nossa consultoria através da gestão de folha e pró-labore.</p>
-                <div class="simple-table">
-                  <div class="t-row t-header">
-                    <span>Faturamento</span>
-                    <span>Imposto</span>
-                  </div>
-                  <div class="t-row">
-                    <span>Até R$ 15 mil/mês</span>
-                    <span class="value-green">6,0%</span>
-                  </div>
-                  <div class="t-row">
-                    <span>Até R$ 30 mil/mês</span>
-                    <span class="value-green">11,2%</span>
-                  </div>
+            <div class="card-body">
+              <p>Alíquota padrão para serviços intelectuais (TI, Médicos, Engenheiros).</p>
+              <div class="simple-table">
+                <div class="t-row t-header">
+                  <span>Faturamento</span>
+                  <span>Imposto</span>
                 </div>
-              </div>
-              <div class="card-footer-info">
-                Economia real de até 60%
+                <div class="t-row">
+                  <span>Até R$ 15 mil/mês</span>
+                  <span class="value-red">15,5%</span>
+                </div>
+                <div class="t-row">
+                  <span>Até R$ 30 mil/mês</span>
+                  <span class="value-red">18,0%</span>
+                </div>
               </div>
             </div>
           </div>
-          <p style="text-align:center; padding:20px;">
-            Para um faturamento de R$ 15 mil/mês,
-            você deixa de pagar R$ 1.425 extras todo mês. 
-            São mais de R$ 17 mil de economia por ano.
-          </p>
+
+          <div class="tax-card featured">
+            <div class="card-header">
+              <span class="label-status success">Estratégia Fator R</span>
+              <h3>Anexo III</h3>
+            </div>
+            <div class="card-body">
+              <p>Redução aplicada por nossa consultoria através da gestão de folha e pró-labore.</p>
+              <div class="simple-table">
+                <div class="t-row t-header">
+                  <span>Faturamento</span>
+                  <span>Imposto</span>
+                </div>
+                <div class="t-row">
+                  <span>Até R$ 15 mil/mês</span>
+                  <span class="value-green">6,0%</span>
+                </div>
+                <div class="t-row">
+                  <span>Até R$ 30 mil/mês</span>
+                  <span class="value-green">11,2%</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              Economia real de até 60%
+            </div>
+          </div>
         </div>
+        <p style="text-align:center; padding:20px;">
+          Para um faturamento de R$ 15 mil/mês,
+          você deixa de pagar R$ 1.425 extras todo mês. 
+          São mais de R$ 17 mil de economia por ano.
+        </p>
+        
         
         <div class="cta-box">
           <h3>Sua atividade não é serviço?</h3>

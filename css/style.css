@@ -278,6 +278,17 @@ section p {
   margin: 70px 0 30px 0;
 }
 
+
+.spaced-text{
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.spaced-text-first{
+  margin-top: 3rem;
+}
+
+
 section ul {
   margin: 1.7rem 0;
   padding-left: 1.5rem;
@@ -364,11 +375,6 @@ section ul li strong {
 /* ============================================
    HOME - BENEFITS GRID
    ============================================ */
-
-.spaced-texto{
-  margin-left: 1.2rem;
-  margin-right: 1.2rem;
-}
 
 .benefits-grid {
   display: grid;
