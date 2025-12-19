@@ -74,6 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// 6. Fechar menu ao clicar fora dele
+document.addEventListener('click', function(e) {
+  const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  // Verifica se o menu está aberto
+  if (navLinks && navLinks.classList.contains('active')) {
+    // Se clicou fora do menu E fora do botão
+    if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+      closeMenu();
+    }
+  }
+});
+
 // Eventos de mudança de rota
 window.addEventListener("hashchange", render);
 window.addEventListener("load", render);
