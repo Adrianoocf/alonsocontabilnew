@@ -56,7 +56,7 @@ const pages = {
                 <div class="back-title">Economize Agora!</div>
               </div>
               <p class="back-text">
-                Descubra quanto você pode economizar com nosso planejamento tributário personalizado.
+                Economize com planejamento tributário personalizado.
               </p>
               <a 
                 href="https://wa.me/5511995172741" 
@@ -89,7 +89,12 @@ const pages = {
               <p class="back-text">
                 Tire suas dúvidas agora mesmo. Nossa equipe está pronta para atender você!
               </p>
-              <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Chamar no WhatsApp</a>
+              <a 
+                href="https://wa.me/5511995172741" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="back-cta">Fale Conosco
+              </a>
             </div>
           </div>
         </div>
