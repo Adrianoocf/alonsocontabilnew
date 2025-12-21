@@ -309,11 +309,11 @@ section ul li strong {
 
 .hero-section {
   display: flex;
-  min-height: 420px;
+  min-height: 530px;
   width: 100%;
-  border-radius: 8px;
   overflow: hidden;
   margin-bottom: 0.2rem; 
+  position: relative; /* 👈 necessário */
 }
 
 /* IMAGEM */
@@ -323,7 +323,8 @@ section ul li strong {
   background-size: cover;
   background-position: center;
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px 0 0 8px;
+  max-width: 800px;
 }
 
 /* EFEITO OVERLAY (igual da 2ª imagem) */
@@ -332,11 +333,12 @@ section ul li strong {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(255,255,255,0.0) 0%,
-    rgba(255,255,255,0.4) 70%,
-    rgba(255,255,255,0.95) 100%
-  );
+    270deg,
+    rgba(242,242,243,1) 0%,
+    rgba(242,242,243,0.85) 4%,
+    rgba(255,255,255,0.4) 10%,
+    rgba(255,255,255,0) 20%
+  )
 }
 
 /* CONTEÚDO */
@@ -346,9 +348,10 @@ section ul li strong {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: var(--bg-white);
+  background: rgba(242,242,243,1);
   z-index: 1;
   max-width: 550px;
+  border-radius: 0 8px 8px 0;
 }
 
 .hero-content h1 {
@@ -427,7 +430,6 @@ section ul li strong {
 
 .benefit-card:hover .benefit-card-front {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
   box-shadow: var(--shadow-soft)
 }
 
@@ -435,9 +437,6 @@ section ul li strong {
 .benefit-card-back {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     transform: rotateY(180deg);
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     color: var(--bg-white);
     border: none;
 }
@@ -471,6 +470,13 @@ section ul li strong {
 }
 
 /* Verso do card */
+
+.back-header {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* espaço entre ícone e título */
+}
+
 .back-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
@@ -488,12 +494,14 @@ section ul li strong {
     opacity: 0.95;
     margin-bottom: 1.5rem;
     color: var(--text-body);
+    text-align: center;
 }
 
 .back-cta {
     background: var(--bg-white);
     color: var(--primary);
     padding: 0.5rem 1.5rem;
+    max-width: 70%;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.938rem;
@@ -502,6 +510,8 @@ section ul li strong {
     transition: all 0.3s;
     text-decoration: none;
     display: inline-block;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .back-cta:hover {
@@ -518,6 +528,38 @@ section ul li strong {
     color: var(--text-gray);
     opacity: 0.6;
     pointer-events: none;
+}
+
+/* ============================================
+   SEÇÃO TRANSIÇÃO PJ – TEXTO ESQ / IMAGEM DIR
+============================================ */
+
+.pj-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 6rem 0;
+}
+
+.pj-text {
+  flex: 1;
+}
+
+.pj-image {
+  flex: 1;
+  min-height: 320px;
+  border-radius: 0 8px 8px 0;
+  max-width: 450px;
+
+  background: 
+    linear-gradient(
+      to right,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,0.7) 20%,
+      rgba(255,255,255,0.4) 35%,
+      rgba(255,255,255,0.0) 60%
+    ),
+    url('/img/img2.jpg') center / cover no-repeat;
 }
 
 /* CONTAINER FAQ */
@@ -1362,32 +1404,89 @@ ul.lista-check li.atencao::before {
 
   .hero-section {
     flex-direction: column;
-    min-height: auto;
-    margin-top: -20px;
+    margin: 0;
+    padding: 0;
   }
 
-  /* ESCONDE A IMAGEM NO MOBILE */
+  /* MOSTRA a imagem no mobile */
   .hero-image {
-    display: none;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* controla a altura automaticamente */
+    min-height: 280px;   /* garante impacto visual */
+    max-height: 290px;   /* evita exagero */   position: relative;
+    border-radius: 20px 20px 0 0; /* bordas só em cima */
+    background-image: url('/img/img4.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
   }
 
-  /* CONTEÚDO OCUPA TUDO */
-  .hero-content {
+ .hero-image::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    padding: 2rem 2rem;
-    align-items: flex-start;
-    text-align: left;
-    background: var(--bg-light);
-    border: 1px solid var(--border);
-    border-radius: 20px;
+    height: 100%; /* controla onde começa o fade */
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0) 10%,
+      rgba(242,242,243,0.6) 90%,
+      rgba(242,242,243,1) 100%
+    );
+    pointer-events: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hero-content {
+    background: rgb(242,242,243);
+    border-top: none; /* 👈 conecta com a imagem */
+    border-radius: 0 0 20px 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0px 20px 20px 20px;
+    max-width: 100%;
   }
 
   .hero-content h1 {
     font-size: 1.8rem;
+    margin-top: 1rem;
   }
 
   .hero-content .section-subtitle {
     font-size: 1rem;
+    color: var(--primary-dark);
+  }
+
+  .pj-section {
+      flex-direction: column;
+  }
+
+  .pj-image {
+    width: 90%;
+    min-height: 240px;
+    background: 
+      /* fade de CIMA */
+      linear-gradient(
+        to bottom,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0) 25%
+      ),
+
+      /* fade de BAIXO */
+      linear-gradient(
+        to top,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0) 25%
+      ),
+      url('/img/img2.jpg') center / cover no-repeat;
+    border-radius: 0 0 0 0;
   }
 
   .flex-detail {

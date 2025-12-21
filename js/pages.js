@@ -10,7 +10,11 @@ const pages = {
           Especialistas em transformar sua contabilidade em uma
           ferramenta de lucro. Atendimento humanizado em São Paulo.
         </p>
-        <a href="https://wa.me/5511995172741" class="cta-button">
+        <a
+          href="https://wa.me/5511995172741"
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="cta-button">
           Quero Falar com um Especialista Agora
         </a>
       </div>
@@ -35,89 +39,109 @@ const pages = {
       <div class="benefits-grid">
         <!-- Card 1 -->
         <div class="benefit-card" onclick="this.classList.toggle('active')">
-            <div class="benefit-card-inner">
-                <div class="benefit-card-front">
-                    <div class="benefit-number">1</div>
-                    <div class="benefit-title">Foco no Lucro</div>
-                    <p class="benefit-text">
-                        Analisamos seu enquadramento tributário para evitar pagamentos
-                        indevidos e garantir que você pague apenas o necessário,
-                        sempre dentro da lei.
-                    </p>
-                    <span class="flip-hint">Clique para ver mais →</span>
-                </div>
-                <div class="benefit-card-back">
-                    <div class="back-icon">💰</div>
-                    <div class="back-title">Economize Agora!</div>
-                    <p class="back-text">
-                        Descubra quanto você pode economizar com nosso planejamento tributário personalizado.
-                    </p>
-                    <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Fale Conosco</a>
-             
-                </div>
+          <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+              <div class="benefit-number">1</div>
+              <div class="benefit-title">Foco no Lucro</div>
+              <p class="benefit-text">
+                Analisamos seu enquadramento tributário para evitar pagamentos
+                indevidos e garantir que você pague apenas o necessário,
+                sempre dentro da lei.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
             </div>
+            <div class="benefit-card-back">
+              <div class="back-header">
+                <span class="back-icon">💰</span>
+                <div class="back-title">Economize Agora!</div>
+              </div>
+              <p class="back-text">
+                Descubra quanto você pode economizar com nosso planejamento tributário personalizado.
+              </p>
+              <a 
+                href="https://wa.me/5511995172741" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="back-cta">
+                  Fale Conosco
+                </a>
+            </div>
+          </div>
         </div>
 
         <!-- Card 2 -->
         <div class="benefit-card" onclick="this.classList.toggle('active')">
-            <div class="benefit-card-inner">
-                <div class="benefit-card-front">
-                    <div class="benefit-number">2</div>
-                    <div class="benefit-title">Atendimento Ágil</div>
-                    <p class="benefit-text">
-                        Suporte rápido e direto via WhatsApp e e-mail,
-                        sem burocracia e sem espera desnecessária.
-                    </p>
-                    <span class="flip-hint">Clique para ver mais →</span>
-                </div>
-                <div class="benefit-card-back">
-                    <div class="back-icon">⚡</div>
-                    <div class="back-title">Atendimento Express!</div>
-                    <p class="back-text">
-                        Tire suas dúvidas agora mesmo. Nossa equipe está pronta para atender você!
-                    </p>
-                  <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Chamar no WhatsApp</a>
-                </div>
+          <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+              <div class="benefit-number">2</div>
+              <div class="benefit-title">Atendimento Ágil</div>
+              <p class="benefit-text">
+                Suporte rápido e direto via WhatsApp e e-mail,
+                sem burocracia e sem espera desnecessária.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
             </div>
+            <div class="benefit-card-back">
+              <div class="back-header">
+                <span class="back-icon">⚡</span>
+                <div class="back-title">Atendimento Express!</div>
+              </div>
+              <p class="back-text">
+                Tire suas dúvidas agora mesmo. Nossa equipe está pronta para atender você!
+              </p>
+              <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Chamar no WhatsApp</a>
+            </div>
+          </div>
         </div>
 
         <!-- Card 3 -->
         <div class="benefit-card" onclick="this.classList.toggle('active')">
-            <div class="benefit-card-inner">
-                <div class="benefit-card-front">
-                    <div class="benefit-number">3</div>
-                    <div class="benefit-title">Tecnologia e Transparência</div>
-                    <p class="benefit-text">
-                        Acesso simples a documentos, relatórios e à saúde financeira
-                        da sua empresa, tudo de forma clara e organizada.
-                    </p>
-                    <span class="flip-hint">Clique para ver mais →</span>
-                </div>
-                <div class="benefit-card-back">
-                    <div class="back-icon">🚀</div>
-                    <div class="back-title">Conheça Nossa Plataforma!</div>
-                    <p class="back-text">
-                        Agende uma demonstração gratuita e veja como podemos transformar sua gestão.
-                    </p>
-                  <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Agendar Demo</a>
-                </div>
+          <div class="benefit-card-inner">
+            <div class="benefit-card-front">
+              <div class="benefit-number">3</div>
+              <div class="benefit-title">Tecnologia e Transparência</div>
+              <p class="benefit-text">
+                Acesso simples a documentos, relatórios e à saúde financeira
+                da sua empresa, tudo de forma clara e organizada.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
             </div>
+            <div class="benefit-card-back">
+              <div class="back-header">
+                <span class="back-icon">🚀</span>
+                <div class="back-title">Conheça Nossa Plataforma!</div>
+              </div>
+              <p class="back-text">
+                Agende uma demonstração gratuita e veja como podemos transformar sua gestão.
+              </p>
+              <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Agendar Demo</a>
+            </div>
+          </div>
         </div>
       </div>
-      <h2 class="spaced-text h2--spaced">
-        Transição de CLT para Pessoa Jurídica em São Paulo
-      </h2>
-      <p class="spaced-text">
-        Planeje sua transição de CLT para PJ com segurança jurídica
-        e economia de impostos. Nossa consultoria especializada
-        atende profissionais em São Paulo e região,
-        garantindo conformidade fiscal e planejamento tributário eficiente.
-      </p>
-      <p class="spaced-text">
-        Uma migração mal planejada pode gerar problemas com a Receita Federal,
-        INSS e até caracterizar pejotização irregular.
-        Por isso, cada transição deve ser analisada de forma individual.
-      </p>
+      <div class="pj-section">
+        <div class="pj-text">
+          <h2 class="spaced-text">
+            Transição de CLT para Pessoa Jurídica em São Paulo
+          </h2>
+
+          <p class="spaced-text">
+            Planeje sua transição de CLT para PJ com segurança jurídica
+            e economia de impostos. Nossa consultoria especializada
+            atende profissionais em São Paulo e região,
+            garantindo conformidade fiscal e planejamento tributário eficiente.
+          </p>
+
+          <p class="spaced-text">
+            Uma migração mal planejada pode gerar problemas com a Receita Federal,
+            INSS e até caracterizar pejotização irregular.
+            Por isso, cada transição deve ser analisada de forma individual.
+          </p>
+        </div>
+
+        <div class="pj-image"></div>
+      </div>
+
       <div class="cta-box" style="margin:80px 0">
         <h3>Pronto para Pagar Menos Impostos com Segurança?</h3>
         <p>
@@ -235,7 +259,7 @@ const pages = {
           <div class="service-card">
             <h3>Plano Digital PJ</h3>
             <p>A solução ágil para profissionais de TI, Saúde, Engenharia e freelancers que buscam economia.</p>
-            <span class="service-badge">PJ • MEI • Autônomos</span>
+            <span class="service-badge">PJ • MEI • Autônomos</span>     
             <ul class="lista-check">
               <li><strong>Redução pelo Fator R:</strong> Pague 6% em vez de 15,5% no Simples.</li>
               <li>Abertura de CNPJ rápida e digital.</li>
@@ -243,7 +267,10 @@ const pages = {
               <li>Gestão de Pró-labore e contribuição ao INSS.</li>
               <li>Atendimento ágil via WhatsApp.</li>
             </ul>
-            <a href="https://wa.me/5511995172741" class="btn-card">Saiba Mais</a>
+            <a href="https://wa.me/5511995172741"
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-card">Saiba Mais</a>
           </div>
 
           <div class="service-card featured">
@@ -257,7 +284,12 @@ const pages = {
               <li>Suporte consultivo para decisões de crescimento.</li>
               <li>Monitoramento de regularidade fiscal e CNDs.</li>
             </ul>
-            <a href="https://wa.me/5511995172741" class="btn-card">Saiba Mais</a>
+            <a 
+              href="https://wa.me/5511995172741"
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-card">Saiba Mais
+            </a>
           </div>
 
           <div class="service-card">
@@ -271,7 +303,12 @@ const pages = {
               <li>Estruturação de Contrato Social Inteligente.</li>
               <li>Consultoria direta com contador sênior.</li>
             </ul>
-            <a href="https://wa.me/5511995172741" class="btn-card">Falar com Especialista</a>
+            <a 
+              href="https://wa.me/5511995172741"
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="btn-card">Falar com Especialista
+            </a>
           </div>
         </div>
         <div class="cta-box">
@@ -555,7 +592,13 @@ const pages = {
         <div class="cta-box">
           <h3>Sua atividade não é serviço?</h3>
           <p>Atendemos Comércio e Indústria com foco em lucro real e presumido.</p>
-          <a href="https://wa.me/5511995172741" class="cta-button cta-button--spaced">Solicitar Estudo Gratuito</a>
+          <a 
+            href="https://wa.me/5511995172741"
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="cta-button cta-button--spaced">
+              Solicitar Estudo Gratuito
+            </a>
         </div>
       </div>
     </section>   
