@@ -33,30 +33,75 @@ const pages = {
         equivocadas que custam caro no longo prazo.
       </p>
       <div class="benefits-grid">
-        <div class="benefit-card">
-          <div class="benefit-number">1</div>
-          <div class="benefit-title">Foco no Lucro</div>
-          <p class="benefit-text">
-            Analisamos seu enquadramento tributário para evitar pagamentos
-            indevidos e garantir que você pague apenas o necessário,
-            sempre dentro da lei.
-          </p>
+        <!-- Card 1 -->
+        <div class="benefit-card" onclick="this.classList.toggle('active')">
+            <div class="benefit-card-inner">
+                <div class="benefit-card-front">
+                    <div class="benefit-number">1</div>
+                    <div class="benefit-title">Foco no Lucro</div>
+                    <p class="benefit-text">
+                        Analisamos seu enquadramento tributário para evitar pagamentos
+                        indevidos e garantir que você pague apenas o necessário,
+                        sempre dentro da lei.
+                    </p>
+                    <span class="flip-hint">Clique para ver mais →</span>
+                </div>
+                <div class="benefit-card-back">
+                    <div class="back-icon">💰</div>
+                    <div class="back-title">Economize Agora!</div>
+                    <p class="back-text">
+                        Descubra quanto você pode economizar com nosso planejamento tributário personalizado.
+                    </p>
+                    <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Fale Conosco</a>
+             
+                </div>
+            </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-number">2</div>
-          <div class="benefit-title">Atendimento Ágil</div>
-          <p class="benefit-text">
-            Suporte rápido e direto via WhatsApp e e-mail,
-            sem burocracia e sem espera desnecessária.
-          </p>
+
+        <!-- Card 2 -->
+        <div class="benefit-card" onclick="this.classList.toggle('active')">
+            <div class="benefit-card-inner">
+                <div class="benefit-card-front">
+                    <div class="benefit-number">2</div>
+                    <div class="benefit-title">Atendimento Ágil</div>
+                    <p class="benefit-text">
+                        Suporte rápido e direto via WhatsApp e e-mail,
+                        sem burocracia e sem espera desnecessária.
+                    </p>
+                    <span class="flip-hint">Clique para ver mais →</span>
+                </div>
+                <div class="benefit-card-back">
+                    <div class="back-icon">⚡</div>
+                    <div class="back-title">Atendimento Express!</div>
+                    <p class="back-text">
+                        Tire suas dúvidas agora mesmo. Nossa equipe está pronta para atender você!
+                    </p>
+                  <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Chamar no WhatsApp</a>
+                </div>
+            </div>
         </div>
-        <div class="benefit-card">
-          <div class="benefit-number">3</div>
-          <div class="benefit-title">Tecnologia e Transparência</div>
-          <p class="benefit-text">
-            Acesso simples a documentos, relatórios e à saúde financeira
-            da sua empresa, tudo de forma clara e organizada.
-          </p>
+
+        <!-- Card 3 -->
+        <div class="benefit-card" onclick="this.classList.toggle('active')">
+            <div class="benefit-card-inner">
+                <div class="benefit-card-front">
+                    <div class="benefit-number">3</div>
+                    <div class="benefit-title">Tecnologia e Transparência</div>
+                    <p class="benefit-text">
+                        Acesso simples a documentos, relatórios e à saúde financeira
+                        da sua empresa, tudo de forma clara e organizada.
+                    </p>
+                    <span class="flip-hint">Clique para ver mais →</span>
+                </div>
+                <div class="benefit-card-back">
+                    <div class="back-icon">🚀</div>
+                    <div class="back-title">Conheça Nossa Plataforma!</div>
+                    <p class="back-text">
+                        Agende uma demonstração gratuita e veja como podemos transformar sua gestão.
+                    </p>
+                  <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Agendar Demo</a>
+                </div>
+            </div>
         </div>
       </div>
       <h2 class="spaced-text h2--spaced">
@@ -88,47 +133,93 @@ const pages = {
           Quero Meu Diagnóstico Gratuito
         </a>
       </div>
-      <section class="faq-section">
-        <h2 style="text-align:center; color:#002D5B; margin-bottom:30px;">Dúvidas Frequentes</h2>
-        <div class="faq-container" style="max-width:900px; margin: 0 auto;">
-          <div class="faq-item">
-            <button class="faq-question">Como funciona a migração de MEI para ME? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>A migração ocorre quando seu faturamento ultrapassa R$ 81 mil/ano ou quando você precisa contratar mais de um funcionário. Nós cuidamos de todo o processo na Junta Comercial e Receita Federal para que a transição seja rápida e segura.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">O que é o Fator R e como ele reduz meu imposto? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>O Fator R permite que profissionais de TI, Saúde e Engenharia paguem 6% de imposto em vez de 15,5% no Simples Nacional. Nós fazemos o cálculo mensal da sua folha para garantir que você pague sempre o mínimo legal.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Quanto tempo demora para abrir meu CNPJ? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>Em São Paulo, conseguimos abrir seu CNPJ de prestação de serviços em uma média de 2 a 5 dias úteis, dependendo da viabilidade da prefeitura.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Vou ter um contador exclusivo para me atender? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>Sim! Aqui você não é apenas um número. Nosso atendimento é humanizado e você terá contato direto com nossos especialistas via WhatsApp para tirar dúvidas em tempo real.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Como funciona a troca de contador? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>É muito simples. Você só precisa nos informar quem é seu contador atual e nós cuidamos de toda a migração dos documentos. Você não precisa se envolver em conversas desconfortáveis.</p>
-            </div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-question">Minha empresa está inativa ou com dívidas, vocês resolvem? <span class="icon">+</span></button>
-            <div class="faq-answer">
-              <p>Sim. Fazemos um diagnóstico completo da situação fiscal da sua empresa, regularizamos pendências e propomos parcelamentos de débitos para que você volte a operar com tranquilidade.</p>
-            </div>
+     <section class="faq-section">
+      <h2>Dúvidas Frequentes</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Como funciona a migração de MEI para ME?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              A migração ocorre quando seu faturamento ultrapassa R$ 81 mil/ano ou quando você
+              precisa contratar mais de um funcionário. Nós cuidamos de todo o processo na
+              Junta Comercial e Receita Federal para que a transição seja rápida e segura.
+            </p>
           </div>
         </div>
-      </section>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            O que é o Fator R e como ele reduz meu imposto?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              O Fator R permite que profissionais de TI, Saúde e Engenharia paguem 6% de imposto
+              em vez de 15,5% no Simples Nacional. Nós fazemos o cálculo mensal da sua folha para
+              garantir que você pague sempre o mínimo legal.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Quanto tempo demora para abrir meu CNPJ?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Em São Paulo, conseguimos abrir seu CNPJ de prestação de serviços em uma média de
+              2 a 5 dias úteis, dependendo da viabilidade da prefeitura.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Vou ter um contador exclusivo para me atender?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sim! Aqui você não é apenas um número. Nosso atendimento é humanizado e você terá
+              contato direto com nossos especialistas via WhatsApp para tirar dúvidas em tempo
+              real.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Como funciona a troca de contador?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              É muito simples. Você só precisa nos informar quem é seu contador atual e nós
+              cuidamos de toda a migração dos documentos. Você não precisa se envolver em
+              conversas desconfortáveis.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" type="button">
+            Minha empresa está inativa ou com dívidas, vocês resolvem?
+            <span class="icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Sim. Fazemos um diagnóstico completo da situação fiscal da sua empresa,
+              regularizamos pendências e propomos parcelamentos de débitos para que você volte
+              a operar com tranquilidade.
+            </p>
+          </div>
+        </div>
+
+      </div>
     </section>
 
     `,
@@ -306,23 +397,81 @@ const pages = {
         </p>
         
         <div class="benefits-grid">
-          <div class="benefit-card">
-            <div class="benefit-number">01</div>
-            <h4 class="benefit-title">Diagnóstico Fiscal</h4>
-            <p class="benefit-text">Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.</p>
+
+          <!-- CARD 1 -->
+          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+
+              <!-- FRENTE -->
+              <div class="flip-front">
+                <div class="benefit-number">01</div>
+                <h4 class="benefit-title">Diagnóstico Fiscal</h4>
+                <p class="benefit-text">
+                  Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.
+                </p>
+                <span class="flip-hint">Clique para ver mais →</span>
+              </div>
+
+              <!-- VERSO -->
+              <div class="flip-back">
+                <div class="back-icon">📊</div>
+                <h4 class="back-title">Decisão Estratégica</h4>
+                <p class="back-text">
+                  Evite pagar impostos desnecessários com um diagnóstico profissional e personalizado.
+                </p>
+              </div>
+
+            </div>
           </div>
 
-          <div class="benefit-card">
-            <div class="benefit-number">02</div>
-            <h4 class="benefit-title">Migração Técnica</h4>
-            <p class="benefit-text">Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.</p>
+          <!-- CARD 2 -->
+          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+
+              <div class="flip-front">
+                <div class="benefit-number">02</div>
+                <h4 class="benefit-title">Migração Técnica</h4>
+                <p class="benefit-text">
+                  Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.
+                </p>
+                <span class="flip-hint">Clique para ver mais →</span>
+              </div>
+
+              <div class="flip-back">
+                <div class="back-icon">🛠️</div>
+                <h4 class="back-title">Zero Dor de Cabeça</h4>
+                <p class="back-text">
+                  Cuidamos de todo o processo técnico enquanto você continua faturando.
+                </p>
+              </div>
+
+            </div>
           </div>
 
-          <div class="benefit-card">
-            <div class="benefit-number">03</div>
-            <h4 class="benefit-title">Gestão Mensal</h4>
-            <p class="benefit-text">Suporte completo com folha de pagamento e monitoramento de impostos.</p>
+          <!-- CARD 3 -->
+          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+            <div class="flip-inner">
+
+              <div class="flip-front">
+                <div class="benefit-number">03</div>
+                <h4 class="benefit-title">Gestão Mensal</h4>
+                <p class="benefit-text">
+                  Suporte completo com folha de pagamento e monitoramento de impostos.
+                </p>
+                <span class="flip-hint">Clique para ver mais →</span>
+              </div>
+
+              <div class="flip-back">
+                <div class="back-icon">📈</div>
+                <h4 class="back-title">Crescimento Seguro</h4>
+                <p class="back-text">
+                  Acompanhamento contínuo para evitar multas e melhorar resultados.
+                </p>
+              </div>
+
+            </div>
           </div>
+
         </div>
 
         <div class="cta-box">
@@ -414,7 +563,7 @@ const pages = {
     `,
 
     "/contato": `
-    <section class="contato">
+    <section class="contact">
       <h1>Entre em Contato</h1>
       <p class="section-subtitle">
         Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo

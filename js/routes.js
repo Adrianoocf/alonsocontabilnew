@@ -88,6 +88,13 @@ document.addEventListener('click', function(e) {
   }
 });
 
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.closest('.faq-item');
+    item.classList.toggle('active');
+  });
+});
+
 // Eventos de mudança de rota
 window.addEventListener("hashchange", render);
 window.addEventListener("load", render);

@@ -23,6 +23,7 @@
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
 }
 
 /* NOVO: Normalização entre navegadores */
@@ -270,10 +271,6 @@ section p {
   line-height: 1.7;
 }
 
-.p--spaced {
-  margin: 2rem 0;
-}
-
 .h2--spaced {
   margin: 70px 0 30px 0;
 }
@@ -376,113 +373,222 @@ section ul li strong {
    HOME - BENEFITS GRID
    ============================================ */
 
-.benefits-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin: 4rem 0;
+ .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin: 4rem 2rem 4rem 1.5rem;
+    max-width: 1200px;
 }
 
+/* Container do card com perspectiva */
 .benefit-card {
-  background: var(--bg-light);
-  padding: 1.75rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  transition: all 0.3s;
+    background: transparent;
+    height: 280px;
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Container interno que faz a rotação */
+.benefit-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Quando clica, vira o card */
+.benefit-card.active .benefit-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilo comum para frente e verso */
+.benefit-card-front,
+.benefit-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: var(--bg-light);
+    padding: 1.75rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Frente do card */
+.benefit-card-front {
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+
+.benefit-card:hover .benefit-card-front {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-soft)
+}
+
+/* Verso do card */
+.benefit-card-back {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    transform: rotateY(180deg);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--bg-white);
+    border: none;
 }
 
 .benefit-number {
-  width: 40px;
-  height: 40px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--bg-white);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.125rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--bg-white);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
 .benefit-title {
-  color: var(--text-dark);
-  font-size: 1.063rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 1.063rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
 .benefit-text {
-  color: var(--text-light);
-  font-size: 0.938rem;
-  line-height: 1.5;
-  margin: 0;
+    color: var(--text-gray);
+    font-size: 0.938rem;
+    line-height: 1.6;
+    margin: 0;
 }
 
-.faq-section {
-  max-width: 800px;
-  margin: 50px auto;
-  padding: 20px;
-  font-family: sans-serif;
+/* Verso do card */
+.back-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
 }
 
-.faq-item {
-  border-bottom: 1px solid #ddd;
+.back-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 }
 
-/* Padronização do Título do FAQ */
-.faq-section h2 {
-    font-family: 'Montserrat', sans-serif; /* Ou a fonte principal que você usa */
-    color: #002D5B; /* O mesmo azul marinho da sua logo/menu */
-    font-size: 1.5rem;
-    font-weight: 600; /* Deixa o título robusto como os outros da página */
-    text-align: center;
-    margin-bottom: 50px;
-    letter-spacing: -0.6px; /* Melhora a leitura em títulos grandes */
+.back-text {
+    font-size: 0.938rem;
+    line-height: 1.6;
+    opacity: 0.95;
+    margin-bottom: 1.5rem;
+    color: var(--text-body);
 }
 
-/* Ajuste das Perguntas para maior legibilidade */
-.faq-question {
-    color: #002D5B; /* Cor da pergunta igual ao título */
-    font-size: 1rem;
+.back-cta {
+    background: var(--bg-white);
+    color: var(--primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
     font-weight: 600;
-    padding: 25px 15px;
+    font-size: 0.938rem;
     border: none;
-    background: transparent;
-    display: flex;
-    justify-content: space-between; /* Isso joga o + para o canto direito */
-    align-items: center;
-    width: 100%;
-    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
 }
 
-/* Efeito de hover (passar o mouse) */
-.faq-question:hover {
-    color: #0056b3; /* Um azul mais claro ao passar o mouse */
+.back-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
+/* Hint para virar o card */
+.flip-hint {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.75rem;
+    color: var(--text-gray);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* CONTAINER FAQ */
+.faq-section {
+  background: var(--bg-white);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  max-width: 900px;
+  border: 1px solid var(--border);
+}
+
+/* ITEM */
+.faq-item {
+  border-bottom: 1px solid var(--border);
+}
+
+/* BOTÃO DA PERGUNTA */
+.faq-question {
+  color: var(--primary);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 1.5rem 0;
+  border: none;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* ÍCONE CHEVRON (▼) */
+.faq-question .icon {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  transform: rotate(45deg); /* seta para baixo */
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+}
+
+/* RESPOSTA */
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-out;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  transition: max-height 0.35s ease;
+  color: var(--text-medium)
 }
 
+.faq-section h2{
+  text-align: center;
+}
+/* TEXTO */
 .faq-answer p {
-  padding: 20px 20px 10px 20px;
-  color: #666;
+  padding: 0 0 1.5rem 0;
+  color: var(--text-medium);
   line-height: 1.6;
 }
 
-/* Classe para quando o item estiver aberto */
+/* QUANDO ABERTO */
 .faq-item.active .faq-answer {
-  max-height: 200px; /* Altura suficiente para o texto */
+  max-height: 300px;
 }
 
 .faq-item.active .icon {
-  transform: rotate(45deg);
+  transform: rotate(-135deg); /* seta para cima */
 }
+
 
 /* ============================================
    SERVIÇOS - SERVICE CARDS (STYLING DIGITAL)
@@ -494,7 +600,7 @@ section ul li strong {
   grid-template-columns: repeat(3, 1fr); 
   gap: 1.5rem;
   margin: 5rem auto;
-  max-width: 1200px;
+  max-width: 1250px;
   width: 100%;
   padding: 0 1rem;
   box-sizing: border-box;
@@ -508,13 +614,14 @@ section ul li strong {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   position: relative;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-  border-color: var(--primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-soft)
 }
 
 /* Destaque para o plano do meio */
@@ -625,6 +732,7 @@ ul.lista-check li.atencao::before {
   border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 /* Garante que a lista dentro do card não tenha recuo extra */
@@ -699,6 +807,7 @@ ul.lista-check li.atencao::before {
   gap: 2rem;
   margin: 2rem auto;
   text-align: left;
+  width: 95%;
 }
 
 .detail-box {
@@ -706,6 +815,7 @@ ul.lista-check li.atencao::before {
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft)
 }
 
 .detail-box h3 {
@@ -724,57 +834,119 @@ ul.lista-check li.atencao::before {
   margin: 4rem 0;
 }
 
+/* ============================================
+   FLIP CARD – BENEFITS (EVOLUÇÃO)
+============================================ */
+
+.flip-card {
+  perspective: 1200px; /* mesmo ponto de fuga em todo o site */
+  height: 260px;
+  cursor: pointer;
+}
+
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+}
+
+/* Ativa rotação */
+.flip-card.active .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRENTE E VERSO */
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+/* FRENTE */
+.flip-front {
+  background: var(--bg-light);
+  box-shadow:0 8px 24px rgba(15, 23, 42, 0.06);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.flip-front {
+  background: var(--bg-light);
+  box-shadow: spaced-text;
+  transition: box-shadow 0.3s, transform 0.3s ease;
+}
+
+/* VERSO */
+.flip-back {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--bg-white);
+  transform: rotateY(180deg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+/* ELEMENTOS DO VERSO */
+.back-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.back-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.back-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-body);
+}
+
+/* HINT */
+.flip-hint {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.flip-card:hover .flip-front {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-soft)
+}
+
 .detail-section {
   background: var(--bg-white);
   padding: 2.5rem;
   border-radius: 8px;
   border: 1px solid var(--border);
   transition: all 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .featured-evolution {
   border: 2px solid var(--primary) !important;
   background: #f8fafc;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .badge-icon {
   font-size: 3rem;
   margin: -15px 0 -15px 0; 
-}
-
-/* Cards de Metodologia (Passo a Passo) */
-.method-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-  margin-top: 2rem;
-  text-align: left;
-}
-
-.method-item {
-  padding: 1.5rem;
-  background: var(--bg-white);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-}
-
-.step-num {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  display: block;
-  margin-bottom: 0.5rem;
-  opacity: 0.3;
-}
-
-.method-item h4 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-.method-item p {
-  font-size: 0.875rem;
-  line-height: 1.4;
 }
 
 /* Reutilizando o estilo da lista check que já corrigimos */
@@ -819,7 +991,7 @@ ul.lista-check li.atencao::before {
 /* Destaque do Anexo III */
 .tax-card.featured {
   border: 2px solid #10b981;
-  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
   background: #f8fafc;
 }
 
@@ -877,9 +1049,13 @@ ul.lista-check li.atencao::before {
 /* ============================================
    CONTATO - CONTACT SECTION
    ============================================ */
-.contato {
+.contact {
   text-align: center;
   padding: 1rem;
+}
+
+.contact p{
+  margin: 30px;
 }
 
 .contact-grid {
@@ -902,12 +1078,13 @@ ul.lista-check li.atencao::before {
   color: inherit;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: var(--shadow-soft);
 }
 
 .contact-card:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  border-color: var(--primary);
+  box-shadow: var(--shadow-soft)
 }
 
 .contact-icon {
@@ -1223,49 +1400,9 @@ ul.lista-check li.atencao::before {
     gap: 2rem;
   }
 
-  .tax-table {
-    background: transparent;
-  }
-
-  .tax-header {
-    display: none;
-  }
-
-  .tax-row {
-    grid-template-columns: 1fr;
-    border: 1px solid var(--text-body);
-    border-radius: 8px;
-    padding: 0;
-    background: var(--bg-white);
-    margin-bottom: 1rem;
-  }
-
-  .tax-row div {
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid var(--bg-light);
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .tax-row div:last-child {
-    border-bottom: none;
-  }
-
-  .tax-row div::before {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-  }
-
-  .tax-row div:first-child::before {
-    content: "Faturamento";
-  }
-
-  .tax-row div:nth-child(2)::before {
-    content: "Alíquota";
+  .tax-card {
+    margin-left: 1rem;
+    margin-right: 1.5rem;
   }
 
   main {
@@ -1289,97 +1426,38 @@ ul.lista-check li.atencao::before {
   }
 
   .container-small{
-    margin: 0;
+    margin: 0 20px 0 20px;
     padding: 0;
   }  
 
+  .service-grid,
   .info-grid,
   .evolution-grid,
-  .contact-grid,
-  .service-grid {
+  .contact-grid
+  {
     grid-template-columns: 1fr;
-    max-width: 800px;
-    margin-left: 1px;
-    margin-right: 1px;
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
+  .benefits-grid {
+      grid-template-columns: 1fr;
+      margin: 2rem 1rem;
+  }
+
+  .service-card {
+    margin: 0 25px 10px 0;
+  }
  
   .cta-box {
     padding: 2rem 1.5rem;
+    margin: 1rem;
   }
 
-  .tax-table {
-    border: none;
-    background: transparent;
-  }
-
-  .tax-header {
-    display: none;
-  }
-
-  .tax-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-    padding: 0;
-    border: 1px solid var(--text-body);
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    background: var(--bg-white);
-  }
-
-  .tax-row:not(.tax-header) {
-    display: block;
-    padding: 1rem;
-  }
-
-  .tax-row div {
-    display: flex;
-    flex-direction: column;
-    gap: 0.375rem;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--bg-light);
-  }
-
-  .tax-row div:last-child {
-    border-bottom: none;
-  }
-
-  .tax-row div::before {
-    content: attr(data-label);
-    font-weight: 600;
-    color: var(--text-dark);
-    font-size: 0.813rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .tax-row:not(.tax-header) div:first-child::before {
-    content: 'Faturamento';
-  }
-
-  .tax-row:not(.tax-header) div:first-child {
-    font-size: 0.938rem;
-    color: var(--text-medium);
-  }
-
-  .tax-row:not(.tax-header) div:nth-child(2) {
-    font-weight: 700;
-    font-size: 1.125rem;
-    color: var(--primary);
-  }
-
-  .tax-row:not(.tax-header) div:nth-child(2)::before {
-    content: 'Alíquota';
-  }
-
-  .tax-row:not(.tax-header) div:nth-child(3) {
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--text-medium);
-  }
-
-  .tax-row:not(.tax-header) div:nth-child(3)::before {
-    content: 'Valor a Deduzir';
+  .contact-card{
+    margin-right: 1rem;
+    margin-left: 1rem;
   }
 
   .whatsapp-btn {
