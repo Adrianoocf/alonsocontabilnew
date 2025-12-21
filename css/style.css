@@ -591,6 +591,12 @@ section ul li strong {
   width: 100%;
   cursor: pointer;
   text-align: left;
+
+  /* REMOVE O TRANCO PRETO NO MOBILE */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 /* ÍCONE CHEVRON (▼) */
