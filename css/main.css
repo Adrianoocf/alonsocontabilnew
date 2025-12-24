@@ -1,0 +1,629 @@
+/* ============================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #0b2a63;
+  --primary-dark: #051a3d;
+  --secondary: #1e3a8a;
+  --accent: #3b82f6;
+  --success: #10b981;
+  --text-dark: #0f172a;
+  --text-medium: #334155;
+  --text-light: #64748b;
+  --text-body: #d4d8df;
+  --bg-light: #f8fafc;
+  --bg-white: #ffffff;
+  --border: #e2e8f0;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* NOVO: Normalização entre navegadores */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  font-size: 16px; /* Define base fixa */
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg-white);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden; /* Previne scroll horizontal */
+  width: 100%;
+}
+
+/* ============================================
+   HEADER E NAVEGAÇÃO
+   ============================================ */
+header {
+  background-color: var(--bg-white);
+  border-bottom: 0px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+#sobre {
+  scroll-margin-top: 70px; /* ajuste conforme seu header */
+}
+
+#faq {
+  scroll-margin-top: 70px; /* ajuste conforme seu header */
+}
+
+#solucoes {
+  scroll-margin-top: 70px; /* ajuste conforme seu header */
+}
+
+.navbar {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+
+.logo {
+  height: 45px;
+  transition: opacity 0.2s;
+  margin-top: 6px;
+}
+
+.logo:hover {
+  opacity: 0.85;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--primary-dark);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.938rem;
+  padding: 0.625rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.nav-links li:not(.contact-navbar) a:hover {
+  color: var(--accent);
+}
+
+.contact-navbar a{
+  display: inline-flex; /* ESSENCIAL */
+  padding: 10px 26px;
+  margin: 12px 16px;
+  background-color: #0056b3;  
+  border-radius: 8px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg-white);
+    /* Transição aqui */
+  transition: 
+    box-shadow 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.contact-navbar a:hover{
+  box-shadow: var(--shadow-soft);
+  background-color: #004494;
+  transform: translateY(-1px) scale(1); /* AQUI cresce */
+  color: var(--bg-white); /* garante que não herde */
+}
+
+/* ==========================================
+   APENAS DROPDOWN - ADICIONAR NO FINAL DO SEU CSS
+   ========================================== */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dropdown-toggle .arrow {
+  font-size: 10px;
+  transition: transform 0.3s;
+}
+
+/* DESKTOP: hover no dropdown */
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  /* --- Posicionamento e Estilo (Mantido) --- */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  min-width: 180px;
+  padding: 8px 0;
+  margin-top: 7px; /* A distância que definimos antes */
+  z-index: 1000;
+
+  /* --- MÁGICA DA ANIMAÇÃO (SUBSTITUI O DISPLAY: NONE) --- */
+  display: block;          /* O elemento existe, mas está invisível */
+  opacity: 0;              /* Totalmente transparente */
+  visibility: hidden;      /* O mouse não interage com ele */
+  transform: translateY(-10px); /* Levemente para cima */
+  
+  /* Isso controla a suavidade da entrada E da saída */
+  transition: all 0.2s ease-in-out; 
+}
+
+/* Mantém a ponte invisível para o mouse não cair (Do passo anterior) */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background: transparent;
+}
+
+/* --- ESTADOS QUE MOSTRAM O MENU --- */
+
+/* 1. Quando passa o mouse (Desktop) */
+.dropdown:hover .dropdown-menu,
+/* 2. Quando o JS adiciona a classe 'active' (Mobile/Click) */
+.dropdown.active .dropdown-menu {
+  opacity: 1;              /* Visível */
+  visibility: visible;     /* Interativo */
+  transform: translateY(0); /* Volta para a posição original */
+}
+
+/* Girar a setinha também quando tiver a classe active */
+.dropdown:hover .arrow,
+.dropdown.active .arrow {
+  transform: rotate(180deg);
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+/* ============================================
+       FOOTER STYLES
+    ============================================ */
+footer {
+  background: linear-gradient(90deg, rgb(0,0,0) 0%, rgb(0,0,0) 100%);
+  color: var(--bg-white);
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-section h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--bg-white);
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.938rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.938rem;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--bg-white);
+  transform: translateX(3px);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.938rem;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  color: var(--bg-white);
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   SEÇÕES GERAIS
+============================================ */
+
+section {
+  background: var(--bg-white);
+  max-width: 100%; /* Adicione isso */
+}
+
+section h1 {
+  color: var(--text-dark);
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 1.6rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+  /* text-align: center; */
+}
+
+.section-subtitle {
+  color: var(--text-light);
+  font-size: 1.063rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+section h2 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: -0.01em;
+  /* text-align: center; */
+}
+
+section h3 {
+  color: var(--text-dark);
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.875rem;
+}
+
+section p {
+  color: var(--text-medium);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  /* text-align: center; */
+}
+
+.spaced-text{
+  margin-left: 1.2rem;
+  margin-right: 1.2rem;
+}
+
+.spaced-text-first{
+  margin-top: 3rem;
+}
+
+section ul {
+  margin: 1.7rem 0;
+  padding-left: 1.5rem;
+}
+
+section ul li {
+  color: var(--text-medium);
+  margin-bottom: 0.825rem;
+  line-height: 1.6;
+  padding-left: 6px;
+}
+
+section ul li strong {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE SMALL (max-width: 480px)
+============================================ */
+
+@media (max-width: 480px) {
+  section {
+    padding: 1.75rem 1rem;
+  }
+
+  section h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 400px;
+    margin: auto;
+  }
+
+  .contact-value {
+    font-size: 0.835rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 768px) {
+
+  section {
+    padding: 2rem 1.25rem;
+  }
+
+  section h1 {
+    font-size: 1.625rem;
+    text-align: center;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+
+  section h3 {
+    font-size: 1.063rem;
+  }
+
+  #sobre {
+    scroll-margin-top: 40px; /* ajuste conforme seu header */
+  }
+
+  #faq {
+    scroll-margin-top: 60px; /* ajuste conforme seu header */
+  }
+
+  #solucoes {
+    scroll-margin-top: 60px; /* ajuste conforme seu header */
+  }
+
+  .navbar {
+    padding: 1rem;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.3s;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: var(--bg-white);
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-links.active {
+    max-height: 400px;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li:first-child {
+    border-top: 0.5px solid var(--border);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+        border-bottom: 1px solid var(--border);
+  }
+
+  .nav-links li:not(.contact-navbar) a {
+    border-radius: 0;
+  }
+
+  .contact-navbar a{
+    border-radius: 8px; /* pill perfeito */
+    width: calc(100% - 32px);
+    margin: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropdown-menu {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    border-radius: 0;
+    top: auto;
+  }
+  
+  /* No mobile, usa classe .active via JavaScript */
+  .dropdown:hover .dropdown-menu {
+    display: none; /* desativa hover no mobile */
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown.active .arrow {
+    transform: rotate(180deg);
+  }
+
+  .footer-content {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-about {
+    grid-column: 1;
+  }
+
+  .footer-section h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  section {
+    padding: 2.5rem;
+  }
+  
+  section h1 {
+    font-size: 1.75rem;
+  }
+  
+  section h2 {
+    font-size: 1.375rem;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    font-size: 14px;
+  }
+}

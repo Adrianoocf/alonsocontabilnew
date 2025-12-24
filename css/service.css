@@ -1,0 +1,192 @@
+/* ============================================
+   SERVIÇOS - SERVICE CARDS (STYLING DIGITAL)
+   ============================================ */
+
+.service-section {
+  width: 100%;
+  padding: 4rem 1rem;
+  display: block; /* REMOVE flex */
+}
+
+.service-title{
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.service-p{
+  text-align: center;
+  margin: 2rem 0 4rem 0;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  max-width: 1250px;
+  margin: 3rem auto 0; /* CENTRALIZA */
+  padding: 0 1rem;
+}
+
+.service-card {
+  background: #ffffff;
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px; /* Cantos mais arredondados estilo startup */
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  position: relative;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-soft)
+}
+
+/* Destaque para o plano do meio */
+.service-card.featured {
+  border: 2px solid var(--primary);
+  transform: scale(1.03);
+}
+
+.service-card h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.service-badge {
+  text-align: center;
+  background: #f0f4f8;
+  color: var(--primary);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.service-card ul li {
+  font-size: 0.9rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  color: #444;
+}
+
+.service-card ul li strong {
+  color: #2ecc71; /* Cor verde para destacar ganho/economia */
+}
+
+.btn-card {
+  margin-top: auto;
+  text-align: center;
+  padding: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-card:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ============================================
+   SEÇÃO TRANSIÇÃO PJ – TEXTO ESQ / IMAGEM DIR
+============================================ */
+
+.pj-section {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 8rem 10rem;
+}
+
+.pj-text {
+  flex: 1;
+}
+
+.pj-image {
+  flex: 1;
+  min-height: 320px;
+  border-radius: 0 8px 8px 0;
+  max-width: 450px;
+
+  background: 
+    linear-gradient(
+      to right,
+      rgba(255,255,255,1) 0%,
+      rgba(255,255,255,0.7) 20%,
+      rgba(255,255,255,0.4) 35%,
+      rgba(255,255,255,0.0) 60%
+    ),
+    url('/img/img2.jpg') center / cover no-repeat;
+}
+
+
+/* ============================================
+   RESPONSIVE - TABLET (max-width: 992px)
+   ============================================ */
+@media (max-width: 992px) {
+  .service-title{
+    margin: 0;
+  }
+
+  .service-grid { 
+    grid-template-columns: 1fr;
+    margin:0;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .service-grid
+  {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .service-card {
+    margin: 0 0 10px 0;
+  }
+ 
+  .pj-section {
+      flex-direction: column;
+      margin: 5rem 0.5rem;
+      text-align: center;
+  }
+
+  .pj-image {
+    width: 100%;
+    margin: 2rem 0 4rem 0;
+    background: 
+      /* fade de CIMA */
+      linear-gradient(
+        to bottom,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0) 25%
+      ),
+
+      /* fade de BAIXO */
+      linear-gradient(
+        to top,
+        rgba(255,255,255,1) 0%,
+        rgba(255,255,255,0) 25%
+      ),
+      url('/img/img2.jpg') center / cover no-repeat;
+    border-radius: 0 0 0 0;
+  }
+
+
+}

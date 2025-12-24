@@ -4,7 +4,7 @@ const pages = {
       <div class="hero-image"></div>
       <div class="hero-content">
         <h1>
-          Contabilidade para MEI e PJ em São Paulo
+          Sua empresa em<span style="color:#004494;"> boas mãos</span>
         </h1>
         <p class="section-subtitle">
           Especialistas em transformar sua contabilidade em uma
@@ -14,155 +14,455 @@ const pages = {
           href="https://wa.me/5511995172741"
           target="_blank" 
           rel="noopener noreferrer"
-          class="cta-button">
+          class="cta-button-home">
           Quero Falar com um Especialista Agora
         </a>
       </div>
     </section>
-    <section class="home container-small">
-      <p class="spaced-text spaced-text-first">
-        A Alonso Contábil é um escritório de contabilidade em São Paulo
-        especializado em MEIs, pequenas e médias empresas e profissionais PJ
-        que precisam de segurança fiscal e economia tributária.
-      </p>
-      <p class="spaced-text">  
-        Cuidamos de toda a burocracia contábil, fiscal e tributária para que
-        você possa focar no que realmente importa: vender mais e crescer
-        com tranquilidade.
-      </p>
-      <h2 class="spaced-text h2--spaced">Transformamos Contabilidade em Estratégia de Crescimento</h2>
-      <p class="spaced-text">
-        Atuamos de forma consultiva, analisando cada detalhe do seu negócio
-        para evitar impostos desnecessários, riscos fiscais e decisões
-        equivocadas que custam caro no longo prazo.
-      </p>
-      <div class="benefits-grid">
-        <!-- Card 1 -->
-        <div class="benefit-card" onclick="this.classList.toggle('active')">
-          <div class="benefit-card-inner">
-            <div class="benefit-card-front">
-              <div class="benefit-number">1</div>
-              <div class="benefit-title">Foco no Lucro</div>
-              <p class="benefit-text">
-                Analisamos seu enquadramento tributário para evitar pagamentos
-                indevidos e garantir que você pague apenas o necessário,
-                sempre dentro da lei.
+    <section id="solucoes" class="solutions-section">
+      <div class="solutions-header">
+        <h2>Soluções completas para sua empresa</h2>
+        <p>Serviços contábeis estratégicos para crescimento e segurança</p>
+      </div>
+      <div class="solutions-grid">
+        <!-- CARD 1 -->
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">1</span>
+                Contabilidade Completa
+              </h3>
+              <p>
+                Gestão contábil, fiscal e financeira com foco em precisão e conformidade.
               </p>
-              <span class="flip-hint">Clique para ver mais →</span>
+              <ul>
+                <li>Balanços e DRE</li>
+                <li>Obrigações acessórias</li>
+                <li>Relatórios gerenciais</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
-            <div class="benefit-card-back">
-              <div class="back-header">
-                <span class="back-icon">💰</span>
-                <div class="back-title">Economize Agora!</div>
-              </div>
-              <p class="back-text">
-                Economize com planejamento tributário personalizado.
+            <div class="flip-back">
+              <h3>Contabilidade Estratégica</h3>
+              <p>
+                Informações confiáveis, visão clara dos números e apoio técnico para decisões
+                seguras e crescimento sustentável da empresa.
               </p>
-              <a 
-                href="https://wa.me/5511995172741" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="back-cta">
-                  Fale Conosco
-                </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="benefit-card" onclick="this.classList.toggle('active')">
-          <div class="benefit-card-inner">
-            <div class="benefit-card-front">
-              <div class="benefit-number">2</div>
-              <div class="benefit-title">Atendimento Ágil</div>
-              <p class="benefit-text">
-                Suporte rápido e direto via WhatsApp e e-mail,
-                sem burocracia e sem espera desnecessária.
-              </p>
-              <span class="flip-hint">Clique para ver mais →</span>
-            </div>
-            <div class="benefit-card-back">
-              <div class="back-header">
-                <span class="back-icon">⚡</span>
-                <div class="back-title">Atendimento Express!</div>
-              </div>
-              <p class="back-text">
-                Tire suas dúvidas agora mesmo. Nossa equipe está pronta para atender você!
-              </p>
-              <a 
-                href="https://wa.me/5511995172741" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="back-cta">Fale Conosco
+              <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
+                Falar no WhatsApp
               </a>
             </div>
           </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="benefit-card" onclick="this.classList.toggle('active')">
-          <div class="benefit-card-inner">
-            <div class="benefit-card-front">
-              <div class="benefit-number">3</div>
-              <div class="benefit-title">Tecnologia e Transparência</div>
-              <p class="benefit-text">
-                Acesso simples a documentos, relatórios e à saúde financeira
-                da sua empresa, tudo de forma clara e organizada.
+        </article>
+        <!-- CARD 2 -->
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">2</span>
+                Planejamento Tributário
+              </h3>
+              <p>
+                Redução legal da carga tributária com análise técnica e estratégia.
               </p>
-              <span class="flip-hint">Clique para ver mais →</span>
+              <ul>
+                <li>Escolha do regime ideal</li>
+                <li>Economia fiscal legal</li>
+                <li>Prevenção de riscos</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
-            <div class="benefit-card-back">
-              <div class="back-header">
-                <span class="back-icon">🚀</span>
-                <div class="back-title">Conheça Nossa Plataforma!</div>
-              </div>
-              <p class="back-text">
-                Agende uma demonstração gratuita e veja como podemos transformar sua gestão.
+            <div class="flip-back">
+              <h3>Economia de Impostos</h3>
+              <p>
+                Estratégias tributárias seguras para pagar menos impostos e manter sua empresa
+                em total conformidade com a legislação.
               </p>
-              <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="back-cta">Agendar Demo</a>
+              <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- CARD 3 -->
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">3</span>
+                Departamento Pessoal
+              </h3>
+              <p>
+                Administração completa das rotinas trabalhistas com segurança jurídica.
+              </p>
+              <ul>
+                <li>Folha de pagamento</li>
+                <li>eSocial e obrigações</li>
+                <li>Gestão de benefícios</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
+            </div>
+            <div class="flip-back">
+              <h3>Segurança Trabalhista</h3>
+              <p>
+                Processos organizados, prazos em dia e tranquilidade para você focar no seu
+                negócio sem preocupações trabalhistas.
+              </p>
+              <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
+                Falar no WhatsApp
+              </a>
+            </div>
+          </div>
+        </article>
+        <!-- CARD 4 -->
+        <article class="solution-card link-card" onclick="window.location.href='#/evolucao'">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">4</span>
+                Evolução MEI → ME
+              </h3>
+              <p>
+                Quando crescer começa a custar caro se você não evoluir.
+              </p>
+              <ul>
+                <li>Evite desenquadramento</li>
+                <li>Mais faturamento</li>
+                <li>Proteção patrimonial</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
+            </div>
+          </div>
+        </article>
+        <!-- CARD 5 -->
+        <article class="solution-card link-card" onclick="window.location.href='#/diferencas'">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">5</span>
+                MEI, LTDA ou SLU?
+              </h3>
+              <p>
+                Escolher errado pode colocar seu patrimônio em risco.
+              </p>
+              <ul>
+                <li>Blindagem patrimonial</li>
+                <li>Sem limite de faturamento</li>
+                <li>Mais credibilidade</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
+            </div>
+          </div>
+        </article>
+        <!-- Card 6 -->
+        <article class="solution-card link-card" onclick="window.location.href='#/impostos'">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <h3>
+                <span class="badge">6</span>
+                Redução de Impostos
+              </h3>
+              <p>
+                Pague menos sem risco fiscal com estratégias tributárias seguras.
+              </p>
+              <ul>
+                <li>Fator R</li>
+                <li>Simples x Presumido</li>
+                <li>Economia legal</li>
+              </ul>
+              <span class="flip-hint">Clique para saber mais</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre" class="about-section">
+      <div class="about-container">
+        <div class="about-image-wrapper">
+          <img src="/img/img6.jpg" alt="Experiência e tecnologia Alonso Contábil">
+          <div class="about-badge">
+            <strong>10+</strong>
+            <span>Anos de tradição<br>e inovação</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <h2>Experiência e tecnologia a serviço do seu sucesso</h2>
+          <p>
+            A Alonso Contábil nasceu com o propósito de transformar a relação entre
+            empresários e contabilidade. Combinamos uma década de experiência com as
+            mais modernas ferramentas tecnológicas.
+          </p>
+          <p>
+            Nossa equipe de especialistas está preparada para entender as
+            particularidades do seu negócio e oferecer soluções personalizadas que
+            realmente fazem diferença no seu resultado.
+          </p>
+          <div class="about-features">
+            <div class="about-feature">
+              <span class="check-icon">✔</span>
+              <div>
+                <strong>CRC Regularizado</strong>
+                <p>Registro profissional ativo e regular</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <span class="check-icon">✔</span>
+              <div>
+                <strong>Equipe Especializada</strong>
+                <p>Profissionais certificados e atualizados</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <span class="check-icon">✔</span>
+              <div>
+                <strong>Tecnologia Avançada</strong>
+                <p>Sistemas modernos e seguros</p>
+              </div>
+            </div>
+            <div class="about-feature">
+              <span class="check-icon">✔</span>
+              <div>
+                <strong>Atendimento Premium</strong>
+                <p>Suporte dedicado e personalizado</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="pj-section">
-        <div class="pj-text">
-          <h2 class="spaced-text">
-            Transição de CLT para Pessoa Jurídica em São Paulo
-          </h2>
+    </section>
 
-          <p class="spaced-text">
-            Planeje sua transição de CLT para PJ com segurança jurídica
-            e economia de impostos. Nossa consultoria especializada
-            atende profissionais em São Paulo e região,
-            garantindo conformidade fiscal e planejamento tributário eficiente.
-          </p>
-
-          <p class="spaced-text">
-            Uma migração mal planejada pode gerar problemas com a Receita Federal,
-            INSS e até caracterizar pejotização irregular.
-            Por isso, cada transição deve ser analisada de forma individual.
+    <section class="why-section">
+      <div class="why-header">
+        <h2>
+          <span class="highlight-blue">Por que escolher a Alonso</span><br>
+          <span class="highlight-blue">Contábil?</span>
+        </h2>
+        <p class="why-subtitle">
+          <span class="light">
+            Diferenciais que fazem toda a diferença no seu dia a dia
+          </span>
+        </p>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="why-icon-svg">
+              <path d="M9 12.75 11.25 15 15 9.75m-3-7.036
+                      A11.959 11.959 0 0 1 3.598 6
+                      11.99 11.99 0 0 0 3 9.749
+                      c0 5.592 3.824 10.29 9 11.623
+                      5.176-1.332 9-6.03 9-11.622
+                      0-1.31-.21-2.571-.598-3.751
+                      h-.152c-3.196 0-6.1-1.248
+                      -8.25-3.285Z" />
+            </svg>
+          </div>
+          <h3><span class="small">Segurança Total</span></h3>
+          <p>
+            <span class="small light">
+              Seus dados protegidos com os mais altos padrões de segurança
+            </span>
           </p>
         </div>
 
-        <div class="pj-image"></div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-outline">
+              <path d="M12 6v6h4.5
+                      m4.5 0
+                      a9 9 0 1 1-18 0
+                      9 9 0 0 1 18 0Z" />
+            </svg>
+          </div>
+          <h3><span class="small">Agilidade</span></h3>
+          <p>
+            <span class="small light">
+              Processos otimizados para economizar seu tempo
+            </span>
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-outline">
+                <path d="M15 19.128a9.38 9.38 0 0 0 2.625.372
+                      9.337 9.337 0 0 0 4.121-.952
+                      4.125 4.125 0 0 0-7.533-2.493
+                      M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07
+                      M15 19.128v.106A12.318 12.318 0 0 1 8.624 21
+                      c-2.331 0-4.512-.645-6.374-1.766l-.001-.109
+                      a6.375 6.375 0 0 1 11.964-3.07
+                      M12 6.375a3.375 3.375 0 1 1-6.75 0
+                      3.375 3.375 0 0 1 6.75 0
+                      Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0
+                      2.625 2.625 0 0 1 5.25 0Z" />
+            </svg>
+          </div>
+          <h3><span class="small">Atendimento Humanizado</span></h3>
+          <p>
+            <span class="small light">
+              Relacionamento próximo e consultoria personalizada
+            </span>
+          </p>
+        </div>
+        <div class="why-card">
+          <div class="why-icon">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon-outline">
+              <path d="M7.5 14.25v2.25
+                      m3-4.5v4.5
+                      m3-6.75v6.75
+                      m3-9v9
+                      M6 20.25h12
+                      A2.25 2.25 0 0 0 20.25 18V6
+                      A2.25 2.25 0 0 0 18 3.75H6
+                      A2.25 2.25 0 0 0 3.75 6v12
+                      A2.25 2.25 0 0 0 6 20.25Z" />
+            </svg>
+          </div>
+          <h3><span class="small">Resultados Reais</span></h3>
+          <p>
+            <span class="small light">
+              Foco em economia tributária e crescimento sustentável
+            </span>
+          </p>
+        </div>
       </div>
+    </section>
 
-      <div class="cta-box" style="margin:80px 0">
-        <h3>Pronto para Pagar Menos Impostos com Segurança?</h3>
-        <p>
-          Fale com um contador em São Paulo especializado em MEI e PJ
-          e receba um diagnóstico gratuito sobre impostos,
-          enquadramento e riscos fiscais do seu negócio.
-        </p>
+    <section class="testimonials-section">
+      <div class="testimonials-header">
+        <h2>O que nossos clientes dizem</h2>
+        <p>A confiança de quem já trabalha conosco</p>
+      </div>
+      <div class="testimonials-grid">
+        <article class="testimonial-card">
+          <div class="testimonial-user">
+            <div>
+              <strong>Maria Cabrera</strong>
+              <span>Comerciante</span>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            A Alonso Contábil transformou completamente a gestão da minha empresa.
+            O planejamento tributário resultou em uma economia significativa e o
+            atendimento é sempre impecável.
+          </p>
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-user">
+            <div>
+              <strong>Edvan de Jesus</strong>
+              <span>Majin Burguer</span>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Profissionalismo e competência definem a Alonso. Sempre prontos para
+            resolver qualquer questão, com agilidade e expertise. Recomendo de olhos
+            fechados!
+          </p>
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+        </article>
+        <article class="testimonial-card">
+          <div class="testimonial-user">
+            <div>
+              <strong>Carolina Gambetta</strong>
+              <span>Médica</span>
+            </div>
+          </div>
+          <p class="testimonial-text">
+            Mudei para a Alonso há 2 anos e foi a melhor decisão. Além de economizar
+            em impostos, tenho total tranquilidade com a parte contábil do meu
+            negócio.
+          </p>
+          <div class="testimonial-stars">
+            ★★★★★
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact">
+      <h1>Pronto para transformar a contabilidade da sua empresa?</h1>
+        <p class="section-subtitle">
+        Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
+      </p>
+      <div class="contact-grid">
+        <!-- Email -->
+        <a 
+          href="mailto:atendimento@alonsocontabil.com.br" 
+          class="contact-card" 
+          rel="noopener noreferrer"
+        >
+          <div class="contact-icon">✉</div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">atendimento@alonsocontabil.com.br</div>
+        </a>
+        <!-- WhatsApp -->
         <a 
           href="https://wa.me/5511995172741"
-          target="_blank" 
+          target="_blank"
           rel="noopener noreferrer"
-          class="cta-button cta-button--spaced">
-          Quero Meu Diagnóstico Gratuito
+          class="contact-card"
+        >
+          <div class="contact-icon">☎</div>
+          <div class="contact-label">WhatsApp</div>
+          <div class="contact-value">(11) 99517-2741</div>
+        </a>
+        <!-- Insta -->
+        <a 
+          href="https://www.instagram.com/alonsocontabil" 
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-card"
+        >
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <div class="contact-label">Insta</div>
+          <div class="contact-value">
+            @alonsocontabil
+          </div>
         </a>
       </div>
-     <section class="faq-section">
+    </section>
+
+    <section id="faq" class="faq-section">
       <h2>Dúvidas Frequentes</h2>
       <div class="faq-container">
         <div class="faq-item">
@@ -178,7 +478,6 @@ const pages = {
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" type="button">
             O que é o Fator R e como ele reduz meu imposto?
@@ -192,7 +491,6 @@ const pages = {
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" type="button">
             Quanto tempo demora para abrir meu CNPJ?
@@ -205,7 +503,6 @@ const pages = {
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" type="button">
             Vou ter um contador exclusivo para me atender?
@@ -219,7 +516,6 @@ const pages = {
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" type="button">
             Como funciona a troca de contador?
@@ -233,7 +529,6 @@ const pages = {
             </p>
           </div>
         </div>
-
         <div class="faq-item">
           <button class="faq-question" type="button">
             Minha empresa está inativa ou com dívidas, vocês resolvem?
@@ -247,16 +542,23 @@ const pages = {
             </p>
           </div>
         </div>
-
       </div>
     </section>
-
+    <div class="cta-box">
+      <h3>Comece hoje mesmo a economizar!</h3>
+      <p>Fale com um contador em São Paulo especializado em MEI e PJ e receba um diagnóstico gratuito sobre impostos, enquadramento e riscos fiscais do seu negócio.</p>
+      <a href="https://wa.me/5511995172741" 
+        target="_blank" rel="noopener noreferrer" 
+        class="cta-button cta-button--spaced">
+        Solicitar Diagnóstico Gratuito
+      </a>
+    </div>
     `,
 
     "/servicos": `
-      <section class="servicos container-small">
-        <h1 class="spaced-text spaced-text-first">Soluções Contábeis Inteligentes para o seu Negócio</h1>
-        <p class="spaced-text section-subtitle">
+      <section>
+        <h1 class="service-title">Soluções Contábeis Inteligentes para o seu Negócio</h1>
+        <p class="service-p">
           Tecnologia digital com consultoria estratégica para quem busca segurança, agilidade e redução legal de impostos em São Paulo.
         </p>
 
@@ -316,7 +618,27 @@ const pages = {
             </a>
           </div>
         </div>
-        <div class="cta-box">
+        <div class="pj-section">
+          <div class="pj-text">
+            <h2>
+              Transição de CLT para Pessoa Jurídica em São Paulo
+            </h2>
+            <p>
+              Planeje sua transição de CLT para PJ com segurança jurídica
+              e economia de impostos. Nossa consultoria especializada
+              atende profissionais em São Paulo e região,
+              garantindo conformidade fiscal e planejamento tributário eficiente.
+            </p>
+            <p>
+              Uma migração mal planejada pode gerar problemas com a Receita Federal,
+              INSS e até caracterizar pejotização irregular.
+              Por isso, cada transição deve ser analisada de forma individual.
+            </p>
+          </div>
+          <div class="pj-image"></div>
+        </div>
+      </section>
+      <div class="cta-box">
           <h3>Pronto para pagar menos impostos com segurança?</h3>
           <p>Receba um diagnóstico tributário gratuito da sua empresa e descubra se você está no regime mais vantajoso.</p>
           <a href="https://wa.me/5511995172741" 
@@ -324,14 +646,139 @@ const pages = {
             class="cta-button cta-button--spaced">
             Solicitar Diagnóstico Gratuito
           </a>
-        </div>
-      </section>
+      </div>
     `,
 
-    "/Diferencas": `
-      <section class="Diferencas container-small">
-        <h1 class="spaced-text spaced-text-first">Qual a melhor armadura jurídica para o seu negócio?</h1>
-        <p class="spaced-text section-subtitle">
+    "/evolucao": `
+    <section class="evolution-section">
+      <h1 class="evolution-title">Do MEI ao Próximo Nível</h1>
+      <p class="evolution-p">
+        O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
+      </p>
+      
+      <div class="evolution-grid">
+        <div class="detail-section">
+          <div class="badge-icon">⚠️</div>
+          <h3>Sinais de que o MEI ficou pequeno</h3>
+          <ul class="lista-check">
+            <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
+            <li>Necessidade de contratar mais de um colaborador.</li>
+            <li>Desejo de atrair sócios ou investidores.</li>
+            <li>Sua atividade não é mais permitida na lista do MEI.</li>
+            <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
+          </ul>
+        </div>
+
+        <div class="detail-section featured-evolution">
+          <div class="badge-icon">🚀</div>
+          <h3>O que você ganha ao evoluir</h3>
+          <ul class="lista-check">
+            <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
+            <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
+            <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
+            <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="strategy-content">
+        <h2>Transição Sem Burocracia</h2>
+        <p class="evolution-p-subtitle">Nossa assessoria cuida de todo 
+          o processo técnico enquanto você foca na operação.
+        </p>
+      </div>
+        
+      <div class="benefits-grid">
+
+        <!-- CARD 1 -->
+        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+
+            <!-- FRENTE -->
+            <div class="flip-front">
+              <div class="benefit-number">01</div>
+              <h4 class="benefit-title">Diagnóstico Fiscal</h4>
+              <p class="benefit-text">
+                Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
+            </div>
+
+            <!-- VERSO -->
+            <div class="flip-back">
+              <div class="back-icon">📊</div>
+              <h4 class="back-title">Decisão Estratégica</h4>
+              <p class="back-text">
+                Evite pagar impostos desnecessários com um diagnóstico profissional e personalizado.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+
+            <div class="flip-front">
+              <div class="benefit-number">02</div>
+              <h4 class="benefit-title">Migração Técnica</h4>
+              <p class="benefit-text">
+                Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
+            </div>
+
+            <div class="flip-back">
+              <div class="back-icon">🛠️</div>
+              <h4 class="back-title">Zero Dor de Cabeça</h4>
+              <p class="back-text">
+                Cuidamos de todo o processo técnico enquanto você continua faturando.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
+          <div class="flip-inner">
+
+            <div class="flip-front">
+              <div class="benefit-number">03</div>
+              <h4 class="benefit-title">Gestão Mensal</h4>
+              <p class="benefit-text">
+                Suporte completo com folha de pagamento e monitoramento de impostos.
+              </p>
+              <span class="flip-hint">Clique para ver mais →</span>
+            </div>
+
+            <div class="flip-back">
+              <div class="back-icon">📈</div>
+              <h4 class="back-title">Crescimento Seguro</h4>
+              <p class="back-text">
+                Acompanhamento contínuo para evitar multas e melhorar resultados.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="cta-box">
+        <h3>Não espere ser desenquadrado de ofício pela Receita.</h3>
+        <p>Migrar de forma planejada evita multas retroativas que podem quebrar o seu caixa. Vamos conversar sobre o seu momento atual?</p>
+        <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
+          Agendar Consultoria de Migração
+        </a>
+      </div>
+    </div>
+    `,
+
+    "/diferencas": `
+      <section class="info-section">
+        <h1 class="info-title">Qual a melhor armadura jurídica para o seu negócio?</h1>
+        <p class="section-subtitle info-p">
           O enquadramento correto é a base da sua segurança. Escolha o modelo que protege seu patrimônio e otimiza seus impostos.
         </p>
 
@@ -389,149 +836,23 @@ const pages = {
             </div>
           </div>
         </div>
-
-        <div class="cta-box">
-          <h3>Precisa de uma análise personalizada?</h3>
-          <p>A legislação muda rápido. Fale com nosso time para garantir sua economia hoje.</p>
-          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
-            Falar com um Especialista Agora
-          </a>
-        </div>
       </section>
+      <div class="cta-box">
+        <h3>Precisa de uma análise personalizada?</h3>
+        <p>A legislação muda rápido. Fale com nosso time para garantir sua economia hoje.</p>
+        <a 
+          href="https://wa.me/5511995172741" 
+          target="_blank" rel="noopener noreferrer" 
+          class="cta-button cta-button--spaced">
+          Falar com um Especialista Agora
+        </a>
+      </div>
     `,
 
-    "/Evolucao": `
-    <section class="Evolucao container-small">
-      <h1 class="spaced-text spaced-text-first">Do MEI ao Próximo Nível</h1>
-      <p class="spaced-text section-subtitle">
-        O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
-      </p>
-      
-      <div class="evolution-grid">
-        <div class="detail-section">
-          <div class="badge-icon">⚠️</div>
-          <h3>Sinais de que o MEI ficou pequeno</h3>
-          <ul class="lista-check">
-            <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
-            <li>Necessidade de contratar mais de um colaborador.</li>
-            <li>Desejo de atrair sócios ou investidores.</li>
-            <li>Sua atividade não é mais permitida na lista do MEI.</li>
-            <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
-          </ul>
-        </div>
-
-        <div class="detail-section featured-evolution">
-          <div class="badge-icon">🚀</div>
-          <h3>O que você ganha ao evoluir</h3>
-          <ul class="lista-check">
-            <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
-            <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
-            <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
-            <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="strategy-content">
-        <h2 class="spaced-text">Transição Sem Burocracia</h2>
-        <p class="spaced-text">Nossa assessoria cuida de todo 
-          o processo técnico enquanto você foca na operação.
-        </p>
-        
-        <div class="benefits-grid">
-
-          <!-- CARD 1 -->
-          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-            <div class="flip-inner">
-
-              <!-- FRENTE -->
-              <div class="flip-front">
-                <div class="benefit-number">01</div>
-                <h4 class="benefit-title">Diagnóstico Fiscal</h4>
-                <p class="benefit-text">
-                  Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.
-                </p>
-                <span class="flip-hint">Clique para ver mais →</span>
-              </div>
-
-              <!-- VERSO -->
-              <div class="flip-back">
-                <div class="back-icon">📊</div>
-                <h4 class="back-title">Decisão Estratégica</h4>
-                <p class="back-text">
-                  Evite pagar impostos desnecessários com um diagnóstico profissional e personalizado.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- CARD 2 -->
-          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-            <div class="flip-inner">
-
-              <div class="flip-front">
-                <div class="benefit-number">02</div>
-                <h4 class="benefit-title">Migração Técnica</h4>
-                <p class="benefit-text">
-                  Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.
-                </p>
-                <span class="flip-hint">Clique para ver mais →</span>
-              </div>
-
-              <div class="flip-back">
-                <div class="back-icon">🛠️</div>
-                <h4 class="back-title">Zero Dor de Cabeça</h4>
-                <p class="back-text">
-                  Cuidamos de todo o processo técnico enquanto você continua faturando.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- CARD 3 -->
-          <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-            <div class="flip-inner">
-
-              <div class="flip-front">
-                <div class="benefit-number">03</div>
-                <h4 class="benefit-title">Gestão Mensal</h4>
-                <p class="benefit-text">
-                  Suporte completo com folha de pagamento e monitoramento de impostos.
-                </p>
-                <span class="flip-hint">Clique para ver mais →</span>
-              </div>
-
-              <div class="flip-back">
-                <div class="back-icon">📈</div>
-                <h4 class="back-title">Crescimento Seguro</h4>
-                <p class="back-text">
-                  Acompanhamento contínuo para evitar multas e melhorar resultados.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-        <div class="cta-box">
-          <h3>Não espere ser desenquadrado de ofício pela Receita.</h3>
-          <p>Migrar de forma planejada evita multas retroativas que podem quebrar o seu caixa. Vamos conversar sobre o seu momento atual?</p>
-          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
-            Agendar Consultoria de Migração
-          </a>
-        </div>
-      </div>
-    </section>
-
-    `,
-
-    "/Impostos": `
-    <section class="impostos container-small">
-        <h1 class="spaced-text spaced-text-first">Inteligência Fiscal</h1>
-        <p class="spaced-text" section-subtitle">
+    "/impostos": `
+    <section class="tax-section">
+        <h1 class="tax-title">Inteligência Fiscal</h1>
+        <p class="tax-p">
           Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.
         </p>
 
@@ -587,26 +908,24 @@ const pages = {
             </div>
           </div>
         </div>
-        <p style="text-align:center; padding:20px;">
+        <p style="text-align:center; padding:20px;margin:4rem auto">
           Para um faturamento de R$ 15 mil/mês,
           você deixa de pagar R$ 1.425 extras todo mês. 
           São mais de R$ 17 mil de economia por ano.
         </p>
-        
-        
-        <div class="cta-box">
-          <h3>Sua atividade não é serviço?</h3>
-          <p>Atendemos Comércio e Indústria com foco em lucro real e presumido.</p>
-          <a 
-            href="https://wa.me/5511995172741"
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="cta-button cta-button--spaced">
-              Solicitar Estudo Gratuito
-            </a>
-        </div>
       </div>
     </section>   
+    <div class="cta-box">
+      <h3>Sua atividade não é serviço?</h3>
+      <p>Atendemos Comércio e Indústria com foco em lucro real e presumido.</p>
+      <a 
+        href="https://wa.me/5511995172741"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="cta-button cta-button--spaced">
+          Solicitar Estudo Gratuito
+        </a>
+    </div>
 
     `,
 
