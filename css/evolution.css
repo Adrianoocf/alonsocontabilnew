@@ -22,7 +22,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   margin: 3rem auto 0;
-  max-width: 1250px;
+  max-width: 85%;
   padding: 0 1rem;
 }
 
@@ -41,7 +41,7 @@
 .flex-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  max-width: 1250px;
+  max-width: 100%;
   gap: 2rem;
   margin: 3rem auto 5rem;
   text-align: left;
@@ -71,7 +71,7 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 
-  max-width: 1250px;
+  max-width: 90%;
   margin: 3rem auto 8rem; /* CENTRALIZA */
   padding: 0 1rem;
 }

@@ -1,6 +1,6 @@
 const pages = {
   "/": `
-    <section class="hero-section">
+    <section id="inicio" class="hero-section">
       <div class="hero-image"></div>
       <div class="hero-content">
         <h1>
@@ -19,6 +19,58 @@ const pages = {
         </a>
       </div>
     </section>
+
+    <section class="about-section">
+      <div class="about-container">
+        <div class="about-header">
+          <div class="about-badge-top">
+            <strong>10+</strong>
+            <span>Anos de Tradição e Inovação</span>
+          </div>
+          <h2>Experiência e tecnologia a serviço do seu sucesso</h2>
+          <p class="about-intro">
+            A Alonso Contábil nasceu com o propósito de transformar a relação entre empresários e contabilidade. 
+            Combinamos uma década de experiência com as mais modernas ferramentas tecnológicas para oferecer 
+            soluções personalizadas que realmente fazem diferença no seu resultado.
+          </p>
+        </div>
+
+        <div class="about-features-grid">
+          <div class="about-feature-card">
+            <span class="check-icon">✔</span>
+            <div class="feature-text">
+              <strong>CRC Regularizado</strong>
+              <p>Registro profissional ativo e regular</p>
+            </div>
+          </div>
+
+          <div class="about-feature-card">
+            <span class="check-icon">✔</span>
+            <div class="feature-text">
+              <strong>Equipe Especializada</strong>
+              <p>Profissionais certificados e atualizados</p>
+            </div>
+          </div>
+
+          <div class="about-feature-card">
+            <span class="check-icon">✔</span>
+            <div class="feature-text">
+              <strong>Tecnologia Avançada</strong>
+              <p>Sistemas modernos e seguros</p>
+            </div>
+          </div>
+
+          <div class="about-feature-card">
+            <span class="check-icon">✔</span>
+            <div class="feature-text">
+              <strong>Atendimento Premium</strong>
+              <p>Suporte dedicado e personalizado</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="solucoes" class="solutions-section">
       <div class="solutions-header">
         <h2>Soluções completas para sua empresa</h2>
@@ -178,62 +230,7 @@ const pages = {
       </div>
     </section>
 
-    <section id="sobre" class="about-section">
-      <div class="about-container">
-        <div class="about-image-wrapper">
-          <img src="/img/img6.jpg" alt="Experiência e tecnologia Alonso Contábil">
-          <div class="about-badge">
-            <strong>10+</strong>
-            <span>Anos de tradição<br>e inovação</span>
-          </div>
-        </div>
-        <div class="about-content">
-          <h2>Experiência e tecnologia a serviço do seu sucesso</h2>
-          <p>
-            A Alonso Contábil nasceu com o propósito de transformar a relação entre
-            empresários e contabilidade. Combinamos uma década de experiência com as
-            mais modernas ferramentas tecnológicas.
-          </p>
-          <p>
-            Nossa equipe de especialistas está preparada para entender as
-            particularidades do seu negócio e oferecer soluções personalizadas que
-            realmente fazem diferença no seu resultado.
-          </p>
-          <div class="about-features">
-            <div class="about-feature">
-              <span class="check-icon">✔</span>
-              <div>
-                <strong>CRC Regularizado</strong>
-                <p>Registro profissional ativo e regular</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <span class="check-icon">✔</span>
-              <div>
-                <strong>Equipe Especializada</strong>
-                <p>Profissionais certificados e atualizados</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <span class="check-icon">✔</span>
-              <div>
-                <strong>Tecnologia Avançada</strong>
-                <p>Sistemas modernos e seguros</p>
-              </div>
-            </div>
-            <div class="about-feature">
-              <span class="check-icon">✔</span>
-              <div>
-                <strong>Atendimento Premium</strong>
-                <p>Suporte dedicado e personalizado</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="why-section">
+    <section id="diferenciais" class="why-section">
       <div class="why-header">
         <h2>
           <span class="highlight-blue">Por que escolher a Alonso</span><br>
@@ -415,7 +412,7 @@ const pages = {
       </div>
     </section>
 
-    <section class="contact">
+    <section class="contact-section">
       <h1>Pronto para transformar a contabilidade da sua empresa?</h1>
         <p class="section-subtitle">
         Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
@@ -463,7 +460,7 @@ const pages = {
     </section>
 
     <section id="faq" class="faq-section">
-      <h2>Dúvidas Frequentes</h2>
+      <h1>Dúvidas Frequentes</h1>
       <div class="faq-container">
         <div class="faq-item">
           <button class="faq-question" type="button">
@@ -930,7 +927,7 @@ const pages = {
     `,
 
     "/contato": `
-    <section class="contact">
+    <section class="contact-section">
       <h1>Entre em Contato</h1>
       <p class="section-subtitle">
         Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo

@@ -1,11 +1,4 @@
-// 1. Função de Navegação
-function route(event) {
-  event.preventDefault();
-  const href = event.currentTarget.getAttribute("href");
-  window.location.hash = href;
-}
-
-// 2. Função para fechar o menu mobile
+// 1. Função para fechar o menu mobile
 function closeMenu() {
   const navLinks = document.querySelector('.nav-links');
   const menuToggle = document.querySelector('.menu-toggle');
@@ -18,7 +11,7 @@ function closeMenu() {
   }
 }
 
-// 3. Função para inicializar o FAQ (garante que o clique funcione)
+// 2. Função para inicializar o FAQ
 function initFAQ() {
   const questions = document.querySelectorAll('.faq-question');
   questions.forEach(button => {
@@ -35,38 +28,46 @@ function initFAQ() {
   });
 }
 
-// 4. Função Principal de Renderização
-function render() {
-  const hash = window.location.hash.replace("#", "");
-  const [path, anchor] = hash.split("#");
+function renderRoute() {
+  const hash = location.hash || "#/";
+  const cleanHash = hash.replace("#", "");
 
-  const route = path || "/";
+  // separa rota e ancora
+  const [rawRoute, anchor] = cleanHash.split("#");
+
+  // normaliza rotas
+  const route = rawRoute === "" || rawRoute === "/" || rawRoute === "home"
+    ? "/"
+    : `/${rawRoute.replace("/", "")}`;
+
   const app = document.getElementById("app");
 
-  if (app) {
-    app.innerHTML = pages[route] || pages["/"];
-  }
+  app.innerHTML = pages[route] || pages["/"] || "<h1>404</h1>";
 
   closeMenu();
   initFAQ();
 
-  // ⬇️ SCROLL INTELIGENTE
+  // 👉 SCROLL CORRETO
   requestAnimationFrame(() => {
     if (anchor) {
-      const target = document.getElementById(anchor);
-      if (target) {
-        target.scrollIntoView({ behavior: "auto", block: "start" });
-        return;
+      const el = document.getElementById(anchor);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
       }
+    } else {
+      // só sobe pro topo quando muda de página
+      window.scrollTo({ top: 0, behavior: "auto" });
     }
-
-    // só vai pro topo se NÃO tiver âncora
-    window.scrollTo({ top: 0, behavior: "auto" });
   });
 }
 
 
-// 5. Inicialização do Menu (Hamburger)
+
+window.addEventListener("hashchange", renderRoute);
+window.addEventListener("load", renderRoute);
+
+
+// 4. Inicialização do Menu (Hamburger)
 document.addEventListener('DOMContentLoaded', function() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!document.querySelector('.menu-toggle')) {
     const menuToggle = document.createElement('button');
     menuToggle.className = 'menu-toggle';
+    menuToggle.setAttribute('aria-label', 'Menu');
     menuToggle.innerHTML = '<span></span><span></span><span></span>';
     
     const logo = navbar.querySelector('a');
@@ -89,50 +91,25 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 6. Fechar menu ao clicar fora dele
+// 5. Fechar menu ao clicar fora dele
 document.addEventListener('click', function(e) {
   const navLinks = document.querySelector('.nav-links');
   const menuToggle = document.querySelector('.menu-toggle');
   
-  // Verifica se o menu está aberto
   if (navLinks && navLinks.classList.contains('active')) {
-    // Se clicou fora do menu E fora do botão
     if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
       closeMenu();
     }
   }
 });
 
-document.querySelectorAll('.faq-question').forEach(button => {
-  button.addEventListener('click', () => {
-    const item = button.closest('.faq-item');
-    item.classList.toggle('active');
-  });
-});
-
-document.querySelectorAll('.scroll-link').forEach(link => {
-  link.addEventListener('click', function (e) {
-    e.preventDefault();
-
-    const targetId = this.getAttribute('href');
-    const target = document.querySelector(targetId);
-
-    if (!target) return;
-
-    target.scrollIntoView({
-      behavior: 'auto', // instantâneo
-      block: 'start'
-    });
-  });
-});
-
+// 6. Dropdown (se você tiver)
 document.addEventListener('DOMContentLoaded', function() {
   const dropdown = document.querySelector('.dropdown');
   const dropdownToggle = dropdown?.querySelector('.dropdown-toggle');
   const dropdownItems = dropdown?.querySelectorAll('.dropdown-item');
   
   if (dropdownToggle) {
-    // Toggle no mobile
     dropdownToggle.addEventListener('click', function(e) {
       if (window.innerWidth <= 768) {
         e.preventDefault();
@@ -140,27 +117,20 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Fecha ao clicar em qualquer item do menu
     dropdownItems?.forEach(item => {
       item.addEventListener('click', function() {
         dropdown.classList.remove('active');
       });
     });
     
-    // Fecha ao clicar fora
     document.addEventListener('click', function(e) {
       if (!dropdown.contains(e.target)) {
         dropdown.classList.remove('active');
       }
     });
     
-    // Fecha ao mudar de página (hash change)
     window.addEventListener('hashchange', function() {
       dropdown.classList.remove('active');
     });
   }
 });
-
-// Eventos de mudança de rota
-window.addEventListener("hashchange", render);
-window.addEventListener("load", render);

@@ -48,22 +48,126 @@
 }
 
 .hero-content h1 {
-  font-size: 2.8rem; /* antes 2.2rem */
+  font-size: 2.7rem; /* antes 2.2rem */
   font-weight: 800;
   letter-spacing: -0.02em;
-  line-height: 3.6rem;
+  margin-right: 1rem;
+  color: Rgb(0,0,0);
 }
 
-.hero-content h2 {
-  font-size: 1.5rem; /* antes 2.2rem */
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  letter-spacing: -0.02em;
-}
-
-.hero-content .section-subtitle {
-  font-size: 1.2rem;
+.section-subtitle {
+  font-size: 1.15rem;
   margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+/* ===============================
+    ABOUT
+==================================*/
+
+.about-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, #f8fcfb 0%, #ffffff 100%);
+  text-align: center; /* Centraliza o conteúdo principal */
+}
+
+.about-container {
+  max-width: 1400px; /* Estreitamos um pouco para o texto não ficar largo demais */
+  margin: 0 auto;
+}
+
+/* Cabeçalho da seção */
+.about-header {
+  margin-bottom: 4.5rem;
+}
+
+.about-badge-top {
+  display: inline-block;
+  background: #eef4ff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  margin-bottom: 2.2rem;
+  border: 1px solid rgba(0, 68, 148, 0.1);
+}
+
+.about-badge-top strong {
+  color: #004494;
+  font-size: 1.4rem;
+  margin-right: 8px;
+}
+
+.about-badge-top span {
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.about-header h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.about-intro {
+  font-size: 1.15rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Grid de Cards */
+.about-features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsivo automático */
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-feature-card {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ícones centralizados */
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid #f0f0f0;
+}
+
+.about-feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #004494;
+}
+
+.about-feature-card .check-icon {
+  background: #16a34a;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.about-feature-card strong {
+  font-size: 1.1rem;
+  color: #004494;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.about-feature-card p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* ===============================
@@ -74,11 +178,12 @@
   padding: 4rem 2rem;
   background: #ffffff;
   margin-bottom: 1rem; /* 👈 AJUSTADO: era 6rem */
+  margin:0;
 }
 
 .solutions-header {
   text-align: center;
-  max-width: 700px;
+  max-width: 100%;
   margin: 0 auto 3rem;
 }
 
@@ -90,36 +195,36 @@
 
 .solutions-header p {
   margin-top: 0.5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #555;
 }
 
-/* GRID */
 .solutions-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.8rem;
-  max-width: 1200px;
-  margin: auto;
+  gap: 2rem;
+  max-width: 1400px; /* Em vez de %, use um valor fixo para controle total */
+  margin: 0 auto;    /* Garante centralização */
+  padding: 0 2rem;   /* Padding igual em ambos os lados */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* CARD BASE */
 .solution-card {
-  background: transparent;
-  border: none;
+  background: transparent; 
   perspective: 1200px;
   cursor: pointer;
-  height: 340px; /* 👈 AJUSTADO: padroniza altura */
-  min-height: 340px; /* 👈 AJUSTADO: padroniza altura */
+  width: 100%;
+  height: 370px;
+  min-height: 370px;
+  border-radius: 12px;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
+  margin: 0;
 }
 
-.solution-card {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
+/* O efeito de subir ao passar o mouse */
 .solution-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px); 
 }
 
 /* FLIP */
@@ -139,7 +244,6 @@
 .flip-front,
 .flip-back {
   padding: 2rem;
-  border-radius: 12px;
   backface-visibility: hidden;
   display: flex; /* 👈 AJUSTADO */
   flex-direction: column;
@@ -152,41 +256,67 @@
   position: absolute;
   inset: 0;
   height: 100%;
+  border-radius: 12px;
 }
 
-/* FRONT */
+/* FRONT - Otimização de Espaço */
 .flip-front {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
+  padding: 2.5rem 2rem; /* Mais respiro interno */
+  height: 100%; /* Garante que ocupa o card todo */
 }
 
 .flip-front h3 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.2rem;
+  font-size: 1.25rem; /* Levemente maior */
+  font-weight: 700;
   margin-bottom: 1rem;
-  flex-shrink: 0; /* 👈 AJUSTADO */
+  color: #1f2937;
+  flex-shrink: 0; 
 }
 
 .flip-front p {
   font-size: 0.95rem;
-  color: #555;
-  margin-bottom: 1rem;
-  flex-shrink: 0; /* 👈 AJUSTADO */
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  flex-shrink: 0;
 }
 
+/* A lista ocupa o espaço disponível, empurrando o 'hint' para baixo */
 .flip-front ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-grow: 1; /* 👈 AJUSTADO: ocupa espaço disponível */
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espaçamento moderno entre itens da lista */
+}
+.flip-front ul li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.9rem;
+  color: #4b5563;
 }
 
-.flip-front p,
-.flip-front ul {
+.flip-front ul li::before {
+  content: "✓"; /* Usar check ou seta fica mais moderno que hifen */
+  position: absolute;
+  left: 0;
+  color: #004494;
+  font-weight: bold;
+}
+
+/* O HINT e a CTA sempre ficarão alinhados no rodapé do card */
+.flip-hint, 
+.back-cta {
+  margin-top: auto; 
   flex-shrink: 0;
 }
 
@@ -282,108 +412,9 @@
   justify-content: space-between; /* 👈 AJUSTADO */
 }
 
-/*****************************
-  ABOUT
-/*****************************/
-
-.about-section {
-  padding: 4rem 2rem; /* 👈 AJUSTADO: era 5rem */
-  background: linear-gradient(180deg, #f8fcfb 0%, var(--bg-light) 100%);
-  margin-top: 0; /* 👈 AJUSTADO: remove espaço extra */
-  height: 640px;
-}
-
-.about-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-/* Imagem */
-.about-image-wrapper {
-  position: relative;
-  height: 100%;
-}
-
-.about-image-wrapper img {
-  width: 100%;
-  border-radius: 18px;
-  display: block;
-}
-
-/* Badge 20+ */
-.about-badge {
-  position: absolute;
-  bottom: -24px;
-  right: -24px;
-  background-color: #ffffff;
-  border-radius: 14px;
-  padding: 1.2rem 1.4rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  text-align: left;
-}
-
-.about-badge strong {
-  font-size: 2rem;
-  color: #004494;
-  display: block;
-  line-height: 1;
-}
-
-.about-badge span {
-  font-size: 0.85rem;
-  color: #444;
-}
-
-/* Conteúdo */
-.about-content h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
-  margin-left: 1.2rem;
-  line-height: 3.0rem;
-}
-
-.about-content p {
-  color: #444;
-  margin-bottom: 1.2rem;
-  line-height: 1.6;
-  margin-left: 1.2rem;
-}
-
-/* Features */
-.about-features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem 2rem;
-  margin-top: 2rem;
-  margin-left: 1.2rem;
-}
-
-.about-feature {
-  display: flex;
-  gap: 0.8rem;
-  align-items: flex-start;
-}
-
-.check-icon {
-  color: #16a34a;
-  font-size: 1.1rem;
-  margin-top: 2px;
-}
-
-.about-feature strong {
-  display: block;
-  font-size: 0.95rem;
-}
-
-.about-feature p {
-  font-size: 0.85rem;
-  margin: 0.2rem 0 0;
-}
+/**************************************
+ WHY
+***********************************/
 
 .why-section {
   padding: 5rem 2rem;
@@ -521,14 +552,20 @@
   font-size: 1.1rem;
 }
 
+/*****************************************
 /* CONTAINER FAQ */
+/***************************************/
 
 .faq-section {
   background: var(--bg-white);
   border-radius: 16px;
-  padding: 3rem 2rem;
-  margin: 4rem auto;
+  padding: 2rem 2rem;
+  margin: 2rem auto 6rem;
   max-width: 900px;
+}
+
+.faq-section h1{
+  margin-bottom: 2.5rem; 
 }
 
 /* ITEM */
@@ -539,7 +576,7 @@
 /* BOTÃO DA PERGUNTA */
 .faq-question {
   color: var(--primary);
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 500;
   padding: 1.5rem 0;
   border: none;
@@ -574,10 +611,10 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  color: var(--text-medium)
+  color: var(--text-medium);
 }
 
-.faq-section h2{
+.faq-section h1{
   text-align: center;
 }
 /* TEXTO */
@@ -585,6 +622,7 @@
   padding: 0 0 1.5rem 0;
   color: var(--text-medium);
   line-height: 1.6;
+  font-size: 1.15rem;
 }
 
 /* QUANDO ABERTO */
@@ -596,20 +634,20 @@
   transform: rotate(-135deg); /* seta para cima */
 }
 
-.contact{
+.contact-section{
   margin-top: 4rem ;
 }
 
 /* ============================================
    CONTATO - CONTACT SECTION
    ============================================ */
-.contact {
+.contact-section {
   text-align: center;
   padding: 1rem;
   margin-bottom: 4rem;
 }
 
-.contact p{
+.contact-section p{
   margin: 30px;
   font-size: 1.2rem;
 }
@@ -732,6 +770,7 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
+    height: 100%;
   }
 
   /* MOSTRA a imagem no mobile */
@@ -763,42 +802,64 @@
       rgba(242,242,243,1) 100%
     );
     pointer-events: none;
-    margin: 0;
+    margin: 2rem 0 0 0;
     padding: 0;
   }
 
   .hero-content {
     background: rgb(242,242,243);
     border-top: none; /* 👈 conecta com a imagem */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 0;
-    padding: 0px 20px 20px 20px;
+    padding: 30px 20px 40px 20px;
     max-width: 100%;
   }
 
   .hero-content h1 {
-    font-size: 1.8rem;
     margin-top: 1rem;
+    line-height: 3.5rem;
+    text-align: left;
   }
 
-  .hero-content .section-subtitle {
-    font-size: 1rem;
-    color: var(--primary-dark);
-  }
-
-  .solutions-grid{
-    gap: 2rem;
-  }
-
-  .solution-card{
-    width: 90%;
-    margin: auto;
-  }
-
-  .about-section{
+  .solutions-section { 
+    padding: 2rem 0.75rem;
     height: inherit;
+  }
+
+  .solutions-section p{
+    margin: 2rem 2rem;
+  }
+
+  .solutions-grid {
+    grid-template-columns: 1fr; /* Uma coluna apenas no celular */
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;            /* Mantém centralizado */
+    padding: 0 20px;           /* Padding IGUAL em ambos os lados */
+  }
+
+  .solution-card {
+    width: 100%;               /* Card preenche a largura da tela (menos o padding) */
+    height: auto;              /* Deixa a altura livre no mobile se precisar */
+    min-height: 360px;
+  }
+
+  .about-header h2 { font-size: 2rem; }
+  .about-section { 
+    padding: 4rem 2rem;
+    height: inherit;
+  }
+
+  .why-section { 
+    height: inherit;
+  }
+
+  .contact-section { 
+    height: inherit;
+    padding: 2rem 1rem;
+  }
+
+  .contact-section h1{
+    margin: 2rem 2rem;
   }
 
   .contact-grid
