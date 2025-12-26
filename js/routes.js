@@ -56,16 +56,13 @@ function renderRoute() {
       }
     } else {
       // só sobe pro topo quando muda de página
-      window.scrollTo({ top: 0, behavior: "auto" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   });
 }
 
-
-
 window.addEventListener("hashchange", renderRoute);
 window.addEventListener("load", renderRoute);
-
 
 // 4. Inicialização do Menu (Hamburger)
 document.addEventListener('DOMContentLoaded', function() {

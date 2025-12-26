@@ -103,7 +103,8 @@
 }
 
 .about-header h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
+  font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 1.5rem;
   line-height: 1.2;
@@ -143,19 +144,24 @@
   border-color: #004494;
 }
 
+/* Bloco atualizado e limpo */
 .about-feature-card .check-icon {
   background: #16a34a;
-  color: white;
-  width: 40px;
-  height: 40px;
+  width: 26px;         /* Tamanho do círculo verde */
+  height: 26px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  font-size: 1.2rem;
   margin-bottom: 1.2rem;
 }
 
+/* Nova regra para o desenho interno */
+.about-feature-card .check-icon svg {
+  width: 16px;         /* Controla o tamanho do "V" */
+  height: 16px;
+  fill: white;         /* Deixa o "V" branco */
+}
 .about-feature-card strong {
   font-size: 1.1rem;
   color: #004494;
@@ -188,7 +194,7 @@
 }
 
 .solutions-header h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
   line-height: 2.7rem;
 }
@@ -403,18 +409,9 @@
   color: #004494;
 }
 
-/* Cards sem flip */
-.link-card .flip-front {
-  position: relative;
-  height: 100%;
-  display: flex; /* 👈 AJUSTADO */
-  flex-direction: column;
-  justify-content: space-between; /* 👈 AJUSTADO */
-}
-
 /**************************************
- WHY
-***********************************/
+    WHY
+**************************************/
 
 .why-section {
   padding: 5rem 2rem;
@@ -427,8 +424,8 @@
 }
 
 .why-header h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 700;
   line-height: 1.5;
 }
 
@@ -485,8 +482,8 @@
 }
 
 .testimonials-header h2 {
-  font-size: 2.4rem;
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 700;
   line-height: 3.4rem;
 }
 
@@ -641,9 +638,9 @@
 /* ============================================
    CONTATO - CONTACT SECTION
    ============================================ */
+   
 .contact-section {
   text-align: center;
-  padding: 1rem;
   margin-bottom: 4rem;
 }
 
@@ -653,13 +650,11 @@
 }
 
 .contact-grid {
+  max-width: 1200px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-top: 4rem;
-  max-width: 1250px;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .contact-card {
@@ -866,8 +861,6 @@
   {
     grid-template-columns: 1fr;
     max-width: 100%;
-    margin-left: 2rem;
-    margin-right: 2rem;
   }
 
   .contact-card{

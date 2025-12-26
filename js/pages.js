@@ -37,7 +37,11 @@ const pages = {
 
         <div class="about-features-grid">
           <div class="about-feature-card">
-            <span class="check-icon">✔</span>
+            <span class="check-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
             <div class="feature-text">
               <strong>CRC Regularizado</strong>
               <p>Registro profissional ativo e regular</p>
@@ -45,7 +49,11 @@ const pages = {
           </div>
 
           <div class="about-feature-card">
-            <span class="check-icon">✔</span>
+            <span class="check-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
             <div class="feature-text">
               <strong>Equipe Especializada</strong>
               <p>Profissionais certificados e atualizados</p>
@@ -53,7 +61,11 @@ const pages = {
           </div>
 
           <div class="about-feature-card">
-            <span class="check-icon">✔</span>
+            <span class="check-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
             <div class="feature-text">
               <strong>Tecnologia Avançada</strong>
               <p>Sistemas modernos e seguros</p>
@@ -61,7 +73,11 @@ const pages = {
           </div>
 
           <div class="about-feature-card">
-            <span class="check-icon">✔</span>
+            <span class="check-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+              </svg>
+            </span>
             <div class="feature-text">
               <strong>Atendimento Premium</strong>
               <p>Suporte dedicado e personalizado</p>
@@ -93,13 +109,8 @@ const pages = {
                 <li>Obrigações acessórias</li>
                 <li>Relatórios gerenciais</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+              <span class="flip-hint">Clique e saiba mais</span>
+             
             </div>
             <div class="flip-back">
               <h3>Contabilidade Estratégica</h3>
@@ -129,13 +140,7 @@ const pages = {
                 <li>Economia fiscal legal</li>
                 <li>Prevenção de riscos</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+              <span class="flip-hint">Clique e saiba mais</span>
             </div>
             <div class="flip-back">
               <h3>Economia de Impostos</h3>
@@ -165,13 +170,7 @@ const pages = {
                 <li>eSocial e obrigações</li>
                 <li>Gestão de benefícios</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+              <span class="flip-hint">Clique e saiba mais</span>
             </div>
             <div class="flip-back">
               <h3>Segurança Trabalhista</h3>
@@ -185,92 +184,126 @@ const pages = {
             </div>
           </div>
         </article>
-        <!-- CARD 4 -->
-        <article class="solution-card" onclick="window.location.href='#/evolucao'">
+
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+
             <div class="flip-front">
               <h3>
                 <span class="badge">4</span>
                 Evolução MEI → ME
               </h3>
+
               <p>
-                Quando crescer começa a custar caro se você não evoluir.
+                Quando crescer começa a custar caro se você não evoluir corretamente.
               </p>
+
               <ul>
                 <li>Evite desenquadramento</li>
                 <li>Mais faturamento</li>
                 <li>Proteção patrimonial</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+
+              <span class="flip-hint">Clique e saiba mais</span>
             </div>
+
+            <div class="flip-back">
+              <h3>Evolução Empresarial</h3>
+              <p>
+                Planejamento seguro para sair do MEI no momento certo, evitar multas,
+                reduzir impostos e estruturar sua empresa para crescer com segurança.
+              </p>
+
+              <a href="#/evolucao" class="back-cta">
+                Saiba mais
+              </a>
+            </div>
+
           </div>
         </article>
-        <!-- CARD 5 -->
-        <article class="solution-card" onclick="window.location.href='#/diferencas'">
+
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+
             <div class="flip-front">
               <h3>
                 <span class="badge">5</span>
                 MEI, LTDA ou SLU?
               </h3>
+
               <p>
-                Escolher errado pode colocar seu patrimônio em risco.
+                Escolher o tipo errado pode colocar seu patrimônio em risco.
               </p>
+
               <ul>
                 <li>Blindagem patrimonial</li>
                 <li>Sem limite de faturamento</li>
                 <li>Mais credibilidade</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+
+              <span class="flip-hint">Clique e saiba mais</span>
             </div>
+
+            <div class="flip-back">
+              <h3>Escolha Jurídica Correta</h3>
+              <p>
+                Análise completa para definir o tipo societário ideal, reduzir riscos,
+                proteger bens pessoais e garantir crescimento sustentável.
+              </p>
+
+              <a href="#/diferencas" class="back-cta">
+                Saiba mais
+              </a>
+            </div>
+
           </div>
         </article>
-        <!-- Card 6 -->
-        <article class="solution-card" onclick="window.location.href='#/impostos'">
+
+        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+
             <div class="flip-front">
               <h3>
                 <span class="badge">6</span>
                 Redução de Impostos
               </h3>
+
               <p>
                 Pague menos sem risco fiscal com estratégias tributárias seguras.
               </p>
+
               <ul>
                 <li>Fator R</li>
                 <li>Simples x Presumido</li>
                 <li>Economia legal</li>
               </ul>
-              <div class="why-icon">
-                <span class="flip-hint">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
-                  </svg>
-                </span>
-              </div>
+
+              <span class="flip-hint">Clique e saiba mais</span>
             </div>
+
+            <div class="flip-back">
+              <h3>Planejamento Tributário</h3>
+              <p>
+                Estratégias legais para reduzir a carga tributária, melhorar o fluxo
+                de caixa e manter sua empresa em total conformidade fiscal.
+              </p>
+
+              <a href="#/impostos" class="back-cta">
+                Saiba mais
+              </a>
+            </div>
+
           </div>
         </article>
+
       </div>
     </section>
 
     <section id="diferenciais" class="why-section">
       <div class="why-header">
         <h2>
-          <span class="highlight-blue">Por que escolher a Alonso</span><br>
-          <span class="highlight-blue">Contábil?</span>
+          <span>Por que escolher a Alonso</span><br>
+          <span>Contábil?</span>
         </h2>
         <p class="why-subtitle">
           <span class="light">
@@ -589,9 +622,9 @@ const pages = {
     `,
 
     "/servicos": `
-      <section>
-        <h1 class="service-title">Soluções Contábeis Inteligentes para o seu Negócio</h1>
-        <p class="service-p">
+      <section class="service-section">
+        <h1>Soluções Contábeis Inteligentes para o seu Negócio</h1>
+        <p class="subtitle">
           Tecnologia digital com consultoria estratégica para quem busca segurança, agilidade e redução legal de impostos em São Paulo.
         </p>
 
@@ -651,164 +684,98 @@ const pages = {
             </a>
           </div>
         </div>
-        <div class="pj-section">
-          <div class="pj-text">
-            <h2>
-              Transição de CLT para Pessoa Jurídica em São Paulo
-            </h2>
-            <p>
-              Planeje sua transição de CLT para PJ com segurança jurídica
-              e economia de impostos. Nossa consultoria especializada
-              atende profissionais em São Paulo e região,
-              garantindo conformidade fiscal e planejamento tributário eficiente.
-            </p>
-            <p>
-              Uma migração mal planejada pode gerar problemas com a Receita Federal,
-              INSS e até caracterizar pejotização irregular.
-              Por isso, cada transição deve ser analisada de forma individual.
-            </p>
-          </div>
-          <div class="pj-image"></div>
-        </div>
       </section>
-      <div class="cta-box">
-          <h3>Pronto para pagar menos impostos com segurança?</h3>
-          <p>Receba um diagnóstico tributário gratuito da sua empresa e descubra se você está no regime mais vantajoso.</p>
-          <a href="https://wa.me/5511995172741" 
-            target="_blank" rel="noopener noreferrer" 
-            class="cta-button cta-button--spaced">
-            Solicitar Diagnóstico Gratuito
-          </a>
-      </div>
-    `,
 
-    "/evolucao": `
-    <section class="evolution-section">
-      <h1 class="evolution-title">Do MEI ao Próximo Nível</h1>
-      <p class="evolution-p">
-        O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
-      </p>
-      
-      <div class="evolution-grid">
-        <div class="detail-section">
-          <div class="badge-icon">⚠️</div>
-          <h3>Sinais de que o MEI ficou pequeno</h3>
-          <ul class="lista-check">
-            <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
-            <li>Necessidade de contratar mais de um colaborador.</li>
-            <li>Desejo de atrair sócios ou investidores.</li>
-            <li>Sua atividade não é mais permitida na lista do MEI.</li>
-            <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
-          </ul>
+      <section class="pj-section">
+        <div class="pj-text">
+          <h1>Transição de CLT para Pessoa Jurídica em São Paulo</h1>
+          <p>
+            Planeje sua transição de CLT para PJ com segurança jurídica
+            e economia de impostos. Nossa consultoria especializada
+            atende profissionais em São Paulo e região,
+            garantindo conformidade fiscal e planejamento tributário eficiente.
+          </p>
+          <p>
+            Uma migração mal planejada pode gerar problemas com a Receita Federal,
+            INSS e até caracterizar pejotização irregular.
+            Por isso, cada transição deve ser analisada de forma individual.
+          </p>
         </div>
 
-        <div class="detail-section featured-evolution">
-          <div class="badge-icon">🚀</div>
-          <h3>O que você ganha ao evoluir</h3>
-          <ul class="lista-check">
-            <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
-            <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
-            <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
-            <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
-          </ul>
-        </div>
-      </div>
+        <div class="pj-image"></div>
+      </section>
       
-      <div class="strategy-content">
-        <h2>Transição Sem Burocracia</h2>
-        <p class="evolution-p-subtitle">Nossa assessoria cuida de todo 
-          o processo técnico enquanto você foca na operação.
+      <section class="evolution-section">
+        <h1>Do MEI ao Próximo Nível</h1>
+        <p>
+          O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
         </p>
-      </div>
         
-      <div class="benefits-grid">
+        <div class="evolution-grid">
+          <div class="detail-section">
+            <div class="badge-icon">⚠️</div>
+            <h3>Sinais de que o MEI ficou pequeno</h3>
+            <ul class="lista-check">
+              <li>Faturamento próximo ou acima de <strong>R$ 6.750/mês</strong>.</li>
+              <li>Necessidade de contratar mais de um colaborador.</li>
+              <li>Desejo de atrair sócios ou investidores.</li>
+              <li>Sua atividade não é mais permitida na lista do MEI.</li>
+              <li>Empresas maiores exigem uma estrutura LTDA para contratar você.</li>
+            </ul>
+          </div>
 
-        <!-- CARD 1 -->
-        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-          <div class="flip-inner">
+          <div class="detail-section featured-evolution">
+            <div class="badge-icon">🚀</div>
+            <h3>O que você ganha ao evoluir</h3>
+            <ul class="lista-check">
+              <li><strong>Blindagem Patrimonial:</strong> Separação real entre seus bens e as dívidas da empresa.</li>
+              <li><strong>Crédito Bancário:</strong> Acesso a juros menores e limites maiores como ME ou EPP.</li>
+              <li><strong>Lucro Isento:</strong> Distribuição de lucros legal sem pagar IR na pessoa física.</li>
+              <li><strong>Sem Teto de Ganho:</strong> Liberdade total para faturar e escalar seu negócio.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="strategy-content">
+          <h2>Transição Sem Burocracia</h2>
+          <p class="evolution-p-subtitle">Nossa assessoria cuida de todo 
+            o processo técnico enquanto você foca na operação.
+          </p>
+        </div>
+        <div class="steps-grid">
 
-            <!-- FRENTE -->
-            <div class="flip-front">
-              <div class="benefit-number">01</div>
-              <h4 class="benefit-title">Diagnóstico Fiscal</h4>
-              <p class="benefit-text">
+          <div class="steps-card">
+            <div class="steps-front">
+              <div class="steps-number">1</div>
+              <h4 class="steps-title">Diagnóstico Fiscal</h4>
+              <p class="steps-text">
                 Analisamos se o melhor para você é o Simples Nacional ou Lucro Presumido.
               </p>
-              <span class="flip-hint">Clique para ver mais →</span>
             </div>
-
-            <!-- VERSO -->
-            <div class="flip-back">
-              <div class="back-icon">📊</div>
-              <h4 class="back-title">Decisão Estratégica</h4>
-              <p class="back-text">
-                Evite pagar impostos desnecessários com um diagnóstico profissional e personalizado.
-              </p>
-            </div>
-
           </div>
-        </div>
 
-        <!-- CARD 2 -->
-        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-          <div class="flip-inner">
-
-            <div class="flip-front">
-              <div class="benefit-number">02</div>
-              <h4 class="benefit-title">Migração Técnica</h4>
-              <p class="benefit-text">
-                Alteração na Junta Comercial e Receita Federal sem interrupção das suas vendas.
-              </p>
-              <span class="flip-hint">Clique para ver mais →</span>
-            </div>
-
-            <div class="flip-back">
-              <div class="back-icon">🛠️</div>
-              <h4 class="back-title">Zero Dor de Cabeça</h4>
-              <p class="back-text">
-                Cuidamos de todo o processo técnico enquanto você continua faturando.
+          <div class="steps-card">
+            <div class="steps-front">
+              <div class="steps-number">2</div>
+              <h4 class="steps-title">Migração Técnica</h4>
+              <p class="steps-text">
+                Alteração na Junta Comercial e Receita Federal sem interromper suas vendas.
               </p>
             </div>
-
           </div>
-        </div>
 
-        <!-- CARD 3 -->
-        <div class="benefit-card flip-card" onclick="this.classList.toggle('active')">
-          <div class="flip-inner">
-
-            <div class="flip-front">
-              <div class="benefit-number">03</div>
-              <h4 class="benefit-title">Gestão Mensal</h4>
-              <p class="benefit-text">
+          <div class="steps-card">
+            <div class="steps-front">
+              <div class="steps-number">3</div>
+              <h4 class="steps-title">Gestão Mensal</h4>
+              <p class="steps-text">
                 Suporte completo com folha de pagamento e monitoramento de impostos.
               </p>
-              <span class="flip-hint">Clique para ver mais →</span>
             </div>
-
-            <div class="flip-back">
-              <div class="back-icon">📈</div>
-              <h4 class="back-title">Crescimento Seguro</h4>
-              <p class="back-text">
-                Acompanhamento contínuo para evitar multas e melhorar resultados.
-              </p>
-            </div>
-
           </div>
-        </div>
-      </div>
-    </section>
-    <div class="cta-box">
-        <h3>Não espere ser desenquadrado de ofício pela Receita.</h3>
-        <p>Migrar de forma planejada evita multas retroativas que podem quebrar o seu caixa. Vamos conversar sobre o seu momento atual?</p>
-        <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" class="cta-button cta-button--spaced">
-          Agendar Consultoria de Migração
-        </a>
-      </div>
-    </div>
-    `,
 
-    "/diferencas": `
+        </div>
+      </section>
       <section class="info-section">
         <h1 class="info-title">Qual a melhor armadura jurídica para o seu negócio?</h1>
         <p class="section-subtitle info-p">
@@ -870,20 +837,7 @@ const pages = {
           </div>
         </div>
       </section>
-      <div class="cta-box">
-        <h3>Precisa de uma análise personalizada?</h3>
-        <p>A legislação muda rápido. Fale com nosso time para garantir sua economia hoje.</p>
-        <a 
-          href="https://wa.me/5511995172741" 
-          target="_blank" rel="noopener noreferrer" 
-          class="cta-button cta-button--spaced">
-          Falar com um Especialista Agora
-        </a>
-      </div>
-    `,
-
-    "/impostos": `
-    <section class="tax-section">
+      <section class="tax-section">
         <h1 class="tax-title">Inteligência Fiscal</h1>
         <p class="tax-p">
           Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.
@@ -959,58 +913,5 @@ const pages = {
           Solicitar Estudo Gratuito
         </a>
     </div>
-
-    `,
-
-    "/contato": `
-    <section class="contact-section">
-      <h1>Entre em Contato</h1>
-      <p class="section-subtitle">
-        Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
-      </p>
-
-      <div class="contact-grid">
-        <!-- Email -->
-        <a 
-          href="mailto:atendimento@alonsocontabil.com.br" 
-          class="contact-card" 
-          rel="noopener noreferrer"
-        >
-          <div class="contact-icon">✉</div>
-          <div class="contact-label">Email</div>
-          <div class="contact-value">atendimento@alonsocontabil.com.br</div>
-        </a>
-        
-        <!-- WhatsApp -->
-        <a 
-          href="https://wa.me/5511995172741"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-card"
-        >
-          <div class="contact-icon">☎</div>
-          <div class="contact-label">WhatsApp</div>
-          <div class="contact-value">(11) 99517-2741</div>
-        </a>
-
-        <!-- Insta -->
-        <a 
-          href="https://www.instagram.com/alonsocontabil" 
-          target="_blank"
-          rel="noopener noreferrer"
-          class="contact-card"
-        >
-          <div class="contact-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </div>
-          <div class="contact-label">Insta</div>
-          <div class="contact-value">
-            @alonsocontabil
-          </div>
-        </a>
-      </div>
-    </section>
-  `
+`,
 };

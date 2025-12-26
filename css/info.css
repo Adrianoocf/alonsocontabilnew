@@ -4,6 +4,7 @@
 
 .info-section {
   width: 100%;
+  padding-top: 3rem;
   display: block; /* REMOVE flex */
 }
 

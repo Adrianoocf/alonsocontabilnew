@@ -4,18 +4,22 @@
 
 .service-section {
   width: 100%;
-  padding: 4rem 1rem;
   display: block; /* REMOVE flex */
 }
 
-.service-title{
+.service-section h1{
+  margin-top: 2rem;
   text-align: center;
-  margin-top: 3rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
-.service-p{
+.service-section p{
   text-align: center;
-  margin: 2rem 0 4rem 0;
+  padding: 2rem;
+}
+
+.subtitle{
+  font-size: 1.2rem;
 }
 
 .service-grid {
@@ -104,47 +108,79 @@
 /* ============================================
    SEÇÃO TRANSIÇÃO PJ – TEXTO ESQ / IMAGEM DIR
 ============================================ */
-
 .pj-section {
   display: flex;
-  align-items: center;
-  gap: 3rem;
-  margin: 8rem 10rem;
+  align-items: stretch; /* Faz a imagem ter a mesma altura do texto */
+  justify-content: space-between;
+  max-width: 1250px;    /* BREQUE AQUI: Não deixa a seção esticar mais que isso */
+  margin: 10rem auto;    /* Centraliza na tela */
+  padding: 0 2rem;
+  gap: 0;
+  overflow: hidden;
 }
 
 .pj-text {
   flex: 1;
+  padding: 1.5rem 4rem 1.5rem 0; /* Espaço interno para o texto respirar */
+  z-index: 2;
+}
+
+.pj-section p{
+  font-size: 1.05rem;
 }
 
 .pj-image {
   flex: 1;
-  min-height: 320px;
+  min-height: 340px;
+  max-width: 50%;       /* BREQUE AQUI: A imagem nunca passa da metade */
   border-radius: 0 8px 8px 0;
-  max-width: 450px;
-
   background: 
     linear-gradient(
-      to right,
-      rgba(255,255,255,1) 0%,
-      rgba(255,255,255,0.7) 20%,
-      rgba(255,255,255,0.4) 35%,
-      rgba(255,255,255,0.0) 60%
+      to right, 
+      #ffffff 0%,           /* Cor de fundo do seu site (ajuste se não for branco puro) */
+      rgba(255, 255, 255, 0) 30% /* Onde a imagem começa a aparecer */
     ),
     url('/img/img2.jpg') center / cover no-repeat;
 }
-
 
 /* ============================================
    RESPONSIVE - TABLET (max-width: 992px)
    ============================================ */
 @media (max-width: 992px) {
   .service-title{
-    margin: 0;
+    padding: 0 1rem 0 1rem;
   }
 
   .service-grid { 
     grid-template-columns: 1fr;
     margin:0;
+    padding: 0rem 1.5rem 0 1.5rem;
+  }
+
+  .pj-section {
+    flex-direction: column;
+    margin-top: 2rem;
+    padding: 0; /* Remove padding lateral no mobile para a imagem encostar nas bordas */
+  }
+
+  .pj-section h1{
+    margin-bottom: 2rem;
+  }
+
+  .pj-text {
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .pj-image {
+    max-width: 100%;
+    width: 100%;
+    height: 250px;
+    margin-top: 2rem;
+    /* No mobile, o degradê deve vir de cima para baixo */
+    background: 
+      linear-gradient(to bottom, #ffffff 0%, transparent 20%, transparent 80%, #ffffff 100%),
+      url('/img/img2.jpg') center / cover no-repeat;
   }
 
 }
@@ -160,33 +196,4 @@
   .service-card {
     margin: 0 0 10px 0;
   }
- 
-  .pj-section {
-      flex-direction: column;
-      margin: 5rem 0.5rem;
-      text-align: center;
-  }
-
-  .pj-image {
-    width: 100%;
-    margin: 2rem 0 4rem 0;
-    background: 
-      /* fade de CIMA */
-      linear-gradient(
-        to bottom,
-        rgba(255,255,255,1) 0%,
-        rgba(255,255,255,0) 25%
-      ),
-
-      /* fade de BAIXO */
-      linear-gradient(
-        to top,
-        rgba(255,255,255,1) 0%,
-        rgba(255,255,255,0) 25%
-      ),
-      url('/img/img2.jpg') center / cover no-repeat;
-    border-radius: 0 0 0 0;
-  }
-
-
 }
