@@ -88,132 +88,124 @@ const pages = {
     </section>
 
     <section id="solucoes" class="solutions-section">
+    
       <div class="solutions-header">
         <h2>Soluções completas para sua empresa</h2>
         <p>Serviços contábeis estratégicos para crescimento e segurança</p>
       </div>
+
       <div class="solutions-grid">
-        <!-- CARD 1 -->
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+
+        <!-- ========== CARD 1 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+            
+            <!-- FRENTE -->
             <div class="flip-front">
               <h3>
                 <span class="badge">1</span>
                 Contabilidade Completa
               </h3>
-              <p>
-                Gestão contábil, fiscal e financeira com foco em precisão e conformidade.
-              </p>
+              <p>Gestão contábil, fiscal e financeira com foco em precisão e conformidade.</p>
               <ul>
                 <li>Balanços e DRE</li>
                 <li>Obrigações acessórias</li>
                 <li>Relatórios gerenciais</li>
               </ul>
-              <span class="flip-hint">Clique e saiba mais</span>
-             
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
+
+            <!-- VERSO -->
             <div class="flip-back">
               <h3>Contabilidade Estratégica</h3>
-              <p>
-                Informações confiáveis, visão clara dos números e apoio técnico para decisões
-                seguras e crescimento sustentável da empresa.
-              </p>
+              <p>Informações confiáveis, visão clara dos números e apoio técnico para decisões seguras e crescimento sustentável da empresa.</p>
               <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
                 Falar no WhatsApp
               </a>
             </div>
+
           </div>
         </article>
-        <!-- CARD 2 -->
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+
+        <!-- ========== CARD 2 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+            
             <div class="flip-front">
               <h3>
                 <span class="badge">2</span>
                 Planejamento Tributário
               </h3>
-              <p>
-                Redução legal da carga tributária com análise técnica e estratégia.
-              </p>
+              <p>Redução legal da carga tributária com análise técnica e estratégia.</p>
               <ul>
                 <li>Escolha do regime ideal</li>
                 <li>Economia fiscal legal</li>
                 <li>Prevenção de riscos</li>
               </ul>
-              <span class="flip-hint">Clique e saiba mais</span>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
+
             <div class="flip-back">
               <h3>Economia de Impostos</h3>
-              <p>
-                Estratégias tributárias seguras para pagar menos impostos e manter sua empresa
-                em total conformidade com a legislação.
-              </p>
+              <p>Estratégias tributárias seguras para pagar menos impostos e manter sua empresa em total conformidade com a legislação.</p>
               <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
                 Falar no WhatsApp
               </a>
             </div>
+
           </div>
         </article>
-        <!-- CARD 3 -->
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+
+        <!-- ========== CARD 3 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
+            
             <div class="flip-front">
               <h3>
                 <span class="badge">3</span>
                 Departamento Pessoal
               </h3>
-              <p>
-                Administração completa das rotinas trabalhistas com segurança jurídica.
-              </p>
+              <p>Administração completa das rotinas trabalhistas com segurança jurídica.</p>
               <ul>
                 <li>Folha de pagamento</li>
                 <li>eSocial e obrigações</li>
                 <li>Gestão de benefícios</li>
               </ul>
-              <span class="flip-hint">Clique e saiba mais</span>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
+
             <div class="flip-back">
               <h3>Segurança Trabalhista</h3>
-              <p>
-                Processos organizados, prazos em dia e tranquilidade para você focar no seu
-                negócio sem preocupações trabalhistas.
-              </p>
+              <p>Processos organizados, prazos em dia e tranquilidade para você focar no seu negócio sem preocupações trabalhistas.</p>
               <a href="https://wa.me/5511995172741" target="_blank" class="back-cta">
                 Falar no WhatsApp
               </a>
             </div>
+
           </div>
         </article>
 
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+        <!-- ========== CARD 4 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
-
+            
             <div class="flip-front">
               <h3>
                 <span class="badge">4</span>
                 Evolução MEI → ME
               </h3>
-
-              <p>
-                Quando crescer começa a custar caro se você não evoluir corretamente.
-              </p>
-
+              <p>Quando crescer começa a custar caro se você não evoluir corretamente.</p>
               <ul>
                 <li>Evite desenquadramento</li>
                 <li>Mais faturamento</li>
                 <li>Proteção patrimonial</li>
               </ul>
-
-              <span class="flip-hint">Clique e saiba mais</span>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
 
             <div class="flip-back">
               <h3>Evolução Empresarial</h3>
-              <p>
-                Planejamento seguro para sair do MEI no momento certo, evitar multas,
-                reduzir impostos e estruturar sua empresa para crescer com segurança.
-              </p>
-
+              <p>Planejamento seguro para sair do MEI no momento certo, evitar multas, reduzir impostos e estruturar sua empresa para crescer com segurança.</p>
               <a href="#/evolucao" class="back-cta">
                 Saiba mais
               </a>
@@ -222,35 +214,27 @@ const pages = {
           </div>
         </article>
 
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+        <!-- ========== CARD 5 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
-
+            
             <div class="flip-front">
               <h3>
                 <span class="badge">5</span>
                 MEI, LTDA ou SLU?
               </h3>
-
-              <p>
-                Escolher o tipo errado pode colocar seu patrimônio em risco.
-              </p>
-
+              <p>Escolher o tipo errado pode colocar seu patrimônio em risco.</p>
               <ul>
                 <li>Blindagem patrimonial</li>
                 <li>Sem limite de faturamento</li>
                 <li>Mais credibilidade</li>
               </ul>
-
-              <span class="flip-hint">Clique e saiba mais</span>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
 
             <div class="flip-back">
               <h3>Escolha Jurídica Correta</h3>
-              <p>
-                Análise completa para definir o tipo societário ideal, reduzir riscos,
-                proteger bens pessoais e garantir crescimento sustentável.
-              </p>
-
+              <p>Análise completa para definir o tipo societário ideal, reduzir riscos, proteger bens pessoais e garantir crescimento sustentável.</p>
               <a href="#/diferencas" class="back-cta">
                 Saiba mais
               </a>
@@ -259,35 +243,27 @@ const pages = {
           </div>
         </article>
 
-        <article class="solution-card flip-card" onclick="this.classList.toggle('active')">
+        <!-- ========== CARD 6 ========== -->
+        <article class="solution-card" onclick="this.classList.toggle('active')">
           <div class="flip-inner">
-
+            
             <div class="flip-front">
               <h3>
                 <span class="badge">6</span>
                 Redução de Impostos
               </h3>
-
-              <p>
-                Pague menos sem risco fiscal com estratégias tributárias seguras.
-              </p>
-
+              <p>Pague menos sem risco fiscal com estratégias tributárias seguras.</p>
               <ul>
                 <li>Fator R</li>
                 <li>Simples x Presumido</li>
                 <li>Economia legal</li>
               </ul>
-
-              <span class="flip-hint">Clique e saiba mais</span>
+              <span class="flip-hint">Clique para saber mais</span>
             </div>
 
             <div class="flip-back">
               <h3>Planejamento Tributário</h3>
-              <p>
-                Estratégias legais para reduzir a carga tributária, melhorar o fluxo
-                de caixa e manter sua empresa em total conformidade fiscal.
-              </p>
-
+              <p>Estratégias legais para reduzir a carga tributária, melhorar o fluxo de caixa e manter sua empresa em total conformidade fiscal.</p>
               <a href="#/impostos" class="back-cta">
                 Saiba mais
               </a>
@@ -295,7 +271,6 @@ const pages = {
 
           </div>
         </article>
-
       </div>
     </section>
 

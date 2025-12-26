@@ -177,237 +177,177 @@
 }
 
 /* ===============================
-   SOLUTIONS – CLEAN VERSION
+   SOLUTIONS 
 ================================ */
-
-.solutions-section {
-  padding: 4rem 2rem;
-  background: #ffffff;
-  margin-bottom: 1rem; /* 👈 AJUSTADO: era 6rem */
-  margin:0;
-}
-
 .solutions-header {
   text-align: center;
-  max-width: 100%;
-  margin: 0 auto 3rem;
+  margin-bottom: 50px;
 }
 
 .solutions-header h2 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  line-height: 2.7rem;
+  font-size: 2rem;
+  color: #1f2937;
+  margin-bottom: 10px;
 }
 
 .solutions-header p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #555;
+  font-size: 1.1rem;
+  color: #6b7280;
 }
 
+/* ========== GRID DOS CARDS ========== */
 .solutions-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-  max-width: 1400px; /* Em vez de %, use um valor fixo para controle total */
-  margin: 0 auto;    /* Garante centralização */
-  padding: 0 2rem;   /* Padding igual em ambos os lados */
-  width: 100%;
-  box-sizing: border-box;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* ========== CARD WRAPPER (container externo) ========== */
 .solution-card {
-  background: transparent; 
-  perspective: 1200px;
+  height: 420px;
+  perspective: 1000px;
   cursor: pointer;
-  width: 100%;
-  height: 380px;
-  min-height: 380px;
-  border-radius: 12px;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
-  margin: 0;
+  transition: transform 0.3s ease;
 }
 
-/* O efeito de subir ao passar o mouse */
 .solution-card:hover {
-  transform: translateY(-5px); 
+  transform: translateY(-5px);
 }
 
-/* FLIP */
+/* ========== FLIP INNER (container que gira) ========== */
 .flip-inner {
   position: relative;
-  width: 100%; /* 👈 AJUSTADO */
+  width: 100%;
   height: 100%;
-  transition: transform 0.6s ease;
+  transition: transform 0.6s;
   transform-style: preserve-3d;
 }
 
+/* Quando o card está ativo (clicado), gira 180° */
 .solution-card.active .flip-inner {
   transform: rotateY(180deg);
 }
 
-/* FACES */
+/* ========== FRENTE E VERSO (base comum) ========== */
 .flip-front,
 .flip-back {
-  padding: 2rem;
-  backface-visibility: hidden;
-  display: flex; /* 👈 AJUSTADO */
-  flex-direction: column;
-  box-sizing: border-box; /* 👈 AJUSTADO */
-}
-
-/* SOMENTE cards com flip */
-.flip-card .flip-front,
-.flip-card .flip-back {
   position: absolute;
-  inset: 0;
+  width: 100%;
   height: 100%;
-  border-radius: 12px;
-}
-
-/* FRONT - Otimização de Espaço */
-.flip-front {
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
-  padding: 2.5rem 2rem; /* Mais respiro interno */
-  height: 100%; /* Garante que ocupa o card todo */
+}
+
+/* ========== FRENTE DO CARD ========== */
+.flip-front {
+  background: white;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
 .flip-front h3 {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-size: 1.25rem; /* Levemente maior */
-  font-weight: 700;
-  margin-bottom: 1rem;
+  gap: 12px;
+  font-size: 1.3rem;
   color: #1f2937;
-  flex-shrink: 0; 
+  margin-bottom: 15px;
 }
 
-.flip-front p {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+.badge {
+  width: 32px;
+  height: 32px;
+  background: #004494;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: bold;
   flex-shrink: 0;
 }
 
-/* A lista ocupa o espaço disponível, empurrando o 'hint' para baixo */
+.flip-front > p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
 .flip-front ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  flex-grow: 1; 
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* Espaçamento moderno entre itens da lista */
+  gap: 10px;
 }
+
 .flip-front ul li {
+  padding-left: 20px;
   position: relative;
-  padding-left: 1.5rem;
   font-size: 0.9rem;
   color: #4b5563;
 }
 
 .flip-front ul li::before {
-  content: "✓"; /* Usar check ou seta fica mais moderno que hifen */
+  content: "✓";
   position: absolute;
   left: 0;
   color: #004494;
   font-weight: bold;
 }
 
-/* O HINT e a CTA sempre ficarão alinhados no rodapé do card */
-.flip-hint, 
-.back-cta {
-  margin-top: auto; 
-  flex-shrink: 0;
-}
-
-.flip-front ul li {
-  position: relative;
-  padding-left: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-}
-
-.flip-front ul li::before {
-  content: "–";
-  position: absolute;
-  left: 0;
-  color: #004494;
-}
-
-/* BADGE */
-.badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 999px;
-  background: #004494;
-  color: #ffffff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  flex-shrink: 0; /* 👈 AJUSTADO */
-}
-
-/* HINT */
 .flip-hint {
-  margin-top: auto; /* 👈 AJUSTADO: empurra pro final */
-  padding-top: 1rem; /* 👈 AJUSTADO */
-  font-size: 0.75rem;
-  color: #777;
-  align-self: flex-end;
-  flex-shrink: 0; /* 👈 AJUSTADO */
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #9ca3af;
+  text-align: right;
+  font-style: italic;
 }
 
-/* BACK */
+/* ========== VERSO DO CARD ========== */
 .flip-back {
   background: linear-gradient(135deg, #004494, #002f6c);
+  color: white;
   transform: rotateY(180deg);
-  color: #ffffff;
-  text-align: center;
   justify-content: center;
+  text-align: center;
 }
 
 .flip-back h3 {
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
 }
 
 .flip-back p {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
   color: #e6ecff;
-  margin-bottom: 1.6rem;
+  margin-bottom: 25px;
 }
 
-/* CTA */
 .back-cta {
-  align-self: center;
-  padding: 0.75rem 1.8rem;
-  border-radius: 12px;
-  background: #ffffff;
+  display: inline-block;
+  padding: 12px 30px;
+  background: white;
   color: #004494;
-  font-weight: 600;
+  border-radius: 8px;
   text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .back-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(255,255,255,0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.3);
 }
 
-.link-card .flip-hint {
-  font-weight: 600;
-  color: #004494;
-}
 
 /**************************************
     WHY
@@ -814,28 +754,35 @@
     text-align: left;
   }
 
-  .solutions-section { 
-    padding: 2rem 0.75rem;
-    height: inherit;
+  .solutions-header h2 {
+    font-size: 1.5rem;
   }
 
-  .solutions-section p{
-    margin: 2rem 2rem;
+  .solutions-header p {
+    font-size: 1rem;
   }
 
   .solutions-grid {
-    grid-template-columns: 1fr; /* Uma coluna apenas no celular */
-    gap: 1.5rem;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;            /* Mantém centralizado */
-    padding: 0 20px;           /* Padding IGUAL em ambos os lados */
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 2rem;
   }
 
   .solution-card {
-    width: 100%;               /* Card preenche a largura da tela (menos o padding) */
-    height: auto;              /* Deixa a altura livre no mobile se precisar */
-    min-height: 360px;
+    height: 380px;
+  }
+
+  .flip-front,
+  .flip-back {
+    padding: 25px;
+  }
+
+  .flip-front h3 {
+    font-size: 1.1rem;
+  }
+
+  .flip-back h3 {
+    font-size: 1.2rem;
   }
 
   .about-header h2 { font-size: 2rem; }
