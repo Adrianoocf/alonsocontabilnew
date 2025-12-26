@@ -58,7 +58,7 @@ header {
 }
 
 #solucoes {
-  scroll-margin-top: 70px;
+  scroll-margin-top: 100px;
 }
 
 #diferenciais {
@@ -67,6 +67,18 @@ header {
 
 #faq {
   scroll-margin-top: 60px;
+}
+
+#evolucao {
+  scroll-margin-top: 120px;
+}
+
+#diferencas {
+  scroll-margin-top: 120px;
+}
+
+#impostos {
+  scroll-margin-top: 120px;
 }
 
 .navbar {
@@ -367,7 +379,7 @@ section ul li strong {
   }
 
   #solucoes {
-    scroll-margin-top: 70px;
+    scroll-margin-top: 40px;
   }
 
   #diferenciais {
@@ -375,7 +387,19 @@ section ul li strong {
   }
 
   #faq {
-    scroll-margin-top: 60px;
+    scroll-margin-top: 40px;
+  }
+
+  #evolucao {
+    scroll-margin-top: 100px;
+  }
+  
+  #diferencas {
+    scroll-margin-top: 100px;
+  }
+  
+  #impostos {
+    scroll-margin-top: 100px;
   }
 
   .navbar {
@@ -446,6 +470,7 @@ section ul li strong {
 
   .nav-links li:not(.contact-navbar) a {
     border-radius: 0;
+    font-size: 1.1rem;
   }
 
   .contact-navbar a {

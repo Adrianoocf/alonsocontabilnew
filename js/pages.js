@@ -42,10 +42,8 @@ const pages = {
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
               </svg>
             </span>
-            <div class="feature-text">
-              <strong>CRC Regularizado</strong>
-              <p>Registro profissional ativo e regular</p>
-            </div>
+            <strong>CRC Regularizado</strong>
+            <p>Registro profissional ativo e regular</p>
           </div>
 
           <div class="about-feature-card">
@@ -54,10 +52,8 @@ const pages = {
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
               </svg>
             </span>
-            <div class="feature-text">
-              <strong>Equipe Especializada</strong>
-              <p>Profissionais certificados e atualizados</p>
-            </div>
+            <strong>Equipe Especializada</strong>
+            <p>Profissionais certificados e atualizados</p>
           </div>
 
           <div class="about-feature-card">
@@ -66,10 +62,8 @@ const pages = {
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
               </svg>
             </span>
-            <div class="feature-text">
-              <strong>Tecnologia Avançada</strong>
-              <p>Sistemas modernos e seguros</p>
-            </div>
+            <strong>Tecnologia Avançada</strong>
+            <p>Sistemas modernos e seguros</p>
           </div>
 
           <div class="about-feature-card">
@@ -78,10 +72,8 @@ const pages = {
                 <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
               </svg>
             </span>
-            <div class="feature-text">
-              <strong>Atendimento Premium</strong>
-              <p>Suporte dedicado e personalizado</p>
-            </div>
+            <strong>Atendimento Premium</strong>
+            <p>Suporte dedicado e personalizado</p>
           </div>
         </div>
       </div>
@@ -90,7 +82,7 @@ const pages = {
     <section id="solucoes" class="solutions-section">
     
       <div class="solutions-header">
-        <h2>Soluções completas para sua empresa</h2>
+        <h1>Soluções completas para sua empresa</h1>
         <p>Serviços contábeis estratégicos para crescimento e segurança</p>
       </div>
 
@@ -206,7 +198,7 @@ const pages = {
             <div class="flip-back">
               <h3>Evolução Empresarial</h3>
               <p>Planejamento seguro para sair do MEI no momento certo, evitar multas, reduzir impostos e estruturar sua empresa para crescer com segurança.</p>
-              <a href="#/evolucao" class="back-cta">
+              <a href="#/servicos#evolucao" class="back-cta">
                 Saiba mais
               </a>
             </div>
@@ -235,7 +227,7 @@ const pages = {
             <div class="flip-back">
               <h3>Escolha Jurídica Correta</h3>
               <p>Análise completa para definir o tipo societário ideal, reduzir riscos, proteger bens pessoais e garantir crescimento sustentável.</p>
-              <a href="#/diferencas" class="back-cta">
+              <a href="#/servicos#diferencas" class="back-cta">
                 Saiba mais
               </a>
             </div>
@@ -264,7 +256,7 @@ const pages = {
             <div class="flip-back">
               <h3>Planejamento Tributário</h3>
               <p>Estratégias legais para reduzir a carga tributária, melhorar o fluxo de caixa e manter sua empresa em total conformidade fiscal.</p>
-              <a href="#/impostos" class="back-cta">
+              <a href="#/servicos#impostos" class="back-cta">
                 Saiba mais
               </a>
             </div>
@@ -274,18 +266,18 @@ const pages = {
       </div>
     </section>
 
+    <!-- ========================================
+       WHY SECTION
+    ======================================== -->
+
     <section id="diferenciais" class="why-section">
       <div class="why-header">
-        <h2>
-          <span>Por que escolher a Alonso</span><br>
-          <span>Contábil?</span>
-        </h2>
+        <h2>Por que escolher a Alonso Contábil?</h2>
         <p class="why-subtitle">
-          <span class="light">
-            Diferenciais que fazem toda a diferença no seu dia a dia
-          </span>
+          Diferenciais que fazem toda a diferença no seu dia a dia
         </p>
       </div>
+
       <div class="why-grid">
         <div class="why-card">
           <div class="why-icon">
@@ -295,24 +287,19 @@ const pages = {
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
-                stroke-linejoin="round"
-                class="why-icon-svg">
+                stroke-linejoin="round">
               <path d="M9 12.75 11.25 15 15 9.75m-3-7.036
-                      A11.959 11.959 0 0 1 3.598 6
-                      11.99 11.99 0 0 0 3 9.749
-                      c0 5.592 3.824 10.29 9 11.623
-                      5.176-1.332 9-6.03 9-11.622
-                      0-1.31-.21-2.571-.598-3.751
-                      h-.152c-3.196 0-6.1-1.248
-                      -8.25-3.285Z" />
+                    A11.959 11.959 0 0 1 3.598 6
+                    11.99 11.99 0 0 0 3 9.749
+                    c0 5.592 3.824 10.29 9 11.623
+                    5.176-1.332 9-6.03 9-11.622
+                    0-1.31-.21-2.571-.598-3.751
+                    h-.152c-3.196 0-6.1-1.248
+                    -8.25-3.285Z" />
             </svg>
           </div>
-          <h3><span class="small">Segurança Total</span></h3>
-          <p>
-            <span class="small light">
-              Seus dados protegidos com os mais altos padrões de segurança
-            </span>
-          </p>
+          <h3>Segurança Total</h3>
+          <p>Seus dados protegidos com os mais altos padrões de segurança</p>
         </div>
 
         <div class="why-card">
@@ -323,21 +310,17 @@ const pages = {
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon-outline">
+                stroke-linejoin="round">
               <path d="M12 6v6h4.5
-                      m4.5 0
-                      a9 9 0 1 1-18 0
-                      9 9 0 0 1 18 0Z" />
+                    m4.5 0
+                    a9 9 0 1 1-18 0
+                    9 9 0 0 1 18 0Z" />
             </svg>
           </div>
-          <h3><span class="small">Agilidade</span></h3>
-          <p>
-            <span class="small light">
-              Processos otimizados para economizar seu tempo
-            </span>
-          </p>
+          <h3>Agilidade</h3>
+          <p>Processos otimizados para economizar seu tempo</p>
         </div>
+
         <div class="why-card">
           <div class="why-icon">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -346,28 +329,24 @@ const pages = {
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon-outline">
-                <path d="M15 19.128a9.38 9.38 0 0 0 2.625.372
-                      9.337 9.337 0 0 0 4.121-.952
-                      4.125 4.125 0 0 0-7.533-2.493
-                      M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07
-                      M15 19.128v.106A12.318 12.318 0 0 1 8.624 21
-                      c-2.331 0-4.512-.645-6.374-1.766l-.001-.109
-                      a6.375 6.375 0 0 1 11.964-3.07
-                      M12 6.375a3.375 3.375 0 1 1-6.75 0
-                      3.375 3.375 0 0 1 6.75 0
-                      Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0
-                      2.625 2.625 0 0 1 5.25 0Z" />
+                stroke-linejoin="round">
+              <path d="M15 19.128a9.38 9.38 0 0 0 2.625.372
+                    9.337 9.337 0 0 0 4.121-.952
+                    4.125 4.125 0 0 0-7.533-2.493
+                    M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07
+                    M15 19.128v.106A12.318 12.318 0 0 1 8.624 21
+                    c-2.331 0-4.512-.645-6.374-1.766l-.001-.109
+                    a6.375 6.375 0 0 1 11.964-3.07
+                    M12 6.375a3.375 3.375 0 1 1-6.75 0
+                    3.375 3.375 0 0 1 6.75 0
+                    Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0
+                    2.625 2.625 0 0 1 5.25 0Z" />
             </svg>
           </div>
-          <h3><span class="small">Atendimento Humanizado</span></h3>
-          <p>
-            <span class="small light">
-              Relacionamento próximo e consultoria personalizada
-            </span>
-          </p>
+          <h3>Atendimento Humanizado</h3>
+          <p>Relacionamento próximo e consultoria personalizada</p>
         </div>
+
         <div class="why-card">
           <div class="why-icon">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -376,29 +355,24 @@ const pages = {
                 stroke="currentColor"
                 stroke-width="1.5"
                 stroke-linecap="round"
-                stroke-linejoin="round"
-                class="icon-outline">
+                stroke-linejoin="round">
               <path d="M7.5 14.25v2.25
-                      m3-4.5v4.5
-                      m3-6.75v6.75
-                      m3-9v9
-                      M6 20.25h12
-                      A2.25 2.25 0 0 0 20.25 18V6
-                      A2.25 2.25 0 0 0 18 3.75H6
-                      A2.25 2.25 0 0 0 3.75 6v12
-                      A2.25 2.25 0 0 0 6 20.25Z" />
+                    m3-4.5v4.5
+                    m3-6.75v6.75
+                    m3-9v9
+                    M6 20.25h12
+                    A2.25 2.25 0 0 0 20.25 18V6
+                    A2.25 2.25 0 0 0 18 3.75H6
+                    A2.25 2.25 0 0 0 3.75 6v12
+                    A2.25 2.25 0 0 0 6 20.25Z" />
             </svg>
           </div>
-          <h3><span class="small">Resultados Reais</span></h3>
-          <p>
-            <span class="small light">
-              Foco em economia tributária e crescimento sustentável
-            </span>
-          </p>
+          <h3>Resultados Reais</h3>
+          <p>Foco em economia tributária e crescimento sustentável</p>
         </div>
       </div>
     </section>
-
+   
     <section class="testimonials-section">
       <div class="testimonials-header">
         <h2>O que nossos clientes dizem</h2>
@@ -456,11 +430,13 @@ const pages = {
       </div>
     </section>
 
+    <!-- ========================================
+      CONTACT SECTION
+    ======================================== -->
     <section class="contact-section">
       <h1>Pronto para transformar a contabilidade da sua empresa?</h1>
-        <p class="section-subtitle">
-        Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo
-      </p>
+      <p>Nossa equipe está pronta para atender você. Entre em contato através dos canais abaixo</p>
+
       <div class="contact-grid">
         <!-- Email -->
         <a 
@@ -470,8 +446,9 @@ const pages = {
         >
           <div class="contact-icon">✉</div>
           <div class="contact-label">Email</div>
-          <div class="contact-value">atendimento@alonsocontabil.com.br</div>
+          <div class="contact-value">atendimento@<br>alonsocontabil.com.br</div>
         </a>
+
         <!-- WhatsApp -->
         <a 
           href="https://wa.me/5511995172741"
@@ -483,7 +460,8 @@ const pages = {
           <div class="contact-label">WhatsApp</div>
           <div class="contact-value">(11) 99517-2741</div>
         </a>
-        <!-- Insta -->
+
+        <!-- Instagram -->
         <a 
           href="https://www.instagram.com/alonsocontabil" 
           target="_blank"
@@ -495,10 +473,8 @@ const pages = {
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
           </div>
-          <div class="contact-label">Insta</div>
-          <div class="contact-value">
-            @alonsocontabil
-          </div>
+          <div class="contact-label">Instagram</div>
+          <div class="contact-value">@alonsocontabil</div>
         </a>
       </div>
     </section>
@@ -680,7 +656,7 @@ const pages = {
         <div class="pj-image"></div>
       </section>
       
-      <section class="evolution-section">
+      <section id="evolucao" class="evolution-section">
         <h1>Do MEI ao Próximo Nível</h1>
         <p>
           O limite de R$ 81 mil não deve ser uma barreira para o seu sucesso. Transformamos a migração do seu regime em um degrau estratégico para lucrar mais e proteger seu patrimônio.
@@ -751,7 +727,7 @@ const pages = {
 
         </div>
       </section>
-      <section class="info-section">
+      <section id="diferencas" class="info-section">
         <h1 class="info-title">Qual a melhor armadura jurídica para o seu negócio?</h1>
         <p class="section-subtitle info-p">
           O enquadramento correto é a base da sua segurança. Escolha o modelo que protege seu patrimônio e otimiza seus impostos.
@@ -790,29 +766,30 @@ const pages = {
           <p class="spaced-text">
             Criado para simplificar, o Simples unifica 8 impostos em uma única guia. Mas atenção: nossa consultoria monitora mensalmente se ele ainda é o mais vantajoso para você.
           </p>
-
           <div class="flex-detail">
             <div class="detail-box">
               <h3>Vantagens Reais</h3>
-              <ul class="lista-check">
-                <li><strong>Economia Legal:</strong> Aplicamos o Fator R para reduzir impostos.</li>
-                <li><strong>Credibilidade:</strong> Empresas estruturadas fecham melhores contratos.</li>
-                <li><strong>Distribuição de Lucros:</strong> Ganho isento de IR.</li>
-              </ul>
+              
+              <p><strong>Economia Legal:</strong> Aplicamos o Fator R para reduzir impostos de forma estratégica e manter sua empresa em conformidade fiscal.</p>
+              
+              <p><strong>Credibilidade:</strong> Empresas estruturadas fecham melhores contratos e transmitem mais confiança para clientes e parceiros comerciais.</p>
+              
+              <p><strong>Distribuição de Lucros:</strong> Ganho isento de IR para você, reduzindo significativamente sua carga tributária como pessoa física.</p>
             </div>
 
             <div class="detail-box">
               <h3>Nossa Entrega</h3>
-              <ul class="lista-check">
-                <li><strong>Planejamento:</strong> Estudo tributário estratégico.</li>
-                <li><strong>Gestão Digital:</strong> Documentos e CNDs sempre à mão.</li>
-                <li><strong>Conformidade:</strong> Monitoramento total contra multas.</li>
-              </ul>
+              
+              <p><strong>Planejamento:</strong> Estudo tributário estratégico personalizado para escolher o melhor regime fiscal para o seu negócio.</p>
+              
+              <p><strong>Gestão Digital:</strong> Documentos, guias e CNDs sempre organizados e disponíveis para você acessar quando precisar.</p>
+              
+              <p><strong>Conformidade:</strong> Monitoramento contínuo e proativo contra multas, mantendo todas as obrigações em dia automaticamente.</p>
             </div>
           </div>
         </div>
       </section>
-      <section class="tax-section">
+      <section id="impostos" class="tax-section">
         <h1 class="tax-title">Inteligência Fiscal</h1>
         <p class="tax-p">
           Pague o mínimo legal com estratégia. Com o nosso suporte, profissionais de tecnologia e saúde podem reduzir a carga tributária em até 60% através do Fator R.

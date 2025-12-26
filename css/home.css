@@ -61,33 +61,32 @@
   color: var(--text-light);
 }
 
-/* ===============================
-    ABOUT
-==================================*/
+/* ========================================
+    🎨 ABOUT SECTION - MELHORADO
+======================================== */
 
 .about-section {
-  padding: 6rem 2rem;
+  padding: 80px 20px;
   background: linear-gradient(180deg, #f8fcfb 0%, #ffffff 100%);
-  text-align: center; /* Centraliza o conteúdo principal */
+  text-align: center;
 }
 
 .about-container {
-  max-width: 1400px; /* Estreitamos um pouco para o texto não ficar largo demais */
+  max-width: 1200px;
   margin: 0 auto;
 }
 
-/* Cabeçalho da seção */
 .about-header {
-  margin-bottom: 4.5rem;
+  margin-bottom: 60px;
 }
 
 .about-badge-top {
   display: inline-block;
   background: #eef4ff;
-  padding: 0.8rem 1.5rem;
+  padding: 12px 24px;
   border-radius: 50px;
-  margin-bottom: 2.2rem;
-  border: 1px solid rgba(0, 68, 148, 0.1);
+  margin-bottom: 25px;
+  border: 1px solid rgba(0, 68, 148, 0.15);
 }
 
 .about-badge-top strong {
@@ -97,22 +96,22 @@
 }
 
 .about-badge-top span {
-  font-size: 0.9rem;
-  color: #444;
+  font-size: 0.95rem;
+  color: #4b5563;
   font-weight: 500;
 }
 
 .about-header h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  color: #1a1a1a;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  color: #1f2937;
+  margin-bottom: 20px;
+  line-height: 1.3;
 }
 
 .about-intro {
-  font-size: 1.15rem;
-  color: #555;
+  font-size: 1.1rem;
+  color: #6b7280;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.7;
@@ -121,60 +120,67 @@
 /* Grid de Cards */
 .about-features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Responsivo automático */
-  gap: 2rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
 }
 
 .about-feature-card {
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  background: white;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ícones centralizados */
+  align-items: center;
   text-align: center;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   border: 1px solid #f0f0f0;
 }
 
 .about-feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 68, 148, 0.15);
   border-color: #004494;
 }
 
-/* Bloco atualizado e limpo */
-.about-feature-card .check-icon {
-  background: #16a34a;
-  width: 26px;         /* Tamanho do círculo verde */
-  height: 26px;
+.check-icon {
+  background: #10b981;
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  margin-bottom: 1.2rem;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
 }
 
-/* Nova regra para o desenho interno */
-.about-feature-card .check-icon svg {
-  width: 16px;         /* Controla o tamanho do "V" */
-  height: 16px;
-  fill: white;         /* Deixa o "V" branco */
+.about-feature-card:hover .check-icon {
+  transform: scale(1.1);
+  background: #059669;
 }
+
+.check-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: white;
+}
+
 .about-feature-card strong {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: #004494;
-  margin-bottom: 0.5rem;
+  margin-bottom: 8px;
   display: block;
 }
 
 .about-feature-card p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: #6b7280;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
+
 
 /* ===============================
    SOLUTIONS 
@@ -245,7 +251,7 @@
 
 /* ========== FRENTE DO CARD ========== */
 .flip-front {
-  background: white;
+  background: var(--bg-light);
   border: 1px solid #e5e7eb;
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
@@ -323,6 +329,7 @@
 .flip-back h3 {
   font-size: 1.4rem;
   margin-bottom: 15px;
+  color: var(--bg-white);
 }
 
 .flip-back p {
@@ -348,73 +355,99 @@
   box-shadow: 0 8px 20px rgba(255,255,255,0.3);
 }
 
-
-/**************************************
-    WHY
-**************************************/
+/* ========================================
+       🎯 WHY SECTION - MELHORADO
+======================================== */
 
 .why-section {
-  padding: 5rem 2rem;
-  background-color: #ffffff;
+  padding: 80px 20px;
+  background: #ffffff;
   text-align: center;
 }
 
 .why-header {
-  margin-bottom: 4rem;
+  margin-bottom: 60px;
 }
 
 .why-header h2 {
   font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.5;
+  color: #1f2937;
+  line-height: 1.3;
+  margin-bottom: 15px;
 }
 
 .why-subtitle {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
-/* Grid */
+/* Grid Responsivo */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Cards */
 .why-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 16px;
   text-align: center;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 68, 148, 0.15);
+  border-color: #004494;
 }
 
 .why-icon {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 1.2rem;
-  border-radius: 10px;
-  background: #e8f0ff;
-  color: #004494;        /* controla a cor do ícone */
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #004494, #002f6c);
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-icon {
+  transform: scale(1.1) rotate(5deg);
 }
 
 .why-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
 }
 
 .why-card h3 {
-  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: #1f2937;
+  margin-bottom: 12px;
+  font-weight: 600;
 }
 
-.testimonials-section {
-  padding: 5rem 2rem;
-  background-color: var(--bg-light);
+.why-card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.6;
 }
 
-/* DEPOIMENTOS */
+/*===============================
+     DEPOIMENTOS 
+==================================*/
 
 .testimonials-header {
   text-align: center;
@@ -487,6 +520,106 @@
 .testimonial-stars {
   color: #facc15;
   font-size: 1.1rem;
+}
+
+/* ========================================
+       📞 CONTACT SECTION - MELHORADO
+======================================== */
+
+.contact-section {
+  text-align: center;
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+}
+
+.contact-section h1 {
+  font-size: 2.2rem;
+  color: #1f2937;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.contact-section > p {
+  font-size: 1.1rem;
+  color: #6b7280;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid de Cards */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Card de Contato */
+.contact-card {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  min-height: 220px;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  border-color: #004494;
+  box-shadow: 0 12px 30px rgba(0, 68, 148, 0.15);
+}
+
+/* Ícone */
+.contact-icon {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, #004494, #002f6c);
+  color: white;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+  transform: scale(1.1);
+}
+
+/* Label */
+.contact-label {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* Valor - AJUSTADO PARA NÃO CORTAR */
+.contact-value {
+  font-size: 1rem;
+  color: #004494;
+  font-weight: 600;
+  word-break: break-all;
+  line-height: 1.5;
+  max-width: 100%;
 }
 
 /*****************************************
@@ -571,164 +704,27 @@
   transform: rotate(-135deg); /* seta para cima */
 }
 
-.contact-section{
-  margin-top: 4rem ;
-}
+/* ========================================
+   📱 RESPONSIVIDADE COMPLETA - HOME
+   ======================================== */
 
-/* ============================================
-   CONTATO - CONTACT SECTION
-   ============================================ */
-   
-.contact-section {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.contact-section p{
-  margin: 30px;
-  font-size: 1.2rem;
-}
-
-.contact-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.contact-card {
-  background: var(--bg-light);
-  padding: 2rem;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  text-align: center;
-  color: inherit;
-  cursor: pointer;
-  text-decoration: none;
-
-  /* estado normal (leve) */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-2px);
-  border-color: #004494;
-
-  /* mesma lógica de sombra dos cards premium */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.contact-icon {
-  width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-  color: var(--bg-white);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  margin: 0 auto 1.25rem;
-}
-
-.contact-label {
-  font-size: 0.815rem;
-  color: var(--text-light);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-}
-
-.contact-value {
-  font-size: 1.025rem;
-  color: var(--primary);
-  font-weight: 600;
-}
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .why-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-header h2 {
-    font-size: 2rem;
-  }
-}
-
-/* Responsivo */
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
-  }
-
-  .about-badge {
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .about-features {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 640px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
+/* ========== MOBILE (max-width: 768px) ========== */
 @media (max-width: 768px) {
- 
+  
+  /* ===== HERO SECTION ===== */
   .hero-section {
     flex-direction: column;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    min-height: auto;
   }
 
-  /* MOSTRA a imagem no mobile */
   .hero-image {
-    display: block;
     width: 100%;
-    aspect-ratio: 16 / 9; /* controla a altura automaticamente */
-    min-height: 280px;   /* garante impacto visual */
-    max-height: 290px;   /* evita exagero */   position: relative;
-    background-image: url('/img/img4.jpg');
-    background-size: cover;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    aspect-ratio: 16 / 9;
+    min-height: 280px;
+    max-height: 300px;
   }
 
- .hero-image::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%; /* controla onde começa o fade */
+  .hero-image::after {
     background: linear-gradient(
       to bottom,
       rgba(255,255,255,0) 0%,
@@ -736,83 +732,301 @@
       rgba(242,242,243,0.6) 90%,
       rgba(242,242,243,1) 100%
     );
-    pointer-events: none;
-    margin: 2rem 0 0 0;
-    padding: 0;
   }
 
   .hero-content {
-    background: rgb(242,242,243);
-    border-top: none; /* 👈 conecta com a imagem */
     padding: 30px 20px 40px 20px;
-    max-width: 100%;
   }
 
   .hero-content h1 {
-    margin-top: 1rem;
-    line-height: 3.5rem;
-    text-align: left;
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  /* ===== ABOUT SECTION ===== */
+  .about-section {
+    padding: 60px 20px;
+  }
+
+  .about-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-intro {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .about-features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  /* ===== SOLUTIONS SECTION ===== */
+  .solutions-section {
+    padding: 60px 20px;
   }
 
   .solutions-header h2 {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .solutions-header p {
     font-size: 1rem;
+    padding: 0 10px;
   }
 
   .solutions-grid {
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 0 2rem;
+    padding: 0 15px;
   }
 
   .solution-card {
-    height: 380px;
+    height: 400px;
   }
 
   .flip-front,
   .flip-back {
-    padding: 25px;
+    padding: 25px 20px;
   }
 
   .flip-front h3 {
     font-size: 1.1rem;
+    margin-bottom: 12px;
+  }
+
+  .flip-front > p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+  }
+
+  .flip-front ul {
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .flip-front ul li {
+    font-size: 0.85rem;
+  }
+
+  .flip-hint {
+    padding-top: 10px;
+    font-size: 0.75rem;
   }
 
   .flip-back h3 {
     font-size: 1.2rem;
   }
 
-  .about-header h2 { font-size: 2rem; }
-  .about-section { 
-    padding: 4rem 2rem;
-    height: inherit;
+  .flip-back p {
+    font-size: 0.9rem;
   }
 
-  .why-section { 
-    height: inherit;
+  /* ===== WHY SECTION ===== */
+  .why-section {
+    padding: 60px 20px;
   }
 
-  .contact-section { 
-    height: inherit;
-    padding: 2rem 1rem;
+  .why-header h2 {
+    font-size: 1.7rem;
   }
 
-  .contact-section h1{
-    margin: 2rem 2rem;
+  .why-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
   }
 
-  .contact-grid
-  {
+  .why-grid {
     grid-template-columns: 1fr;
-    max-width: 100%;
+    gap: 20px;
+    padding: 0 15px;
   }
 
-  .contact-card{
-    margin-right: 1rem;
-    margin-left: 1rem;
+  /* ===== TESTIMONIALS SECTION ===== */
+  .testimonials-section {
+    padding: 60px 20px;
   }
 
+  .testimonials-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .testimonials-header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .testimonial-card {
+    padding: 30px 25px;
+  }
+
+  /* ===== FAQ SECTION ===== */
+  .faq-section {
+    padding: 40px 20px;
+    margin: 40px 15px;
+  }
+
+  .faq-section h1 {
+    font-size: 1.7rem;
+    margin-bottom: 30px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 20px 0;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+    padding: 0 0 20px 0;
+  }
+
+  /* ===== CONTACT SECTION ===== */
+  .contact-section {
+    margin: 60px auto;
+    padding: 0 20px;
+  }
+
+  .contact-section h1 {
+    font-size: 1.7rem;
+    padding: 0 10px;
+  }
+
+  .contact-section > p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .contact-card {
+    padding: 35px 25px;
+  }
+
+  .contact-value {
+    font-size: 0.95rem;
+  }
+
+  /* ===== CTA BOX ===== */
+  .cta-box {
+    margin: 60px 15px;
+    padding: 40px 25px;
+  }
+
+  .cta-box h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-box p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 30px;
+    font-size: 1rem;
+  }
+}
+
+/* ========== TABLET (768px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+  /* Why Section - 2 colunas */
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  /* About Section - 2 colunas */
+  .about-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  /* Testimonials - 2 colunas */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  /* Solutions - 2 colunas */
+  .solutions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* ========== MOBILE PEQUENO (max-width: 480px) ========== */
+@media (max-width: 480px) {
+  
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .about-section {
+    padding: 50px 15px;
+  }
+
+  .about-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .solutions-section {
+    padding: 50px 15px;
+  }
+
+  .solutions-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .why-section {
+    padding: 50px 15px;
+  }
+
+  .why-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .testimonials-section {
+    padding: 50px 15px;
+  }
+
+  .testimonials-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-icon {
+    width: 64px;
+    height: 64px;
+    font-size: 1.6rem;
+  }
+
+  .faq-section h1 {
+    font-size: 1.5rem;
+  }
+
+  .cta-box h3 {
+    font-size: 1.3rem;
+  }
 }
