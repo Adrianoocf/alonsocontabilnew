@@ -15,7 +15,7 @@ const pages = {
           target="_blank" 
           rel="noopener noreferrer"
           class="cta-button-home">
-          Quero Falar com um Especialista Agora
+          Fale com um Especialista
         </a>
       </div>
     </section>
@@ -93,7 +93,13 @@ const pages = {
                 <li>Obrigações acessórias</li>
                 <li>Relatórios gerenciais</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
             <div class="flip-back">
               <h3>Contabilidade Estratégica</h3>
@@ -123,7 +129,13 @@ const pages = {
                 <li>Economia fiscal legal</li>
                 <li>Prevenção de riscos</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
             <div class="flip-back">
               <h3>Economia de Impostos</h3>
@@ -153,7 +165,13 @@ const pages = {
                 <li>eSocial e obrigações</li>
                 <li>Gestão de benefícios</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
             <div class="flip-back">
               <h3>Segurança Trabalhista</h3>
@@ -168,7 +186,7 @@ const pages = {
           </div>
         </article>
         <!-- CARD 4 -->
-        <article class="solution-card link-card" onclick="window.location.href='#/evolucao'">
+        <article class="solution-card" onclick="window.location.href='#/evolucao'">
           <div class="flip-inner">
             <div class="flip-front">
               <h3>
@@ -183,12 +201,18 @@ const pages = {
                 <li>Mais faturamento</li>
                 <li>Proteção patrimonial</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </article>
         <!-- CARD 5 -->
-        <article class="solution-card link-card" onclick="window.location.href='#/diferencas'">
+        <article class="solution-card" onclick="window.location.href='#/diferencas'">
           <div class="flip-inner">
             <div class="flip-front">
               <h3>
@@ -203,12 +227,18 @@ const pages = {
                 <li>Sem limite de faturamento</li>
                 <li>Mais credibilidade</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </article>
         <!-- Card 6 -->
-        <article class="solution-card link-card" onclick="window.location.href='#/impostos'">
+        <article class="solution-card" onclick="window.location.href='#/impostos'">
           <div class="flip-inner">
             <div class="flip-front">
               <h3>
@@ -223,7 +253,13 @@ const pages = {
                 <li>Simples x Presumido</li>
                 <li>Economia legal</li>
               </ul>
-              <span class="flip-hint">Clique para saber mais</span>
+              <div class="why-icon">
+                <span class="flip-hint">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243-1.59-1.59" />
+                  </svg>
+                </span>
+              </div>
             </div>
           </div>
         </article>

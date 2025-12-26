@@ -431,7 +431,7 @@ section ul li strong {
   }
 
   .footer-content {
-    padding: 2rem 1rem 1rem;
+    padding: 2rem 1rem 1rem 1rem;
   }
 
   .footer-grid {
@@ -465,6 +465,10 @@ section ul li strong {
     font-size: 14px;
   }
   
+  .footer-section{
+    padding: 1rem;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
