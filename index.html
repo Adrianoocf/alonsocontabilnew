@@ -82,9 +82,186 @@
         const ArrowRight = ({ size = 24, className = "" }) => (
             <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         );
-        const Calculator = ({ size = 24, className = "" }) => (
-            <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
-        );
+
+        // --- IDENTIFICADOR MINI (MODAL) ---
+        const IdentificadorAnexoMini = ({ onClose, onResultado }) => {
+            const [etapa, setEtapa] = useState(1);
+            const [dados, setDados] = useState({
+                atividade: '',
+                tipoAtividade: '',
+                temFuncionarios: null,
+                folhaPagamento: 0,
+                faturamentoMensal: 0
+            });
+
+            const identificarPorTexto = (texto) => {
+                const t = texto.toLowerCase();
+                if (t.match(/médic|dentist|advogad|contador|desenvolv|program|software|engenheir|arquitet|marketing|psicólog|nutricion|fisioterapeut|consultoria|veterinári|farmacêutic|jornalis|design|projeto|tráfego|corretor|ti|tecnologia|saúde/)) {
+                    return 'servicosIntelectuais';
+                }
+                if (t.match(/elétric|hidráulic|pintur|construção|salão|barbearia|restaurante|lanchonete|transporte|motoboy|limpeza|jardinagem|oficina|mecânic|academia|lavanderia|costura|segurança|evento|beleza|estética|bar|pizzaria|buffet|chaveiro|borracharia|funilaria/)) {
+                    return 'servicosGerais';
+                }
+                return null;
+            };
+
+            const calcularFatorR = () => {
+                if (!dados.folhaPagamento || !dados.faturamentoMensal) return null;
+                const fatorR = (dados.folhaPagamento / dados.faturamentoMensal);
+                const percentual = (fatorR * 100).toFixed(1);
+                return { valor: fatorR, percentual: percentual, aprovado: fatorR >= 0.28 };
+            };
+
+            const proximaEtapa = () => {
+                if (etapa === 1 && dados.tipoAtividade) {
+                    if (dados.tipoAtividade === 'servicosIntelectuais') {
+                        setEtapa(2);
+                    } else {
+                        gerarResultado();
+                    }
+                } else if (etapa === 2) {
+                    if (dados.temFuncionarios === true) {
+                        setEtapa(3);
+                    } else {
+                        gerarResultado();
+                    }
+                } else if (etapa === 3) {
+                    gerarResultado();
+                }
+            };
+
+            const gerarResultado = () => {
+                let resultado = {
+                    tipoAnexo: dados.tipoAtividade,
+                    anexoNome: dados.tipoAtividade === 'servicosGerais' ? 'Anexo III' : 'Anexo V',
+                    fatorR: null,
+                    podeEconomizar: false
+                };
+
+                if (dados.tipoAtividade === 'servicosIntelectuais' && dados.temFuncionarios) {
+                    const fatorR = calcularFatorR();
+                    resultado.fatorR = fatorR;
+                    if (fatorR && fatorR.aprovado) {
+                        resultado.podeEconomizar = true;
+                        resultado.anexoNome = 'Anexo III (com Fator R)';
+                    }
+                }
+
+                setEtapa(4);
+                onResultado(resultado);
+            };
+
+            return (
+                <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div className="bg-slate-950 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-8 relative">
+                        
+                        <button onClick={onClose} className="absolute top-4 right-4 text-slate-400 hover:text-white">
+                            <X size={24} />
+                        </button>
+
+                        {etapa === 1 && (
+                            <div>
+                                <h3 className="text-3xl font-black text-white mb-3">Descubra seu Anexo</h3>
+                                <p className="text-slate-400 mb-8">Identifique qual regime tributário se aplica à sua atividade</p>
+                                
+                                <input 
+                                    type="text"
+                                    value={dados.atividade}
+                                    onChange={(e) => {
+                                        setDados({...dados, atividade: e.target.value});
+                                        const tipo = identificarPorTexto(e.target.value);
+                                        if (tipo) setDados({...dados, atividade: e.target.value, tipoAtividade: tipo});
+                                    }}
+                                    placeholder="Ex: Desenvolvimento de software, Salão de beleza..."
+                                    className="w-full bg-slate-900 border border-slate-700 text-white px-6 py-3 rounded-xl mb-6 outline-none focus:border-emerald-500"
+                                />
+
+                                <div className="space-y-4 mb-6">
+                                    <button onClick={() => setDados({...dados, tipoAtividade: 'servicosGerais'})} className={`w-full p-6 rounded-xl border-2 text-left transition-all ${dados.tipoAtividade === 'servicosGerais' ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-700 bg-slate-900 hover:border-slate-600'}`}>
+                                        <div className="flex items-center gap-4">
+                                            <div className="text-3xl">🔧</div>
+                                            <div className="flex-1">
+                                                <div className="text-white font-bold text-lg">Anexo III - Serviços Gerais</div>
+                                                <div className="text-slate-400 text-sm">Salão, restaurante, transporte, limpeza...</div>
+                                            </div>
+                                            <div className="text-emerald-400 font-black text-xl">6%</div>
+                                        </div>
+                                    </button>
+
+                                    <button onClick={() => setDados({...dados, tipoAtividade: 'servicosIntelectuais'})} className={`w-full p-6 rounded-xl border-2 text-left transition-all ${dados.tipoAtividade === 'servicosIntelectuais' ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-700 bg-slate-900 hover:border-slate-600'}`}>
+                                        <div className="flex items-center gap-4">
+                                            <div className="text-3xl">💡</div>
+                                            <div className="flex-1">
+                                                <div className="text-white font-bold text-lg">Anexo V - Intelectual</div>
+                                                <div className="text-slate-400 text-sm">Médico, advogado, dev, engenheiro...</div>
+                                            </div>
+                                            <div className="text-orange-400 font-black text-xl">15,5%</div>
+                                        </div>
+                                    </button>
+                                </div>
+
+                                <button onClick={proximaEtapa} disabled={!dados.tipoAtividade} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all">
+                                    Continuar →
+                                </button>
+                            </div>
+                        )}
+
+                        {etapa === 2 && (
+                            <div>
+                                <h3 className="text-2xl font-black text-white mb-3">Você tem funcionários CLT?</h3>
+                                <p className="text-slate-400 mb-6">Com funcionários você pode usar o Fator R</p>
+
+                                <div className="grid grid-cols-2 gap-4 mb-6">
+                                    <button onClick={() => setDados({...dados, temFuncionarios: true})} className={`p-6 rounded-xl border-2 ${dados.temFuncionarios === true ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-700 bg-slate-900'}`}>
+                                        <div className="text-3xl mb-2">✅</div>
+                                        <div className="text-white font-bold">Sim</div>
+                                    </button>
+                                    <button onClick={() => setDados({...dados, temFuncionarios: false})} className={`p-6 rounded-xl border-2 ${dados.temFuncionarios === false ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-700 bg-slate-900'}`}>
+                                        <div className="text-3xl mb-2">❌</div>
+                                        <div className="text-white font-bold">Não</div>
+                                    </button>
+                                </div>
+
+                                <button onClick={proximaEtapa} disabled={dados.temFuncionarios === null} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold">
+                                    Continuar →
+                                </button>
+                            </div>
+                        )}
+
+                        {etapa === 3 && (
+                            <div>
+                                <h3 className="text-2xl font-black text-white mb-3">Dados para Fator R</h3>
+                                <div className="space-y-4 mb-6">
+                                    <div>
+                                        <label className="text-emerald-400 font-bold mb-2 block text-sm">Faturamento Mensal</label>
+                                        <input type="number" value={dados.faturamentoMensal || ''} onChange={(e) => setDados({...dados, faturamentoMensal: parseFloat(e.target.value) || 0})} placeholder="50000" className="w-full bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:border-emerald-500"/>
+                                    </div>
+                                    <div>
+                                        <label className="text-emerald-400 font-bold mb-2 block text-sm">Folha de Pagamento</label>
+                                        <input type="number" value={dados.folhaPagamento || ''} onChange={(e) => setDados({...dados, folhaPagamento: parseFloat(e.target.value) || 0})} placeholder="15000" className="w-full bg-slate-900 border border-slate-700 text-white px-4 py-3 rounded-xl outline-none focus:border-emerald-500"/>
+                                    </div>
+                                </div>
+                                <button onClick={proximaEtapa} disabled={!dados.faturamentoMensal || !dados.folhaPagamento} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold">
+                                    Ver Resultado →
+                                </button>
+                            </div>
+                        )}
+
+                        {etapa === 4 && (
+                            <div className="text-center">
+                                <div className="text-5xl mb-4">✅</div>
+                                <h3 className="text-2xl font-black text-white mb-2">Identificação Concluída!</h3>
+                                <p className="text-slate-400 mb-6">Agora você pode simular seus impostos com precisão</p>
+                                <button onClick={onClose} className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-3 rounded-xl font-bold">
+                                    Voltar para Simulação
+                                </button>
+                            </div>
+                        )}
+
+                    </div>
+                </div>
+            );
+        };
 
         const CalculadoraPage = () => {
             const [faturamento, setFaturamento] = useState('');
@@ -94,7 +271,10 @@
                 presumido: 0
             });
             const [showResults, setShowResults] = useState(false);
+            const [showIdentificador, setShowIdentificador] = useState(false);
+            const [anexoIdentificado, setAnexoIdentificado] = useState(null);
 
+            // Tabelas de Anexo (Apenas 3 e 5 conforme solicitado)
             const tabelaAnexo3 = [
                 { limite: 180000, aliq: 0.06, deducao: 0 },
                 { limite: 360000, aliq: 0.112, deducao: 9360 },
@@ -118,9 +298,7 @@
             };
 
             const formatMoneyInput = (value) => {
-                // Remove tudo que não é número
                 const numero = value.replace(/\D/g, '');
-                // Converte para formato de moeda
                 const valorFormatado = (Number(numero) / 100).toLocaleString('pt-BR', {
                     minimumFractionDigits: 2,
                     maximumFractionDigits: 2
@@ -136,7 +314,6 @@
             };
 
             const calcularImpostos = (valor) => {
-                // Remove formatação e pega só números
                 const valorLimpo = valor.replace(/\D/g, '');
                 const valorMensal = Number(valorLimpo) / 100;
 
@@ -168,7 +345,6 @@
                 calcularImpostos(valorDigitado);
             };
 
-            // Calcula economia com estratégia Alonso
             const economiaAnual = ((resultados.anexo5 - resultados.anexo3) * 12);
 
             return (
@@ -176,7 +352,7 @@
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         
                         {/* Título */}
-                        <div className="text-center mb-16">
+                        <div className="text-center mb-12">
                             <h1 className="text-5xl md:text-6xl font-black mb-6 text-white uppercase tracking-tighter">
                                 SIMULADOR DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">IMPOSTOS</span>
                             </h1>
@@ -185,10 +361,12 @@
                             </p>
                         </div>
 
-                        {/* Input */}
+                        {/* Input e Ajuda */}
                         <div className="flex flex-col items-center mb-16">
                             <label className="text-emerald-400 font-bold mb-4 text-lg">Faturamento Mensal Estimado</label>
-                            <div className="relative w-full max-w-md">
+                            
+                            {/* Wrapper do input */}
+                            <div className="relative w-full max-w-md mb-4">
                                 <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 text-2xl font-bold">R$</span>
                                 <input 
                                     type="text" 
@@ -198,14 +376,38 @@
                                     onChange={handleInputChange}
                                 />
                             </div>
+
+                            {/* Link de Ajuda posicionado logo abaixo do input */}
+                            <button 
+                                onClick={() => setShowIdentificador(true)}
+                                className="text-slate-400 hover:text-emerald-400 text-sm font-medium underline underline-offset-4 decoration-slate-600 hover:decoration-emerald-400 transition-all flex items-center gap-2"
+                            >
+                                <span>❓</span> Não sei qual é meu anexo
+                            </button>
+
+                            {anexoIdentificado && (
+                                <div className="mt-4 inline-block bg-emerald-500/10 border border-emerald-500/30 rounded-lg px-6 py-2">
+                                    <span className="text-emerald-400 font-bold text-sm">✓ Identificado: {anexoIdentificado.anexoNome}</span>
+                                </div>
+                            )}
                         </div>
+
+                        {/* Modal Identificador */}
+                        {showIdentificador && (
+                            <IdentificadorAnexoMini 
+                                onClose={() => setShowIdentificador(false)}
+                                onResultado={(resultado) => {
+                                    setAnexoIdentificado(resultado);
+                                    setShowIdentificador(false);
+                                }}
+                            />
+                        )}
 
                         {/* Cards de Resultado */}
                         <div 
                             className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-opacity duration-300 ${showResults ? 'opacity-100' : 'opacity-30'}`}
                             style={{pointerEvents: showResults ? 'all' : 'none'}}
                         >
-                            
                             {/* Card 1 - Anexo III */}
                             <div className="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-8 rounded-2xl transition-all hover:-translate-y-1">
                                 <div className="text-slate-400 text-sm font-bold uppercase mb-2 pb-3 border-b border-slate-800">
@@ -253,7 +455,6 @@
                                     </p>
                                 </div>
                             </div>
-
                         </div>
 
                         {/* Box de Economia */}
@@ -569,11 +770,11 @@
                     </div>
                   </section>
                 </>
-              ) : view === 'calculadora' ? (
-                <CalculadoraPage />
-              ) : (
-                <DestravaPage />
-              )}
+                ) : view === 'calculadora' ? (
+                    <CalculadoraPage />
+                ) : (
+                    <DestravaPage />
+                )}
 
               {/* Footer */}
               <footer className="bg-slate-950 py-12 border-t border-slate-900">
