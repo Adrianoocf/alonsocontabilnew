@@ -86,8 +86,6 @@
             <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>
         );
 
-        // --- PÁGINA CALCULADORA ---
-        // --- PÁGINA CALCULADORA (COM CSS DO SITE) ---
         const CalculadoraPage = () => {
             const [faturamento, setFaturamento] = useState('');
             const [resultados, setResultados] = useState({
@@ -119,6 +117,17 @@
                 return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             };
 
+            const formatMoneyInput = (value) => {
+                // Remove tudo que não é número
+                const numero = value.replace(/\D/g, '');
+                // Converte para formato de moeda
+                const valorFormatado = (Number(numero) / 100).toLocaleString('pt-BR', {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                });
+                return valorFormatado;
+            };
+
             const getSimplesTax = (rbt12, tabela) => {
                 let faixa = tabela.find(f => rbt12 <= f.limite);
                 if (!faixa) faixa = tabela[tabela.length - 1];
@@ -127,11 +136,13 @@
             };
 
             const calcularImpostos = (valor) => {
-                setFaturamento(valor);
-                const valorMensal = parseFloat(valor);
+                // Remove formatação e pega só números
+                const valorLimpo = valor.replace(/\D/g, '');
+                const valorMensal = Number(valorLimpo) / 100;
 
                 if (!valorMensal || valorMensal <= 0) {
                     setShowResults(false);
+                    setFaturamento('');
                     return;
                 }
 
@@ -150,6 +161,16 @@
                 });
             };
 
+            const handleInputChange = (e) => {
+                const valorDigitado = e.target.value;
+                const valorFormatado = formatMoneyInput(valorDigitado);
+                setFaturamento(valorFormatado);
+                calcularImpostos(valorDigitado);
+            };
+
+            // Calcula economia com estratégia Alonso
+            const economiaAnual = ((resultados.anexo5 - resultados.anexo3) * 12);
+
             return (
                 <div className="pt-32 pb-20 animate-fade-in-up">
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -166,19 +187,22 @@
 
                         {/* Input */}
                         <div className="flex flex-col items-center mb-16">
-                            <label className="text-emerald-400 font-bold mb-4 text-lg">Faturamento Mensal Estimado (R$)</label>
-                            <input 
-                                type="number" 
-                                className="bg-slate-900 border border-slate-700 focus:border-emerald-500 text-white text-2xl px-6 py-4 rounded-xl w-full max-w-md text-center outline-none transition-all focus:ring-2 focus:ring-emerald-500/50" 
-                                placeholder="Ex: 15000" 
-                                value={faturamento}
-                                onChange={(e) => calcularImpostos(e.target.value)}
-                            />
+                            <label className="text-emerald-400 font-bold mb-4 text-lg">Faturamento Mensal Estimado</label>
+                            <div className="relative w-full max-w-md">
+                                <span className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-400 text-2xl font-bold">R$</span>
+                                <input 
+                                    type="text" 
+                                    className="bg-slate-900 border border-slate-700 focus:border-emerald-500 text-white text-2xl pl-16 pr-6 py-4 rounded-xl w-full text-center outline-none transition-all focus:ring-2 focus:ring-emerald-500/50" 
+                                    placeholder="0,00" 
+                                    value={faturamento}
+                                    onChange={handleInputChange}
+                                />
+                            </div>
                         </div>
 
                         {/* Cards de Resultado */}
                         <div 
-                            className={`grid grid-cols-1 md:grid-cols-3 gap-6 transition-opacity duration-300 ${showResults ? 'opacity-100' : 'opacity-30'}`}
+                            className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-opacity duration-300 ${showResults ? 'opacity-100' : 'opacity-30'}`}
                             style={{pointerEvents: showResults ? 'all' : 'none'}}
                         >
                             
@@ -231,6 +255,15 @@
                             </div>
 
                         </div>
+
+                        {/* Box de Economia */}
+                        {showResults && economiaAnual > 0 && (
+                            <div className="max-w-2xl mx-auto mb-12 bg-gradient-to-r from-emerald-600 to-cyan-600 p-8 rounded-2xl text-center shadow-2xl animate-fade-in-up">
+                                <p className="text-white text-sm font-bold uppercase tracking-wider mb-2">💰 Economia Anual com Estratégia Alonso</p>
+                                <p className="text-white text-5xl font-black mb-2">{formatMoney(economiaAnual)}</p>
+                                <p className="text-emerald-50 text-sm">É isso que você economiza por ano saindo do Anexo V para o Anexo III com Fator R</p>
+                            </div>
+                        )}
 
                         {/* CTA Button */}
                         <div className="text-center mt-16">
@@ -418,7 +451,7 @@
                         </span>
                       </h1>
                       <p className="mt-4 text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed">
-                        Chega de burocracia lenta. Nós somos a força que o seu negócio precisa para crescer sem freios.
+                        <span className="text-emerald-400 font-bold">Economize até R$ 50 mil/ano</span> em impostos (legalmente). Mais de 150 empresas em Guarulhos já pagam menos com a gente.
                       </p>
                       <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                         <button onClick={(e) => handleNav('destrava', e)} className="group bg-emerald-600 hover:bg-emerald-500 text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2">
@@ -472,7 +505,7 @@
                         <h2 className="text-4xl md:text-5xl font-black text-white mb-6 leading-tight">Sua contabilidade parou no tempo? <br /><span className="text-emerald-400">Nós aceleramos.</span></h2>
                         <p className="text-slate-400 text-lg mb-8 leading-relaxed">A Alonso Contábil não é apenas um escritório que gera guias de impostos. Nós somos parceiros de negócios. Usamos tecnologia de ponta para garantir que nada fique pendente.</p>
                         <ul className="space-y-4">
-                          {["Atendimento rápido via WhatsApp (sem robôs burros).", "Abertura de empresa em tempo recorde.", "Regularização de pendências complexas.", "Consultoria proativa: a gente avisa antes do problema acontecer."].map((item, idx) => (
+                          {["Atendimento rápido via WhatsApp (sem robôs burros).", "CNPJ aberto em até 48h úteis.", "Regularização de pendências complexas.", "Consultoria proativa: a gente avisa antes do problema acontecer."].map((item, idx) => (
                             <li key={idx} className="flex items-center gap-3">
                               <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-slate-950"><CheckCircle size={14} strokeWidth={3} /></div>
                               <span className="text-slate-200 font-medium">{item}</span>
