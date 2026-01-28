@@ -494,7 +494,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-emerald-500 selection:text-white">
+    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-emerald-500 selection:text-white overflow-x-hidden">
       
       {/* <nav className="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800"> */}
       <nav className="fixed w-full z-50 bg-slate-950/95 border-b border-slate-800">
@@ -539,7 +539,7 @@ function App() {
                 <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span></span>
                 Referência em Guarulhos
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-8 text-white">A CONTABILIDADE DE <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">ALTA PERFORMANCE</span></h1>
+              <h1 className="text-4xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-8 text-white">A CONTABILIDADE DE <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">ALTA PERFORMANCE</span></h1>
               <p className="mt-4 text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed"><span className="text-emerald-400 font-bold">Economize até R$ 50 mil/ano</span> em impostos (legalmente). Mais de 150 empresas em Guarulhos já pagam menos com a gente.</p>
               <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
                 <button onClick={(e) => handleNav('destrava', e)} className="group bg-emerald-600 hover:bg-emerald-500 text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2">Quero Destravar Minha Empresa <ArrowRight className="group-hover:translate-x-1 transition-transform" /></button>
@@ -548,7 +548,7 @@ function App() {
             </div>
           </section>
           <section id="solucoes" className="py-20 bg-slate-900">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
               <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que sua empresa precisa?</h2><p className="text-slate-400 text-lg">Não importa o tamanho do problema, nós temos a solução exata.</p></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:-translate-y-2 group"><div className="bg-slate-900 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors"><CheckCircle className="text-emerald-500 w-8 h-8" /></div><h3 className="text-xl font-bold text-white mb-3">Resolvemos Tudo</h3><p className="text-slate-400 leading-relaxed">Fiscal, trabalhista, contábil ou societário. Assumimos a responsabilidade para você focar apenas em vender.</p></div>
