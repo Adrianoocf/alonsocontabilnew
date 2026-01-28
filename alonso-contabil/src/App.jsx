@@ -172,28 +172,33 @@ const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
                     </button>
                 </div>
             )}
-
             {etapa === 3 && (
                 <div className="animate-fade-in-up">
                     <p className="text-slate-300 mb-4 font-medium">3. Informe os valores (Mensal)</p>
-                    <div className="space-y-4 mb-6">
+                    
+                    {/* Envolvemos os inputs em um formulário para o Android entender o fim da digitação */}
+                    <form onSubmit={(e) => e.preventDefault()} className="space-y-4 mb-6">
                         
                         {/* INPUT FATURAMENTO */}
                         <div>
                             <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Faturamento</label>
-                            <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-fat').focus()}>
+                            <div 
+                                className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" 
+                                onClick={() => document.getElementById('diag-fat').focus()}
+                            >
                                 <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
                                 <input 
                                     id="diag-fat"
                                     type="tel"
                                     inputMode="numeric"
-                                    value={inputFat} 
                                     placeholder="0,00"
+                                    value={inputFat} 
                                     onChange={(e) => {
                                         const v = e.target.value;
                                         setInputFat(formatMoneyLocal(v));
                                         setDados({...dados, faturamentoMensal: parseFloat(v.replace(/\D/g, ''))/100});
                                     }}
+                                    onKeyDown={(e) => { if (e.key === 'Enter') e.target.blur(); }}
                                     className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
                                 />
                             </div>
@@ -202,26 +207,41 @@ const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
                         {/* INPUT FOLHA */}
                         <div>
                             <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Folha (Salários + Pró-labore)</label>
-                            <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-folha').focus()}>
-                                <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
-                                <input 
-                                    id="diag-folha"
-                                    type="tel" 
-                                    inputMode="numeric"
-                                    value={inputFolha} 
-                                    placeholder="0,00"
-                                    onChange={(e) => {
-                                        const v = e.target.value;
-                                        setInputFolha(formatMoneyLocal(v));
-                                        setDados({...dados, folhaPagamento: parseFloat(v.replace(/\D/g, ''))/100});
-                                    }}
-                                    className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
-                                />
-                            </div>
+                            
+                            {/* O form garante que o botão 'check' do Android funcione como um comando de conclusão */}
+                            <form onSubmit={(e) => e.preventDefault()}>
+                                <div 
+                                    className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" 
+                                    onClick={() => document.getElementById('diag-folha').focus()}
+                                >
+                                    <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
+                                    <input 
+                                        id="diag-folha"
+                                        type="tel" 
+                                        inputMode="numeric"
+                                        placeholder="0,00"
+                                        value={inputFolha} 
+                                        onChange={(e) => {
+                                            const v = e.target.value;
+                                            setInputFolha(formatMoneyLocal(v));
+                                            setDados({...dados, folhaPagamento: parseFloat(v.replace(/\D/g, ''))/100});
+                                        }}
+                                        // Força a saída do foco e fecha o teclado no Android
+                                        onKeyDown={(e) => { 
+                                            if (e.key === 'Enter') e.target.blur(); 
+                                        }}
+                                        className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
+                                    />
+                                </div>
+                            </form>
                         </div>
+                    </form>
 
-                    </div>
-                    <button onClick={proximaEtapa} disabled={!dados.faturamentoMensal} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all">
+                    <button 
+                        onClick={proximaEtapa} 
+                        disabled={!dados.faturamentoMensal} 
+                        className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all"
+                    >
                         Calcular Diagnóstico →
                     </button>
                 </div>
@@ -358,6 +378,12 @@ const CalculadoraPage = () => {
 
     const economiaAnual = ((resultados.anexo5 - resultados.anexo3) * 12);
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            e.target.blur(); // Isso tira o foco do input e fecha o teclado no Android
+        }
+    };
+    
     return (
         <div className="pt-32 pb-20 animate-fade-in-up min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -372,14 +398,32 @@ const CalculadoraPage = () => {
 
                 <div className="flex flex-col items-center mb-12">   
                     <label className="text-emerald-400 font-bold mb-4 text-lg">Faturamento Mensal Estimado</label>
-                    <div className="flex items-center w-full max-w-xs bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 mb-4 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/50 transition-all cursor-text" onClick={() => document.getElementById('input-faturamento').focus()}>
-                        <span className="text-slate-400 text-2xl font-bold mr-2 select-none">R$</span>
-                        <input 
-                            id="input-faturamento" type="tel" inputMode="numeric" 
-                            className="bg-transparent border-none text-white text-2xl w-full text-left outline-none font-bold placeholder-slate-600" 
-                            placeholder="0,00" value={faturamento} onChange={handleInputChange} autoComplete="off"
-                        />
-                    </div>
+                    
+                    {/* Envolver em FORM garante que o Android entenda o botão de 'Check' do teclado */}
+                    <form onSubmit={(e) => e.preventDefault()} className="w-full max-w-xs">
+                        <div 
+                            className="flex items-center w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 mb-4 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/50 transition-all cursor-text" 
+                            onClick={() => document.getElementById('input-faturamento').focus()}
+                        >
+                            <span className="text-slate-400 text-2xl font-bold mr-2 select-none">R$</span>
+                            <input 
+                                id="input-faturamento" 
+                                type="tel" 
+                                inputMode="numeric" 
+                                className="bg-transparent border-none text-white text-2xl w-full text-left outline-none font-bold placeholder-slate-600" 
+                                placeholder="0,00" 
+                                value={faturamento} 
+                                onChange={handleInputChange} 
+                                autoComplete="off"
+                                // Esta é a função que esconde o teclado no Android
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        e.target.blur();
+                                    }
+                                }}
+                            />
+                        </div>
+                    </form>
                     
                     <button 
                         onClick={toggleDiagnostico}
