@@ -102,10 +102,57 @@
                 return (Number(numero) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
             };
 
+            // --- FUNÇÃO DE INTELIGÊNCIA DE BUSCA (CNAE / ANEXOS) ---
             const identificarPorTexto = (texto) => {
-                const t = texto.toLowerCase();
-                if (t.match(/médic|dentist|advogad|contador|desenvolv|program|software|engenheir|arquitet|marketing|psicólog|nutricion|fisioterapeut|consultoria|veterinári|farmacêutic|jornalis|design|projeto|tráfego|corretor|ti|tecnologia|saúde/)) return 'servicosIntelectuais';
-                if (t.match(/elétric|hidráulic|pintur|construção|salão|barbearia|restaurante|lanchonete|transporte|motoboy|limpeza|jardinagem|oficina|mecânic|academia|lavanderia|costura|segurança|evento|beleza|estética|bar|pizzaria|buffet|chaveiro|borracharia|funilaria/)) return 'servicosGerais';
+                if (!texto) return null;
+
+                // 1. Normalização "Bruta": Remove acentos, ç, e deixa minúsculo.
+                // Ex: "Manutenção Elétrica" vira "manutencao eletrica"
+                const t = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+                // --- GRUPO 1: ANEXO V (Intelectual / Científico / Tech / Saúde) ---
+                // Sujeito ao Fator R (pode cair para Anexo III se tiver folha)
+                const termosAnexoV = [
+                    // TECH & DEV
+                    /desenvol|program|soft|sistem|ti\b|tecno|dados|web|site|app|aplicati|cloud|suporte tec/,
+                    // SAÚDE HUMANA E ANIMAL
+                    /medic|doutor|clinic|saude|dentist|odont|psicol|nutri|fisioter|fono|veterin|laborat|enferm|terap|fisia/,
+                    // ENGENHARIA E ARQUITETURA
+                    /engenh|arquit|urbanis|topogra|geo|proj/,
+                    // MARKETING, CONSULTORIA E INTELECTUAIS
+                    /consult|assessoria|gestao|market|publicid|propag|design|redat|jornal|tradut|audit|intermed|represent|perit|aval/
+                ];
+
+                // --- GRUPO 2: ANEXO III (Serviços Gerais / Manutenção / Operacional) ---
+                // Já começa pagando menos (6%), sem depender de Fator R (na maioria)
+                const termosAnexoIII = [
+                    // MANUTENÇÃO E REPAROS
+                    /manuten|repar|consert|instal|eletric|hidraul|mecanic|pedreir|pintor|obra|construc|serral|marcen|vidrac|monta/,
+                    // BELEZA E ESTÉTICA
+                    /salao|barbe|cabel|manic|pedic|estetic|belez|maquia|depil|cilio|sobrancelh|tatu/,
+                    // ALIMENTAÇÃO
+                    /restauran|bar\b|lanch|pizz|hamburg|alimen|comid|buffet|bolo|doce|gastron/,
+                    // TRANSPORTE E LOGÍSTICA
+                    /transp|frete|mudanc|escolar|motorist|logist|entreg|motoboy|carga/,
+                    // SERVIÇOS ADMINISTRATIVOS E EDUCACIONAIS
+                    /contab|digit|escrit|ensino|curso|treinament|aula|creche|escola|idios|traduc/,
+                    // LIMPEZA E CONSERVAÇÃO
+                    /limpez|faxin|diarist|dedetiz|jardin|portar|vigil|zelad/,
+                    // DIVERSOS
+                    /grafic|impres|fotog|filmagem|event|promoc|agenc|viagem|lavand|costur/
+                ];
+
+                // LÓGICA DE DECISÃO:
+                // Primeiro verificamos Anexo V (Fator R), pois são palavras mais específicas.
+                for (let regex of termosAnexoV) {
+                    if (regex.test(t)) return 'servicosIntelectuais';
+                }
+
+                // Depois verificamos Anexo III
+                for (let regex of termosAnexoIII) {
+                    if (regex.test(t)) return 'servicosGerais';
+                }
+
                 return null;
             };
 
@@ -213,30 +260,47 @@
                         <div className="animate-fade-in-up">
                             <p className="text-slate-300 mb-4 font-medium">3. Informe os valores (Mensal)</p>
                             <div className="space-y-4 mb-6">
+                                
+                                {/* INPUT FATURAMENTO ESTILO BANCO */}
                                 <div>
                                     <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Faturamento</label>
-                                    <input 
-                                        type="text" value={inputFat} placeholder="R$ 0,00"
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setInputFat(formatMoneyLocal(v));
-                                            setDados({...dados, faturamentoMensal: parseFloat(v.replace(/\D/g, ''))/100});
-                                        }}
-                                        className="w-full bg-slate-950 border border-slate-700 text-white text-lg px-4 py-3 rounded-xl outline-none focus:border-emerald-500"
-                                    />
+                                    <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-fat').focus()}>
+                                        <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
+                                        <input 
+                                            id="diag-fat"
+                                            type="text" 
+                                            value={inputFat} 
+                                            placeholder="0,00"
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setInputFat(formatMoneyLocal(v));
+                                                setDados({...dados, faturamentoMensal: parseFloat(v.replace(/\D/g, ''))/100});
+                                            }}
+                                            className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
+                                        />
+                                    </div>
                                 </div>
+
+                                {/* INPUT FOLHA ESTILO BANCO */}
                                 <div>
                                     <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Folha (Salários + Pró-labore)</label>
-                                    <input 
-                                        type="text" value={inputFolha} placeholder="R$ 0,00"
-                                        onChange={(e) => {
-                                            const v = e.target.value;
-                                            setInputFolha(formatMoneyLocal(v));
-                                            setDados({...dados, folhaPagamento: parseFloat(v.replace(/\D/g, ''))/100});
-                                        }}
-                                        className="w-full bg-slate-950 border border-slate-700 text-white text-lg px-4 py-3 rounded-xl outline-none focus:border-emerald-500"
-                                    />
+                                    <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-folha').focus()}>
+                                        <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
+                                        <input 
+                                            id="diag-folha"
+                                            type="text" 
+                                            value={inputFolha} 
+                                            placeholder="0,00"
+                                            onChange={(e) => {
+                                                const v = e.target.value;
+                                                setInputFolha(formatMoneyLocal(v));
+                                                setDados({...dados, folhaPagamento: parseFloat(v.replace(/\D/g, ''))/100});
+                                            }}
+                                            className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
+                                        />
+                                    </div>
                                 </div>
+
                             </div>
                             <button onClick={proximaEtapa} disabled={!dados.faturamentoMensal} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all">
                                 Calcular Diagnóstico →
