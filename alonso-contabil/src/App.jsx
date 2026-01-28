@@ -375,7 +375,7 @@ const CalculadoraPage = () => {
                     <div className="flex items-center w-full max-w-xs bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 mb-4 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/50 transition-all cursor-text" onClick={() => document.getElementById('input-faturamento').focus()}>
                         <span className="text-slate-400 text-2xl font-bold mr-2 select-none">R$</span>
                         <input 
-                            id="input-faturamento" type="text" 
+                            id="input-faturamento" type="tel" inputMode="numeric" 
                             className="bg-transparent border-none text-white text-2xl w-full text-left outline-none font-bold placeholder-slate-600" 
                             placeholder="0,00" value={faturamento} onChange={handleInputChange} autoComplete="off"
                         />
