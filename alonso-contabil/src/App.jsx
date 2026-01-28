@@ -360,7 +360,7 @@ const CalculadoraPage = () => {
         <div className="pt-32 pb-20 animate-fade-in-up min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 text-white uppercase tracking-tighter">
+                    <h1 className="text-4xl md:text-6xl font-black mb-6 text-white uppercase tracking-tighter">
                         SIMULADOR DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">IMPOSTOS</span>
                     </h1>
                     <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">
@@ -450,7 +450,7 @@ const CalculadoraPage = () => {
 const DestravaPage = () => (
     <div className="pt-32 pb-20 animate-fade-in-up">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-7xl font-black mb-8 text-white uppercase tracking-tighter leading-none">
+            <h1 className="text-4xl md:text-7xl font-black mb-8 text-white uppercase tracking-tighter leading-none">
                 ESTRATÉGIAS DE <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">PERFORMANCE</span>
             </h1>
@@ -547,7 +547,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section id="solucoes" className="py-20 bg-slate-900">
+          <section id="solucoes" className="py-20 bg-slate-900 scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
               <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que sua empresa precisa?</h2><p className="text-slate-400 text-lg">Não importa o tamanho do problema, nós temos a solução exata.</p></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
