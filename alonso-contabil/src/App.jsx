@@ -1,0 +1,584 @@
+import React, { useState, useRef, useEffect } from 'react';
+
+// --- ÍCONES (SVG Puro para leveza total) ---
+const Rocket = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-5.2L19 2a22 22 0 0 1 2.34 7.64L15 12"/><path d="M9 21v-6a2 2 0 0 1 2-2h2.76a2 2 0 0 1 1.79 1.11L17 18h0a2 2 0 0 1-2.22 2.76c-1.35-.35-2.22-.32-2.78.24a.69.69 0 0 0-.25.59V21"/></svg>
+);
+const Unlock = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+);
+const CheckCircle = ({ size = 24, className = "", strokeWidth=2 }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth} strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+);
+const MessageCircle = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+);
+const TrendingUp = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+);
+const Menu = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+);
+const X = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+);
+const ArrowRight = ({ size = 24, className = "" }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+);
+
+// --- COMPONENTE: IDENTIFICADOR IN-PAGE ---
+const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
+    const [etapa, setEtapa] = useState(1);
+    const [inputFat, setInputFat] = useState('');
+    const [inputFolha, setInputFolha] = useState('');
+
+    const [dados, setDados] = useState({
+        atividade: '',
+        tipoAtividade: '',
+        temFolha: null,
+        folhaPagamento: 0,
+        faturamentoMensal: 0
+    });
+
+    const formatMoneyLocal = (value) => {
+        const numero = value.replace(/\D/g, '');
+        return (Number(numero) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    const identificarPorTexto = (texto) => {
+        if (!texto) return null;
+        const t = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+        const termosAnexoV = [
+            /desenvol|program|soft|sistem|ti\b|tecno|dados|web|site|app|aplicati|cloud|suporte tec/,
+            /medic|doutor|clinic|saude|dentist|odont|psicol|nutri|fisioter|fono|veterin|laborat|enferm|terap|fisia/,
+            /engenh|arquit|urbanis|topogra|geo|proj/,
+            /consult|assessoria|gestao|market|publicid|propag|design|redat|jornal|tradut|audit|intermed|represent|perit|aval/
+        ];
+
+        const termosAnexoIII = [
+            /manuten|repar|consert|instal|eletric|hidraul|mecanic|pedreir|pintor|obra|construc|serral|marcen|vidrac|monta/,
+            /salao|barbe|cabel|manic|pedic|estetic|belez|maquia|depil|cilio|sobrancelh|tatu/,
+            /restauran|bar\b|lanch|pizz|hamburg|alimen|comid|buffet|bolo|doce|gastron/,
+            /transp|frete|mudanc|escolar|motorist|logist|entreg|motoboy|carga/,
+            /contab|digit|escrit|ensino|curso|treinament|aula|creche|escola|idios|traduc/,
+            /limpez|faxin|diarist|dedetiz|jardin|portar|vigil|zelad/,
+            /grafic|impres|fotog|filmagem|event|promoc|agenc|viagem|lavand|costur/
+        ];
+
+        for (let regex of termosAnexoV) {
+            if (regex.test(t)) return 'servicosIntelectuais';
+        }
+
+        for (let regex of termosAnexoIII) {
+            if (regex.test(t)) return 'servicosGerais';
+        }
+
+        return null;
+    };
+
+    const proximaEtapa = () => {
+        if (etapa === 1 && dados.tipoAtividade) {
+            dados.tipoAtividade === 'servicosIntelectuais' ? setEtapa(2) : gerarResultado();
+        } else if (etapa === 2) {
+            dados.temFolha === true ? setEtapa(3) : gerarResultado();
+        } else if (etapa === 3) {
+            gerarResultado();
+        }
+    };
+
+    const gerarResultado = () => {
+        let resultado = {
+            tipoAnexo: dados.tipoAtividade,
+            anexoNome: dados.tipoAtividade === 'servicosGerais' ? 'Anexo III' : 'Anexo V',
+            fatorR: 0,
+            percentualFolha: 0,
+            podeEconomizar: false,
+            faturamento: dados.faturamentoMensal
+        };
+
+        if (dados.tipoAtividade === 'servicosIntelectuais' && dados.temFolha) {
+            const faturamento = dados.faturamentoMensal || 1;
+            const folha = dados.folhaPagamento || 0;
+            const razao = folha / faturamento;
+            
+            resultado.percentualFolha = (razao * 100).toFixed(2);
+            resultado.fatorR = razao;
+
+            if (razao >= 0.28) {
+                resultado.podeEconomizar = true;
+                resultado.anexoNome = 'Anexo III (Via Fator R)';
+            }
+        }
+        setEtapa(4);
+        setDados({...dados, resultadoFinal: resultado}); 
+    };
+
+    return (
+        <div className="w-full max-w-2xl mx-auto mt-12 bg-slate-900/80 border border-slate-700 rounded-2xl p-6 md:p-8 animate-fade-in-up scroll-mt-32">
+            <div className="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h3 className="text-xl font-bold text-white flex items-center gap-2">
+                    <span className="text-emerald-500">🔎</span> Diagnóstico Fiscal
+                </h3>
+                <button onClick={onCancelar} className="text-slate-500 hover:text-white transition-colors text-sm">Cancelar</button>
+            </div>
+
+            {etapa === 1 && (
+                <div className="animate-fade-in-up">
+                    <p className="text-slate-300 mb-4 font-medium">1. Qual a sua atividade principal?</p>
+                    <input 
+                        type="text"
+                        value={dados.atividade}
+                        onChange={(e) => {
+                            setDados({...dados, atividade: e.target.value});
+                            const tipo = identificarPorTexto(e.target.value);
+                            if (tipo) setDados({...dados, atividade: e.target.value, tipoAtividade: tipo});
+                        }}
+                        placeholder="Ex: Programador, Médico, Salão..."
+                        className="w-full bg-slate-950 border border-slate-700 text-white px-4 py-3 rounded-xl mb-4 outline-none focus:border-emerald-500 transition-colors"
+                    />
+                    
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                        <button onClick={() => setDados({...dados, tipoAtividade: 'servicosGerais'})} className={`p-4 rounded-xl border transition-all text-left ${dados.tipoAtividade === 'servicosGerais' ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-800 bg-slate-950 text-slate-400'}`}>
+                            <div className="font-bold text-white">Serviços Gerais</div>
+                            <div className="text-xs mt-1">Manutenção, comércio, transporte...</div>
+                        </button>
+                        <button onClick={() => setDados({...dados, tipoAtividade: 'servicosIntelectuais'})} className={`p-4 rounded-xl border transition-all text-left ${dados.tipoAtividade === 'servicosIntelectuais' ? 'border-emerald-500 bg-emerald-500/10' : 'border-slate-800 bg-slate-950 text-slate-400'}`}>
+                            <div className="font-bold text-white">Intelectual / Tech</div>
+                            <div className="text-xs mt-1">Dev, médico, engenheiro, marketing...</div>
+                        </button>
+                    </div>
+                    <button onClick={proximaEtapa} disabled={!dados.tipoAtividade} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 disabled:text-slate-500 text-white py-3 rounded-xl font-bold transition-all">
+                        Próximo Passo →
+                    </button>
+                </div>
+            )}
+
+            {etapa === 2 && (
+                <div className="animate-fade-in-up">
+                    <p className="text-slate-300 mb-2 font-medium">2. Você tem gastos com folha?</p>
+                    <p className="text-slate-500 text-sm mb-4">Isso inclui funcionários registrados <strong>OU</strong> o seu próprio Pró-labore.</p>
+                    
+                    <div className="grid grid-cols-2 gap-4 mb-6">
+                        <button onClick={() => setDados({...dados, temFolha: true})} className={`p-4 rounded-xl border transition-all ${dados.temFolha === true ? 'border-emerald-500 bg-emerald-500/10 text-white' : 'border-slate-800 bg-slate-950 text-slate-400'}`}>
+                            <div className="text-2xl mb-2">✅</div> Sim
+                        </button>
+                        <button onClick={() => setDados({...dados, temFolha: false})} className={`p-4 rounded-xl border transition-all ${dados.temFolha === false ? 'border-emerald-500 bg-emerald-500/10 text-white' : 'border-slate-800 bg-slate-950 text-slate-400'}`}>
+                            <div className="text-2xl mb-2">❌</div> Não
+                        </button>
+                    </div>
+                    <button onClick={proximaEtapa} disabled={dados.temFolha === null} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all">
+                        Próximo Passo →
+                    </button>
+                </div>
+            )}
+
+            {etapa === 3 && (
+                <div className="animate-fade-in-up">
+                    <p className="text-slate-300 mb-4 font-medium">3. Informe os valores (Mensal)</p>
+                    <div className="space-y-4 mb-6">
+                        
+                        {/* INPUT FATURAMENTO */}
+                        <div>
+                            <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Faturamento</label>
+                            <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-fat').focus()}>
+                                <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
+                                <input 
+                                    id="diag-fat"
+                                    type="text" 
+                                    value={inputFat} 
+                                    placeholder="0,00"
+                                    onChange={(e) => {
+                                        const v = e.target.value;
+                                        setInputFat(formatMoneyLocal(v));
+                                        setDados({...dados, faturamentoMensal: parseFloat(v.replace(/\D/g, ''))/100});
+                                    }}
+                                    className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
+                                />
+                            </div>
+                        </div>
+
+                        {/* INPUT FOLHA */}
+                        <div>
+                            <label className="text-emerald-400 text-xs font-bold uppercase mb-1 block">Folha (Salários + Pró-labore)</label>
+                            <div className="flex items-center w-full bg-slate-950 border border-slate-700 rounded-xl px-4 py-3 focus-within:border-emerald-500 transition-all cursor-text" onClick={() => document.getElementById('diag-folha').focus()}>
+                                <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
+                                <input 
+                                    id="diag-folha"
+                                    type="text" 
+                                    value={inputFolha} 
+                                    placeholder="0,00"
+                                    onChange={(e) => {
+                                        const v = e.target.value;
+                                        setInputFolha(formatMoneyLocal(v));
+                                        setDados({...dados, folhaPagamento: parseFloat(v.replace(/\D/g, ''))/100});
+                                    }}
+                                    className="bg-transparent border-none text-white text-lg w-full outline-none font-bold"
+                                />
+                            </div>
+                        </div>
+
+                    </div>
+                    <button onClick={proximaEtapa} disabled={!dados.faturamentoMensal} className="w-full bg-emerald-600 hover:bg-emerald-500 disabled:bg-slate-700 text-white py-3 rounded-xl font-bold transition-all">
+                        Calcular Diagnóstico →
+                    </button>
+                </div>
+            )}
+
+            {etapa === 4 && dados.resultadoFinal && (
+                <div className="text-center animate-fade-in-up">
+                    <div className="mb-6 p-4 bg-slate-950 rounded-xl border border-slate-800">
+                        <div className="text-emerald-400 font-bold text-sm uppercase tracking-wide mb-2">Resultado da Análise</div>
+                        <div className="text-white text-3xl font-black mb-2">
+                            {dados.resultadoFinal.anexoNome}
+                        </div>
+                        
+                        {dados.tipoAtividade === 'servicosIntelectuais' && dados.temFolha && (
+                            <div className="mt-3 pt-3 border-t border-slate-800">
+                                <div className="flex justify-between items-center text-sm mb-1">
+                                    <span className="text-slate-400">Sua Folha representa:</span>
+                                    <span className={`font-bold ${dados.resultadoFinal.percentualFolha >= 28 ? 'text-emerald-400' : 'text-orange-400'}`}>
+                                        {dados.resultadoFinal.percentualFolha}% do Faturamento
+                                    </span>
+                                </div>
+                                <div className="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div 
+                                        className={`h-full ${dados.resultadoFinal.percentualFolha >= 28 ? 'bg-emerald-500' : 'bg-orange-500'}`} 
+                                        style={{width: `${Math.min(dados.resultadoFinal.percentualFolha, 100)}%`}}
+                                    ></div>
+                                </div>
+                                <p className="text-xs text-slate-500 mt-2 text-left">
+                                    {dados.resultadoFinal.percentualFolha >= 28 
+                                        ? "✅ Parabéns! Você atingiu 28% e paga menos imposto (Anexo III)." 
+                                        : `⚠️ Você precisa de 28% para reduzir o imposto. Faltam ${(28 - dados.resultadoFinal.percentualFolha).toFixed(1)}%.`
+                                    }
+                                </p>
+                            </div>
+                        )}
+                    </div>
+
+                    <button 
+                        onClick={() => onConcluir(dados.resultadoFinal)} 
+                        className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-xl font-bold shadow-lg shadow-emerald-500/20 transition-all transform hover:scale-[1.02]"
+                    >
+                        Simular Valores com esse Perfil
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};
+
+// --- PÁGINAS ---
+
+const CalculadoraPage = () => {
+    const [faturamento, setFaturamento] = useState('');
+    const [resultados, setResultados] = useState({ anexo3: 0, anexo5: 0, presumido: 0 });
+    const [showResults, setShowResults] = useState(false);
+    const [anexoRecomendado, setAnexoRecomendado] = useState(null);
+    
+    const [showDiagnostico, setShowDiagnostico] = useState(false);
+    const diagnosticoRef = useRef(null);
+    const resultsRef = useRef(null);
+
+    const tabelaAnexo3 = [
+        { limite: 180000, aliq: 0.06, deducao: 0 }, { limite: 360000, aliq: 0.112, deducao: 9360 },
+        { limite: 720000, aliq: 0.135, deducao: 17640 }, { limite: 1800000, aliq: 0.16, deducao: 35640 },
+        { limite: 3600000, aliq: 0.21, deducao: 125640 }, { limite: 4800000, aliq: 0.33, deducao: 648000 }
+    ];
+    const tabelaAnexo5 = [
+        { limite: 180000, aliq: 0.155, deducao: 0 }, { limite: 360000, aliq: 0.18, deducao: 4500 },
+        { limite: 720000, aliq: 0.195, deducao: 9900 }, { limite: 1800000, aliq: 0.205, deducao: 17100 },
+        { limite: 3600000, aliq: 0.23, deducao: 62100 }, { limite: 4800000, aliq: 0.305, deducao: 540000 }
+    ];
+
+    const formatMoney = (value) => value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+    const formatMoneyInput = (value) => {
+        const numero = value.replace(/\D/g, '');
+        return (Number(numero) / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    };
+
+    const getSimplesTax = (rbt12, tabela) => {
+        let faixa = tabela.find(f => rbt12 <= f.limite);
+        if (!faixa) faixa = tabela[tabela.length - 1];
+        return ((rbt12 * faixa.aliq) - faixa.deducao) / rbt12;
+    };
+
+    const calcularImpostos = (valorRaw) => {
+        const valorLimpo = typeof valorRaw === 'string' ? valorRaw.replace(/\D/g, '') : (valorRaw * 100).toString();
+        const valorMensal = Number(valorLimpo) / 100;
+
+        if (!valorMensal || valorMensal <= 0) {
+            setShowResults(false);
+            setFaturamento('');
+            return;
+        }
+        setShowResults(true);
+        const rbt12 = valorMensal * 12;
+        setResultados({
+            anexo3: valorMensal * getSimplesTax(rbt12, tabelaAnexo3),
+            anexo5: valorMensal * getSimplesTax(rbt12, tabelaAnexo5),
+            presumido: valorMensal * 0.1333
+        });
+    };
+
+    const handleInputChange = (e) => {
+        const valorDigitado = e.target.value;
+        setFaturamento(formatMoneyInput(valorDigitado));
+        calcularImpostos(valorDigitado);
+    };
+
+    const toggleDiagnostico = () => {
+        setShowDiagnostico(!showDiagnostico);
+        setTimeout(() => {
+            if (!showDiagnostico && diagnosticoRef.current) {
+                diagnosticoRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }, 100);
+    };
+
+    const handleDiagnosticoConcluido = (resultadoFinal) => {
+        setShowDiagnostico(false);
+        if (resultadoFinal.podeEconomizar || resultadoFinal.tipoAnexo === 'servicosGerais') {
+            setAnexoRecomendado('anexo3');
+        } else {
+            setAnexoRecomendado('anexo5');
+        }
+        if (resultadoFinal.faturamento) {
+            const valString = resultadoFinal.faturamento.toFixed(2).replace('.', ',');
+            setFaturamento(formatMoneyInput(valString)); 
+            calcularImpostos(valString); 
+        }
+        setTimeout(() => {
+            resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+    };
+
+    const economiaAnual = ((resultados.anexo5 - resultados.anexo3) * 12);
+
+    return (
+        <div className="pt-32 pb-20 animate-fade-in-up min-h-screen">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center mb-12">
+                    <h1 className="text-5xl md:text-6xl font-black mb-6 text-white uppercase tracking-tighter">
+                        SIMULADOR DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">IMPOSTOS</span>
+                    </h1>
+                    <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">
+                        Descubra quanto você pagaria em cada regime tributário
+                    </p>
+                </div>
+
+                <div className="flex flex-col items-center mb-12">   
+                    <label className="text-emerald-400 font-bold mb-4 text-lg">Faturamento Mensal Estimado</label>
+                    <div className="flex items-center w-full max-w-xs bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 mb-4 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/50 transition-all cursor-text" onClick={() => document.getElementById('input-faturamento').focus()}>
+                        <span className="text-slate-400 text-2xl font-bold mr-2 select-none">R$</span>
+                        <input 
+                            id="input-faturamento" type="text" 
+                            className="bg-transparent border-none text-white text-2xl w-full text-left outline-none font-bold placeholder-slate-600" 
+                            placeholder="0,00" value={faturamento} onChange={handleInputChange} autoComplete="off"
+                        />
+                    </div>
+                    
+                    <button 
+                        onClick={toggleDiagnostico}
+                        className="text-slate-400 hover:text-emerald-400 text-sm font-medium underline underline-offset-4 decoration-slate-600 hover:decoration-emerald-400 transition-all flex items-center gap-2"
+                    >
+                        <span>{showDiagnostico ? '❌ Fechar ajuda' : '❓ Não sei qual é meu anexo'}</span>
+                    </button>
+                </div>
+
+                {showDiagnostico && (
+                    <div ref={diagnosticoRef} className="mb-16 scroll-mt-32">
+                        <IdentificadorInPage 
+                            onConcluir={handleDiagnosticoConcluido} 
+                            onCancelar={() => setShowDiagnostico(false)} 
+                        />
+                    </div>
+                )}
+
+                <div 
+                    ref={resultsRef}
+                    className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-all duration-500 ${showResults ? 'opacity-100 translate-y-0' : 'opacity-30 translate-y-4'}`}
+                    style={{pointerEvents: showResults ? 'all' : 'none'}}
+                >
+                    <div className={`bg-slate-900 p-8 rounded-2xl transition-all hover:-translate-y-1 ${anexoRecomendado === 'anexo3' ? 'border-2 border-emerald-500 shadow-[0_0_30px_rgba(16,185,129,0.2)]' : 'border border-slate-800 hover:border-emerald-500/50'}`}>
+                        <div className="text-slate-400 text-sm font-bold uppercase mb-2 pb-3 border-b border-slate-800">
+                            Simples Nacional <br/><span className="text-emerald-400">Anexo III</span>
+                            {anexoRecomendado === 'anexo3' && <span className="ml-2 bg-emerald-500 text-slate-900 text-[10px] px-2 py-0.5 rounded font-black">SEU PERFIL</span>}
+                        </div>
+                        <div className="text-4xl font-black text-white my-4">{formatMoney(resultados.anexo3)}</div>
+                        <p className="text-slate-500 text-sm leading-relaxed">Ideal para serviços gerais ou Intelectual com Fator R (28%).</p>
+                    </div>
+
+                    <div className="bg-slate-900 border border-slate-800 hover:border-emerald-500/50 p-8 rounded-2xl transition-all hover:-translate-y-1">
+                        <div className="text-slate-400 text-sm font-bold uppercase mb-2 pb-3 border-b border-slate-800">Lucro Presumido <br/><span className="text-slate-300">(ISS 2%)</span></div>
+                        <div className="text-4xl font-black text-white my-4">{formatMoney(resultados.presumido)}</div>
+                        <p className="text-slate-500 text-sm leading-relaxed">Cálculo fixo estimado em 13.33% (Federais + ISS Municipal).</p>
+                    </div>
+
+                    <div className={`bg-slate-900 p-8 rounded-2xl transition-all hover:-translate-y-1 relative ${anexoRecomendado === 'anexo5' ? 'border-2 border-orange-500 shadow-[0_0_30px_rgba(249,115,22,0.2)]' : 'border border-slate-800 hover:border-emerald-500/50'}`}>
+                        <div className="text-slate-400 text-sm font-bold uppercase mb-2 pb-3 border-b border-slate-800">
+                            Profissionais Tech/Saúde <br/><span className="text-orange-400">Anexo V</span>
+                            {anexoRecomendado === 'anexo5' && <span className="ml-2 bg-orange-500 text-slate-900 text-[10px] px-2 py-0.5 rounded font-black">SEU PERFIL ATUAL</span>}
+                        </div>
+                        <div className="text-4xl font-black text-white my-4">{formatMoney(resultados.anexo5)}</div>
+                        <div className="mt-6 bg-emerald-500/10 border border-emerald-500/30 rounded-lg p-4 text-center">
+                            <p className="text-emerald-400 text-xs font-bold uppercase tracking-wide">💡 ESTRATÉGIA ALONSO</p>
+                            <p className="text-slate-300 text-xs mt-2">Com Pró-labore ajustado, podemos migrar você para o Anexo III (Card 1).</p>
+                        </div>
+                    </div>
+                </div>
+
+                {showResults && economiaAnual > 0 && (
+                    <div className="max-w-2xl mx-auto mb-12 bg-gradient-to-r from-emerald-600 to-cyan-600 p-8 rounded-2xl text-center shadow-2xl animate-fade-in-up">
+                        <p className="text-white text-sm font-bold uppercase tracking-wider mb-2">💰 Economia Anual com Estratégia Alonso</p>
+                        <p className="text-white text-5xl font-black mb-2">{formatMoney(economiaAnual)}</p>
+                        <p className="text-emerald-50 text-sm">É isso que você economiza por ano saindo do Anexo V para o Anexo III.</p>
+                    </div>
+                )}
+
+                <div className="text-center mt-16">
+                    <button onClick={() => window.open('https://wa.me/5511995172741?text=Quero%20pagar%20o%20menor%20imposto%20possível', '_blank')} className="bg-emerald-600 hover:bg-emerald-500 text-white text-lg px-10 py-5 rounded-full font-bold transition-all shadow-lg shadow-emerald-500/20 hover:shadow-emerald-500/40 hover:scale-105">
+                        Quero Pagar o Menor Imposto Possível
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const DestravaPage = () => (
+    <div className="pt-32 pb-20 animate-fade-in-up">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 className="text-5xl md:text-7xl font-black mb-8 text-white uppercase tracking-tighter leading-none">
+                ESTRATÉGIAS DE <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">PERFORMANCE</span>
+            </h1>
+            <p className="text-slate-400 text-xl max-w-3xl mx-auto font-light mb-16">Informação técnica e direta para quem busca o próximo nível.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 text-left">
+                <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl group hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-500/10">
+                    <TrendingUp className="text-emerald-500 mb-6" size={40} />
+                    <h2 className="text-2xl font-bold text-white mb-4">Fator R</h2>
+                    <p className="text-slate-400 leading-relaxed mb-8 text-lg">Estratégia legal para reduzir sua carga tributária no Simples Nacional de 15,5% para 6%. Ideal para profissionais liberais e tecnologia.</p>
+                    <button onClick={() => window.open('https://wa.me/5511995172741?text=Quero%20consultoria%20Fator%20R', '_blank')} className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2 shadow-lg">Consultoria Fator R <ArrowRight size={20} /></button>
+                </div>
+                <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl group hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-500/10">
+                    <Rocket className="text-emerald-500 mb-6" size={40} />
+                    <h2 className="text-2xl font-bold text-white mb-4">Migração de MEI</h2>
+                    <p className="text-slate-400 leading-relaxed mb-8 text-lg">Sua empresa cresceu? Fazemos o desenquadramento do MEI para ME de forma segura, evitando multas e impostos retroativos.</p>
+                    <button onClick={() => window.open('https://wa.me/5511995172741?text=Quero%20migrar%20meu%20MEI', '_blank')} className="w-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white py-4 rounded-lg font-bold text-lg transition-all flex items-center justify-center gap-2">Migrar com Segurança <ArrowRight size={20} /></button>
+                </div>
+            </div>
+        </div>
+    </div>
+);
+
+function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [view, setView] = useState('home');
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const handleNav = (target, e) => {
+      if(e) e.preventDefault();
+      setIsMenuOpen(false);
+      if (target === 'home') { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      else if (target === 'solucoes') {
+          if (view !== 'home') { setView('home'); setTimeout(() => document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' }), 100); }
+          else { document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' }); }
+      } else if (target === 'destrava') { setView('destrava'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      else if (target === 'calculadora') { setView('calculadora'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+  };
+  const scrollToContact = () => {
+    setIsMenuOpen(false);
+    if(view !== 'home') setView('home');
+    setTimeout(() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }), 100);
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-slate-50 font-sans selection:bg-emerald-500 selection:text-white">
+      <nav className="fixed w-full z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            <div className="flex items-center cursor-pointer" onClick={(e) => handleNav('home', e)}>
+              <span className="text-2xl font-black tracking-tighter text-white">ALONSO<span className="text-emerald-500">.</span>CONTÁBIL</span>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <button onClick={(e) => handleNav('home', e)} className="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Início</button>
+              <button onClick={(e) => handleNav('solucoes', e)} className="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Soluções</button>
+              <button onClick={(e) => handleNav('destrava', e)} className="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Destrava</button>
+              <button onClick={(e) => handleNav('calculadora', e)} className="text-slate-300 hover:text-emerald-400 transition-colors font-medium">Calculadora</button>
+              <button onClick={scrollToContact} className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-emerald-500/20">Fale com Especialista</button>
+            </div>
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMenu} className="text-white">{isMenuOpen ? <X size={28} /> : <Menu size={28} />}</button>
+            </div>
+          </div>
+        </div>
+        {isMenuOpen && (
+          <div className="md:hidden bg-slate-900 border-b border-slate-800 p-4 space-y-4">
+            <button onClick={(e) => handleNav('home', e)} className="block w-full text-left text-slate-300">Início</button>
+            <button onClick={(e) => handleNav('solucoes', e)} className="block w-full text-left text-slate-300">Soluções</button>
+            <button onClick={(e) => handleNav('destrava', e)} className="block w-full text-left text-slate-300">Destrava</button>
+            <button onClick={(e) => handleNav('calculadora', e)} className="block w-full text-left text-slate-300">Calculadora</button>
+            <button onClick={scrollToContact} className="block w-full text-left text-emerald-400 font-bold">Fale Conosco</button>
+          </div>
+        )}
+      </nav>
+
+      {view === 'home' ? (
+        <>
+          <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-emerald-500/20 rounded-full blur-[120px] -z-10 opacity-50"></div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-900/50 border border-slate-700 text-emerald-400 text-sm font-bold mb-8 animate-fade-in-up">
+                <span className="relative flex h-3 w-3"><span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span><span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span></span>
+                Referência em Guarulhos
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-8 text-white">A CONTABILIDADE DE <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">ALTA PERFORMANCE</span></h1>
+              <p className="mt-4 text-xl md:text-2xl text-slate-400 max-w-3xl mx-auto font-light leading-relaxed"><span className="text-emerald-400 font-bold">Economize até R$ 50 mil/ano</span> em impostos (legalmente). Mais de 150 empresas em Guarulhos já pagam menos com a gente.</p>
+              <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                <button onClick={(e) => handleNav('destrava', e)} className="group bg-emerald-600 hover:bg-emerald-500 text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] flex items-center justify-center gap-2">Quero Destravar Minha Empresa <ArrowRight className="group-hover:translate-x-1 transition-transform" /></button>
+                <button onClick={() => window.open('https://wa.me/5511995172741?text=Olá!', '_blank')} className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-lg px-8 py-4 rounded-lg font-semibold transition-all flex items-center justify-center gap-2"><MessageCircle size={20} /> WhatsApp Rápido</button>
+              </div>
+            </div>
+          </section>
+          <section id="solucoes" className="py-20 bg-slate-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que sua empresa precisa?</h2><p className="text-slate-400 text-lg">Não importa o tamanho do problema, nós temos a solução exata.</p></div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:-translate-y-2 group"><div className="bg-slate-900 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors"><CheckCircle className="text-emerald-500 w-8 h-8" /></div><h3 className="text-xl font-bold text-white mb-3">Resolvemos Tudo</h3><p className="text-slate-400 leading-relaxed">Fiscal, trabalhista, contábil ou societário. Assumimos a responsabilidade para você focar apenas em vender.</p></div>
+                <div className="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:-translate-y-2 group"><div className="bg-slate-900 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors"><Unlock className="text-emerald-500 w-8 h-8" /></div><h3 className="text-xl font-bold text-white mb-3">Destravamos Tudo</h3><p className="text-slate-400 leading-relaxed">CNPJ travado? Dívidas? Regularização urgente? Nós limpamos o caminho para sua empresa voar.</p></div>
+                <div className="bg-slate-950 p-8 rounded-2xl border border-slate-800 hover:border-emerald-500/50 transition-all hover:-translate-y-2 group"><div className="bg-slate-900 w-14 h-14 rounded-lg flex items-center justify-center mb-6 group-hover:bg-emerald-500/20 transition-colors"><TrendingUp className="text-emerald-500 w-8 h-8" /></div><h3 className="text-xl font-bold text-white mb-3">Lucro Real</h3><p className="text-slate-400 leading-relaxed">Planejamento tributário agressivo (dentro da lei) para você pagar menos impostos e lucrar mais.</p></div>
+              </div>
+            </div>
+          </section>
+          <section id="contact" className="py-20 px-4">
+            <div className="max-w-5xl mx-auto bg-emerald-600 rounded-3xl p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
+                <h2 className="text-3xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter">Pare de perder dinheiro com burocracia.</h2>
+                <p className="text-emerald-50 text-xl mb-10 max-w-2xl mx-auto">Fale agora com um de nossos especialistas e descubra como a Alonso Contábil vai mudar o jogo da sua empresa.</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onClick={() => window.open('https://wa.me/5511995172741', '_blank')} className="bg-white text-emerald-900 hover:bg-slate-100 text-lg px-8 py-4 rounded-lg font-bold shadow-lg flex items-center justify-center gap-2">Chamar no WhatsApp</button>
+                    <button onClick={() => window.open('https://wa.me/5511995172741?text=Olá! Gostaria de solicitar uma proposta.', '_blank')} className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white/10 transition-colors">Solicitar Proposta</button>
+                </div>
+            </div>
+          </section>
+        </>
+      ) : view === 'calculadora' ? (
+          <CalculadoraPage />
+      ) : (
+          <DestravaPage />
+      )}
+
+      <footer className="bg-slate-950 py-12 border-t border-slate-900">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-2xl font-black tracking-tighter text-white">ALONSO<span className="text-emerald-500">.</span>CONTÁBIL</div>
+          <p className="text-slate-500 text-sm">© 2025 Alonso Contábil. A potência de Guarulhos.</p>
+          <div className="flex gap-6">
+            <a href="https://instagram.com/alonsocontabil" target="_blank" className="text-slate-400 hover:text-white transition-colors">Instagram</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
