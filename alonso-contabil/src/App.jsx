@@ -185,7 +185,8 @@ const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
                                 <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
                                 <input 
                                     id="diag-fat"
-                                    type="text" 
+                                    type="tel"
+                                    inputMode="numeric"
                                     value={inputFat} 
                                     placeholder="0,00"
                                     onChange={(e) => {
@@ -205,7 +206,8 @@ const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
                                 <span className="text-slate-500 text-lg font-bold mr-2 select-none">R$</span>
                                 <input 
                                     id="diag-folha"
-                                    type="text" 
+                                    type="tel" 
+                                    inputMode="numeric"
                                     value={inputFolha} 
                                     placeholder="0,00"
                                     onChange={(e) => {
