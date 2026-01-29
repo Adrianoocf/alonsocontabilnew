@@ -666,7 +666,7 @@ function App() {
 
       {/* 2. CENTRO: Links (Fonte Maior e Mais Espaçamento) */}
       {/* Mudanças: gap-12 (mais espaço) e text-base (fonte tamanho padrão/header) */}
-      <nav className="flex flex-wrap justify-center gap-8 text-base text-slate-400 font-medium md:justify-self-center">
+      <nav className="flex flex-wrap justify-center gap-6 text-base text-slate-400 font-medium md:justify-self-center">
         <button onClick={(e) => handleNav('home', e)} className="hover:text-emerald-400 transition-colors">Início</button>
         <button onClick={(e) => handleNav('solucoes', e)} className="hover:text-emerald-400 transition-colors">Soluções</button>
         <button onClick={(e) => handleNav('destrava', e)} className="hover:text-emerald-400 transition-colors">Destrava</button>
