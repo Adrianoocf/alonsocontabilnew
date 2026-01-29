@@ -554,45 +554,59 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [view, setView] = useState('home');
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
- const handleNav = (target, e) => {
-      if(e) e.preventDefault();
-      setIsMenuOpen(false); // Fecha o menu mobile se estiver aberto
 
-      // Função auxiliar inteligente
-      const irParaSecao = (id, comportamento) => {
+  const handleNav = (target, e) => {
+      // Previne comportamentos padrões de links/toques fantasmas
+      if (e) e.preventDefault();
+      
+      // Fecha o menu mobile imediatamente
+      setIsMenuOpen(false);
+
+      // Função Mágica: Rola para o topo DEPOIS que a tela piscar
+      const rolarParaTopo = () => {
           setTimeout(() => {
-              const element = document.getElementById(id);
-              if (element) {
-                  element.scrollIntoView({ behavior: comportamento, block: 'start' });
-              }
-          }, 100); // Pequeno delay para garantir que a tela existe
+              window.scrollTo({ top: 0, behavior: 'auto' });
+          }, 50); // 50ms de atraso é imperceptível para o olho, mas vital para o código
       };
 
       if (target === 'home') {
-          setView('home');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-      } 
-      else if (target === 'solucoes') {
-          if (view !== 'home') { 
-              // CASO 1: Estou em outra página (Ex: Calculadora/Footer)
-              setView('home'); 
-              // Uso 'auto' (INSTANTÂNEO) para evitar o bug do celular se perdendo
-              irParaSecao('solucoes', 'auto'); 
-          } else { 
-              // CASO 2: Já estou na Home
-              // Uso 'smooth' (SUAVE) para manter a elegância
-              irParaSecao('solucoes', 'smooth'); 
+          if (view !== 'home') {
+              setView('home');
+              rolarParaTopo();
+          } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
           }
       } 
-      else if (target === 'destrava') { 
-          setView('destrava'); 
-          window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      else if (target === 'solucoes') {
+          if (view !== 'home') {
+              setView('home');
+              // Atraso maior aqui (100ms) porque precisa carregar a Home inteira antes de achar a seção
+              setTimeout(() => {
+                  const section = document.getElementById('solucoes');
+                  if (section) section.scrollIntoView({ behavior: 'auto', block: 'start' });
+              }, 100);
+          } else {
+              document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
       } 
-      else if (target === 'calculadora') { 
-          setView('calculadora'); 
-          window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      else if (target === 'destrava') {
+          if (view !== 'destrava') {
+              setView('destrava');
+              rolarParaTopo(); // Resolve o bug da tela branca/meio do nada
+          } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+      } 
+      else if (target === 'calculadora') {
+          if (view !== 'calculadora') {
+              setView('calculadora');
+              rolarParaTopo(); // Resolve o bug da tela branca/meio do nada
+          } else {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
       }
   };
+
   const scrollToContact = () => {
     setIsMenuOpen(false);
     if(view !== 'home') setView('home');
