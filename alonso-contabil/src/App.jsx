@@ -554,15 +554,44 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [view, setView] = useState('home');
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const handleNav = (target, e) => {
+ const handleNav = (target, e) => {
       if(e) e.preventDefault();
-      setIsMenuOpen(false);
-      if (target === 'home') { setView('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+      setIsMenuOpen(false); // Fecha o menu mobile se estiver aberto
+
+      // Função auxiliar inteligente
+      const irParaSecao = (id, comportamento) => {
+          setTimeout(() => {
+              const element = document.getElementById(id);
+              if (element) {
+                  element.scrollIntoView({ behavior: comportamento, block: 'start' });
+              }
+          }, 100); // Pequeno delay para garantir que a tela existe
+      };
+
+      if (target === 'home') {
+          setView('home');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+      } 
       else if (target === 'solucoes') {
-          if (view !== 'home') { setView('home'); setTimeout(() => document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' }), 100); }
-          else { document.getElementById('solucoes')?.scrollIntoView({ behavior: 'smooth' }); }
-      } else if (target === 'destrava') { setView('destrava'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-      else if (target === 'calculadora') { setView('calculadora'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+          if (view !== 'home') { 
+              // CASO 1: Estou em outra página (Ex: Calculadora/Footer)
+              setView('home'); 
+              // Uso 'auto' (INSTANTÂNEO) para evitar o bug do celular se perdendo
+              irParaSecao('solucoes', 'auto'); 
+          } else { 
+              // CASO 2: Já estou na Home
+              // Uso 'smooth' (SUAVE) para manter a elegância
+              irParaSecao('solucoes', 'smooth'); 
+          }
+      } 
+      else if (target === 'destrava') { 
+          setView('destrava'); 
+          window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      } 
+      else if (target === 'calculadora') { 
+          setView('calculadora'); 
+          window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      }
   };
   const scrollToContact = () => {
     setIsMenuOpen(false);
