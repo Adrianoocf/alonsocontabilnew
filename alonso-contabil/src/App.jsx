@@ -50,20 +50,47 @@ const IdentificadorInPage = ({ onConcluir, onCancelar }) => {
         const t = texto.normalize('NFD').replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
         const termosAnexoV = [
-            /desenvol|program|soft|sistem|ti\b|tecno|dados|web|site|app|aplicati|cloud|suporte tec/,
-            /medic|doutor|clinic|saude|dentist|odont|psicol|nutri|fisioter|fono|veterin|laborat|enferm|terap|fisia/,
-            /engenh|arquit|urbanis|topogra|geo|proj/,
-            /consult|assessoria|gestao|market|publicid|propag|design|redat|jornal|tradut|audit|intermed|represent|perit|aval/
-        ];
+            // Tecnologia / TI
+            /desenvol|program|soft|sistem|ti\b|tecno|dados|data|web|site|portal|app|aplicati|cloud|infra|devops|suporte tec|helpdesk|analist|consult ti|seguranca da informac|ciber|rede|banco de dados/,
+            // Saúde / Profissionais da saúde
+            /medic|doutor|clinic|saude|dentist|odont|psicol|psiquiatr|nutri|fisioter|fono|veterin|laborat|biomed|enferm|terap|fisia|farmac|radiolog|estet med|acupuntur/,
+            // Engenharia / Arquitetura
+            /engenh|arquit|urbanis|topogra|geo|geolog|agrimen|agrari|proj|calculo estrut|obra tecnica|laudo tecnic|art\b|rrt\b/,
+            // Consultoria / Intelectual
+            /consult|assessoria|gestao|planej|estrateg|coach|mentoria|trein corpor|business|process|organizac|compliance|governanc/,
+            // Marketing / Comunicação intelectual
+            /market|publicid|propag|design|branding|ux|ui|redat|copy|conteud|social media|seo|trafego pago|midia|jornal|editor|comunicac/,
+            // Jurídico / Contábil / Financeiro
+            /advoc|jurid|direito|contab|contador|auditor|audit|perit|avaliac|econom|financ|invest|controlador|planej tribut/,
+            // Educação intelectual
+            /professor|docent|ensino superior|palestr|instrutor|treinament tecnico|educac corpor|ead|curso online/,
+            // Outros intelectuais
+            /tradut|interprete|pesquis|cientif|estatist|atuar|perici|analise tecnic/
+            ];
 
         const termosAnexoIII = [
-            /manuten|repar|consert|instal|eletric|hidraul|mecanic|pedreir|pintor|obra|construc|serral|marcen|vidrac|monta/,
-            /salao|barbe|cabel|manic|pedic|estetic|belez|maquia|depil|cilio|sobrancelh|tatu/,
-            /restauran|bar\b|lanch|pizz|hamburg|alimen|comid|buffet|bolo|doce|gastron/,
-            /transp|frete|mudanc|escolar|motorist|logist|entreg|motoboy|carga/,
-            /contab|digit|escrit|ensino|curso|treinament|aula|creche|escola|idios|traduc/,
-            /limpez|faxin|diarist|dedetiz|jardin|portar|vigil|zelad/,
-            /grafic|impres|fotog|filmagem|event|promoc|agenc|viagem|lavand|costur/
+            // Manutenção / Construção
+            /manuten|repar|consert|instal|eletric|hidraul|mecanic|pedreir|pintor|obra|construc|reforma|serral|solda|marcen|vidrac|monta|gesso|forro|telhad|impermeab/,
+            // Beleza / Estética
+            /salao|barbe|cabel|manic|pedic|estetic|belez|maquia|depil|cilio|sobrancelh|tatu|pierc|spa|massag/,
+            // Alimentação
+            /restauran|bar\b|lanch|pizz|hamburg|alimen|comid|buffet|bolo|doce|confeit|padar|panific|gastron|cozinha|delivery/,
+            // Transporte / Logística
+            /transp|frete|mudanc|escolar|motorist|uber|taxi|logist|entreg|motoboy|carga|coleta|distribuic/,
+            // Educação básica / apoio
+            /creche|escola|bercar|reforc escolar|aula partic|idiom|lingua|alfabet|educac infantil/,
+            // Serviços administrativos / apoio
+            /digit|escrit|secretari|backoffice|call center|teleatend|cobranc|arquivo|protocol|portar|recepc/,
+            // Limpeza / Conservação
+            /limpez|faxin|diarist|dedetiz|jardin|capin|zelad|conserv|higieniz|desinfecc/,
+            // Gráfica / Produção
+            /grafic|impres|plotag|copiador|xerox|encadern|serigraf|silk|estampa/,
+            // Eventos / Serviços gerais
+            /fotog|filmagem|video|event|buffet|promoc|agenc|viagem|turism|cerimonial|sonoriz|iluminac/,
+            // Lavanderia / Costura
+            /lavand|passad|costur|ajust|conserto roupa|bordad|tinturaria/,
+            // Comércio / varejo
+            /comerc|loj|varej|atacad|revend|distribuidor|marketplace|ecommerce|venda de/
         ];
 
         for (let regex of termosAnexoV) {
@@ -388,8 +415,11 @@ const CalculadoraPage = () => {
         <div className="pt-32 pb-20 animate-fade-in-up min-h-screen">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-6xl font-black mb-6 text-white uppercase tracking-tighter">
-                        SIMULADOR DE <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">IMPOSTOS</span>
+                    <h1 className="text-4xl md:text-6xl font-black mb-6 text-white uppercase tracking-tight">
+                        SIMULADOR DE{' '}
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
+                            IMPOSTOS
+                        </span>
                     </h1>
                     <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light">
                         Descubra quanto você pagaria em cada regime tributário
@@ -500,6 +530,7 @@ const DestravaPage = () => (
                 ESTRATÉGIAS DE <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">PERFORMANCE</span>
             </h1>
+            
             <p className="text-slate-400 text-xl max-w-3xl mx-auto font-light mb-16">Informação técnica e direta para quem busca o próximo nível.</p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20 text-left">
                 <div className="bg-slate-900 border border-slate-800 p-10 rounded-2xl group hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-500/10">
@@ -593,7 +624,7 @@ function App() {
               </div>
             </div>
           </section>
-          <section id="solucoes" className="py-20 bg-slate-900 scroll-mt-20">
+          <section id="solucoes" className="py-12 bg-slate-900 scroll-mt-20">
             <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
               <div className="text-center mb-16"><h2 className="text-3xl md:text-4xl font-bold text-white mb-4">O que sua empresa precisa?</h2><p className="text-slate-400 text-lg">Não importa o tamanho do problema, nós temos a solução exata.</p></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -620,15 +651,49 @@ function App() {
           <DestravaPage />
       )}
 
-      <footer className="bg-slate-950 py-12 border-t border-slate-900">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-2xl font-black tracking-tighter text-white">ALONSO<span className="text-emerald-500">.</span>CONTÁBIL</div>
-          <p className="text-slate-500 text-sm">© 2025 Alonso Contábil. A potência de Guarulhos.</p>
-          <div className="flex gap-6">
-            <a href="https://instagram.com/alonsocontabil" target="_blank" className="text-slate-400 hover:text-white transition-colors">Instagram</a>
-          </div>
+<footer className="bg-slate-950 py-12 border-t border-slate-900">
+  <div className="max-w-7xl mx-auto px-6">
+    
+    {/* GRID 3 COLUNAS */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-10">
+
+      {/* 1. ESQUERDA: Logo */}
+      <div className="flex flex-col items-center md:items-start text-center md:text-left md:justify-self-start">
+        <div className="text-2xl font-black tracking-tighter text-white">
+          ALONSO<span className="text-emerald-500">.</span>CONTÁBIL
         </div>
-      </footer>
+      </div>
+
+      {/* 2. CENTRO: Links (Fonte Maior e Mais Espaçamento) */}
+      {/* Mudanças: gap-12 (mais espaço) e text-base (fonte tamanho padrão/header) */}
+      <nav className="flex flex-wrap justify-center gap-8 text-base text-slate-400 font-medium md:justify-self-center">
+        <button onClick={(e) => handleNav('home', e)} className="hover:text-emerald-400 transition-colors">Início</button>
+        <button onClick={(e) => handleNav('solucoes', e)} className="hover:text-emerald-400 transition-colors">Soluções</button>
+        <button onClick={(e) => handleNav('destrava', e)} className="hover:text-emerald-400 transition-colors">Destrava</button>
+        <button onClick={(e) => handleNav('calculadora', e)} className="hover:text-emerald-400 transition-colors">Calculadora</button>
+      </nav>
+
+      {/* 3. DIREITA: Social (Ajustei para text-base para acompanhar o meio) */}
+      <div className="w-full flex justify-center md:justify-end md:justify-self-end">
+        <div className="flex items-center gap-6 text-base text-slate-400 font-medium">
+          <a href="https://instagram.com/alonsocontabil" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+            <span>📸</span> Instagram
+          </a>
+          <a href="https://wa.me/5511995172741" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2">
+            <span>💬</span> WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    {/* COPYRIGHT: Mantido discreto */}
+    <div className="border-t border-slate-900 pt-8 text-center text-sm text-slate-500">
+      <p>© 2025 Alonso Contábil. A potência de Guarulhos.</p>
+    </div>
+
+  </div>
+</footer>
     </div>
   );
 }
